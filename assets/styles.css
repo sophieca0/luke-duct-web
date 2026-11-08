@@ -504,3 +504,12 @@ body{margin:0;background:#1C1B1A}
 @media (max-width:560px){.after a{display:inline;margin-top:0}}
 @media (max-width:350px){.stickybar .btn-ghost .lbl{display:none}}
 @media (max-width:350px){.btn{padding-inline:1.1rem}}
+
+/* wall sheet (7) */
+.sv-wall{fill:color-mix(in srgb,var(--band-ink) 7%,var(--band-2));stroke:var(--band-muted);stroke-width:1.2;stroke-linejoin:round}
+.sv-wseam{stroke:var(--band-muted);stroke-width:1;opacity:.45}
+.p7 .pi,.part:nth-child(7) .pc{animation:none}
+@supports selector(:has(a)){
+  .sgrid:has(.part:nth-child(7):hover) .p7 .pi{border-color:var(--acc);background-color:color-mix(in srgb,var(--acc) 30%,var(--pill));box-shadow:0 0 0 5px color-mix(in srgb,var(--acc) 25%,transparent)}
+}
+@media (min-width:1041px){.parts{grid-template-columns:repeat(4,minmax(0,1fr))}}

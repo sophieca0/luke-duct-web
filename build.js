@@ -69,13 +69,13 @@ const EN = {
   scopeH2: "Air Out, Fresh Air In.",
   scopeSub: "A commercial kitchen needs a properly planned ventilation system. The exhaust removes smoke, heat and grease-laden air, while the fresh air system brings clean outside air back into the kitchen.",
   fact1: 'Exhaust systems', fact2: 'Fresh air systems', fact3: 'Fabricated in-house', fact4: 'Victoria-wide',
-  s1t: "Hood", s1d: "Sits over the cooking line and captures smoke, heat and grease-laden air where it starts.",
-  s2t: "Access Hatches", s2d: "Placed along the duct where needed, so the system can be inspected and cleaned.",
-  s3t: "Ductwork", s3d: "Carries the exhaust air from the hood to the fan, routed neatly to the approved drawings.",
+  s1t: "Canopy", s1d: "Sits over the cooking line and captures smoke, heat and grease-laden air where it starts.",
+  s2t: "Access Panel", s2d: "Placed along the duct where needed, so the system can be inspected and cleaned.",
+  s3t: "Ductwork", s3d: "Carries the exhaust air from the canopy to the fan, routed neatly to the approved drawings.",
   s4t: "Exhaust Fan", s4d: "Draws air through the system. Its position is set out on the drawings before anything is made.",
   s5t: "Discharge Point", s5d: "Where the exhaust leaves the building – roof, wall or shaft – planned from the start.",
   s6t: "Fresh Air Supply", s6d: "A supply fan and ductwork bring clean outside air back into the kitchen to replace what is exhausted.",
-  dgLabel: "Illustration of a typical commercial kitchen system, not to scale. Numbered 1 to 6: the hood over the cooking equipment, an access hatch on the vertical riser, the ductwork above the ceiling, the exhaust fan, the discharge point, and the fresh air supply coming down into the kitchen.",
+  dgLabel: "Illustration of a typical commercial kitchen system, not to scale. Numbered 1 to 7: the canopy over the cooking equipment, an access panel on the vertical riser, the ductwork above the ceiling, the exhaust fan, the discharge point, the fresh air supply coming down into the kitchen, and the wall sheet behind the cooking line.",
   dgTitle: 'TYPICAL KITCHEN SYSTEM', dgScale: 'NOT TO SCALE', dgCeiling: 'CEILING', dgExhaust: 'EXHAUST', dgFresh: 'FRESH AIR',
   workEyebrow: 'Our work', workH2: 'Look closely at the finish.', workSub: 'Real photos from our own jobs across Victoria.',
   ctaT: "Planning a New Kitchen or Upgrading an Existing One?", ctaS: "Whether you're fitting out a new commercial kitchen or upgrading an existing system, getting the exhaust and fresh air right from the start makes a difference.",
@@ -125,7 +125,10 @@ const EN = {
   procSub: "We keep the process straightforward and make sure the important details are worked through before the installation begins.",
   contactIntro2: "Tell us a little about your project. We'll take the time to understand what you need and discuss the best way to approach the job.",
   footTag: "Commercial Kitchen Exhaust & Fresh Air Systems",
-  navLabel: 'Main menu'
+  navLabel: 'Main menu',
+  s7t: "Wall Sheet",
+  s7d: "Stainless steel sheeting on the wall behind the cooking line, so the area is easy to wipe down and keep clean.",
+  dgWall: "WALL SHEET"
 };
 
 const VI = {
@@ -164,13 +167,13 @@ const VI = {
   scopeH2: "Hút khói ra, gió tươi vào.",
   scopeSub: "Bếp thương mại cần một hệ thống thông gió được tính toán kỹ. Hệ thống hút đưa khói, hơi nóng và hơi dầu mỡ ra ngoài, còn hệ thống gió tươi đưa không khí sạch từ bên ngoài trở lại bếp.",
   fact1: 'Hệ thống hút khói', fact2: 'Hệ thống gió tươi', fact3: 'Tự gia công', fact4: 'Toàn bang Victoria',
-  s1t: "Hood", s1d: "Đặt phía trên khu nấu, giữ lại khói, hơi nóng và hơi dầu mỡ ngay từ nguồn.",
-  s2t: "Cửa thăm", s2d: "Bố trí dọc tuyến ống ở những chỗ cần thiết để kiểm tra và vệ sinh hệ thống.",
-  s3t: "Đường ống", s3d: "Dẫn khí thải từ hood đến quạt, đi ống gọn gàng theo đúng bản vẽ đã duyệt.",
+  s1t: "Chụp hút (canopy)", s1d: "Đặt phía trên khu nấu, giữ lại khói, hơi nóng và hơi dầu mỡ ngay từ nguồn.",
+  s2t: "Cửa thăm (access panel)", s2d: "Bố trí dọc tuyến ống ở những chỗ cần thiết để kiểm tra và vệ sinh hệ thống.",
+  s3t: "Đường ống (ductwork)", s3d: "Dẫn khí thải từ chụp hút đến quạt, đi ống gọn gàng theo đúng bản vẽ đã duyệt.",
   s4t: "Quạt hút", s4d: "Hút khí qua toàn hệ thống. Vị trí quạt được xác định trên bản vẽ trước khi gia công.",
   s5t: "Điểm xả khí", s5d: "Nơi khí thải ra khỏi công trình – mái, tường hoặc hộp gen – được tính từ đầu.",
   s6t: "Cấp gió tươi", s6d: "Quạt cấp và đường ống đưa không khí sạch từ bên ngoài vào bếp, bù lại lượng khí đã hút ra.",
-  dgLabel: "Hình minh họa hệ thống bếp thương mại điển hình, không theo tỷ lệ. Đánh số 1 đến 6: hood phía trên thiết bị nấu, cửa thăm trên ống đứng, đường ống trên trần, quạt hút, điểm xả khí, và đường cấp gió tươi đi xuống bếp.",
+  dgLabel: "Hình minh họa hệ thống bếp thương mại điển hình, không theo tỷ lệ. Đánh số 1 đến 7: chụp hút phía trên thiết bị nấu, cửa thăm trên ống đứng, đường ống trên trần, quạt hút, điểm xả khí, đường cấp gió tươi đi xuống bếp, và tấm ốp tường phía sau khu nấu.",
   dgTitle: 'HỆ THỐNG BẾP ĐIỂN HÌNH', dgScale: 'KHÔNG THEO TỶ LỆ', dgCeiling: 'TRẦN', dgExhaust: 'HÚT KHÓI', dgFresh: 'GIÓ TƯƠI',
   workEyebrow: 'Công trình', workH2: 'Xem kỹ phần hoàn thiện.', workSub: 'Ảnh thật từ chính các công trình bên mình đã làm ở Victoria.',
   ctaT: "Đang làm bếp mới hay nâng cấp bếp hiện có?", ctaS: "Dù anh chị đang làm bếp thương mại mới hay nâng cấp hệ thống hiện có, làm đúng phần hút khói và gió tươi ngay từ đầu sẽ tạo ra khác biệt.",
@@ -220,7 +223,9 @@ const VI = {
   procSub: "Bên mình giữ quy trình đơn giản, rõ ràng và tính kỹ những chi tiết quan trọng trước khi bắt đầu lắp đặt.",
   contactIntro2: "Hãy kể sơ cho bên mình về công trình. Bên mình sẽ dành thời gian tìm hiểu nhu cầu của anh chị và cùng bàn cách làm phù hợp nhất.",
   footTag: "Hệ thống hút khói & cấp gió tươi cho bếp thương mại",
-  navLabel: 'Menu chính'
+  navLabel: 'Menu chính',
+  s7t: "Tấm ốp tường (wall sheet)",
+  s7d: "Tấm inox ốp tường phía sau khu nấu, giúp khu vực này dễ lau chùi và luôn sạch sẽ."
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -409,6 +414,11 @@ function page(T, lang) {
                 <rect class="sv-glow mk m0" x="486" y="56" width="72" height="80" rx="10" filter="url(#gl)"/>
 
                 <line class="sv-line d1" pathLength="1" x1="24" y1="380" x2="736" y2="380"/>
+                <rect class="sv-wall d1" pathLength="1" x="40" y="246" width="286" height="134"/>
+                <line class="sv-wseam" x1="88" y1="246" x2="88" y2="380"/>
+                <line class="sv-wseam" x1="136" y1="246" x2="136" y2="380"/>
+                <line class="sv-wseam" x1="232" y1="246" x2="232" y2="380"/>
+                <line class="sv-wseam" x1="280" y1="246" x2="280" y2="380"/>
                 <rect class="sv-duct d1" pathLength="1" x="76" y="332" width="214" height="48" rx="8"/>
                 <line class="sv-mut" x1="96" y1="346" x2="136" y2="346"/>
                 <line class="sv-mut" x1="156" y1="346" x2="196" y2="346"/>
@@ -450,6 +460,7 @@ function page(T, lang) {
                 <g class="mk m2"><rect class="sv-hot" x="191" y="198" width="10" height="44" rx="2"/><line class="sv-lead" x1="201" y1="220" x2="240" y2="220"/></g>
                 <g class="mk m3"><line class="sv-lead" x1="340" y1="76" x2="340" y2="56"/><circle class="sv-hot" cx="340" cy="76" r="4"/></g>
                 <g class="mk m4"><line class="sv-lead" x1="522" y1="136" x2="522" y2="150"/><circle class="sv-hot" cx="522" cy="136" r="4"/></g>
+                <g class="mk m1"><line class="sv-lead" x1="326" y1="358" x2="340" y2="358"/><circle class="sv-hot" cx="326" cy="358" r="4"/></g>
                 <g class="mk m5"><line class="sv-lead" x1="526.4" y1="30" x2="548" y2="30"/><circle class="sv-hot" cx="526.4" cy="30" r="4"/></g>
                 <g class="mk m5"><line class="sv-falead" x1="644" y1="237" x2="624" y2="237"/><circle class="sv-fahot" cx="644" cy="237" r="4"/></g>
 
@@ -459,12 +470,13 @@ function page(T, lang) {
                 <text class="sv-lgd" x="420" y="416" fill="#7CC0FF">● ${T.dgFresh}</text>
                 <text class="sv-ttl" x="736" y="416" text-anchor="end">${T.dgScale}</text>
               </svg>
-              <span class="pill p1" style="--x:330;--y:296;--k:0"><span class="pw"><span class="pi"><b>1</b><span class="pl">${T.s1t}</span></span></span></span>
-              <span class="pill p2" style="--x:244;--y:220;--k:1"><span class="pw"><span class="pi"><b>2</b><span class="pl">${T.s2t}</span></span></span></span>
-              <span class="pill p3 c" style="--x:340;--y:32;--k:2"><span class="pw"><span class="pi"><b>3</b><span class="pl">${T.s3t}</span></span></span></span>
-              <span class="pill p4 c" style="--x:522;--y:162;--k:3"><span class="pw"><span class="pi"><b>4</b><span class="pl">${T.s4t}</span></span></span></span>
-              <span class="pill p5" style="--x:552;--y:30;--k:4"><span class="pw"><span class="pi"><b>5</b><span class="pl">${T.s5t}</span></span></span></span>
-              <span class="pill p6 r" style="--x:620;--y:237;--k:5"><span class="pw"><span class="pi"><b>6</b><span class="pl">${T.s6t}</span></span></span></span>
+              <span class="pill p1" style="--x:330;--y:296;--k:0"><span class="pw"><span class="pi"><b>1</b><span class="pl">${T.s1t.replace(/\s*\(.*\)$/, '')}</span></span></span></span>
+              <span class="pill p2" style="--x:244;--y:220;--k:1"><span class="pw"><span class="pi"><b>2</b><span class="pl">${T.s2t.replace(/\s*\(.*\)$/, '')}</span></span></span></span>
+              <span class="pill p3 c" style="--x:340;--y:32;--k:2"><span class="pw"><span class="pi"><b>3</b><span class="pl">${T.s3t.replace(/\s*\(.*\)$/, '')}</span></span></span></span>
+              <span class="pill p4 c" style="--x:522;--y:162;--k:3"><span class="pw"><span class="pi"><b>4</b><span class="pl">${T.s4t.replace(/\s*\(.*\)$/, '')}</span></span></span></span>
+              <span class="pill p5" style="--x:552;--y:30;--k:4"><span class="pw"><span class="pi"><b>5</b><span class="pl">${T.s5t.replace(/\s*\(.*\)$/, '')}</span></span></span></span>
+              <span class="pill p7" style="--x:344;--y:358;--k:6"><span class="pw"><span class="pi"><b>7</b><span class="pl">${T.s7t.replace(/\s*\(.*\)$/, '')}</span></span></span></span>
+              <span class="pill p6 r" style="--x:620;--y:237;--k:5"><span class="pw"><span class="pi"><b>6</b><span class="pl">${T.s6t.replace(/\s*\(.*\)$/, '')}</span></span></span></span>
             </div>
           </figure>
           <ol class="parts">
@@ -474,6 +486,7 @@ function page(T, lang) {
             <li class="part" style="--k:3"><div class="pc"><span class="num" aria-hidden="true">4</span><div><h3>${T.s4t}</h3><p>${T.s4d}</p></div></div></li>
             <li class="part" style="--k:4"><div class="pc"><span class="num" aria-hidden="true">5</span><div><h3>${T.s5t}</h3><p>${T.s5d}</p></div></div></li>
             <li class="part fa" style="--k:5"><div class="pc"><span class="num" aria-hidden="true">6</span><div><h3>${T.s6t}</h3><p>${T.s6d}</p></div></div></li>
+            <li class="part" style="--k:6"><div class="pc"><span class="num" aria-hidden="true">7</span><div><h3>${T.s7t}</h3><p>${T.s7d}</p></div></div></li>
           </ol>
         </div>
       </div>
