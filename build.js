@@ -249,7 +249,7 @@ function page(T, lang) {
 <script type="application/ld+json">${JSON.stringify(ldjson)}</script>
 </head>
 <body>
-<div class="pg lang-${lang}" id="top">
+<div class="pg lang-${lang}" id="top" data-lang="${lang}" data-site="${esc(JSON.stringify(msgs))}">
 
   <header class="top">
     <div class="in top-in">
@@ -266,7 +266,7 @@ function page(T, lang) {
       <div class="top-r">
         <a class="btn btn-ghost btn-sm hdr-cta" href="${tel}">${PHONE_IC}<span>${esc(C.phoneDisplay)}</span></a>
         <a class="btn btn-primary btn-sm hdr-cta" href="#contact">${T.quote}</a>
-        <button class="iconbtn" type="button" id="motion" aria-label="${T.motionPause}" title="${T.motionPause}">
+        <button class="iconbtn js-motion" type="button" aria-label="${T.motionPause}" title="${T.motionPause}">
           <svg class="ic-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1.5"/><rect x="14" y="4" width="5" height="16" rx="1.5"/></svg>
           <svg class="ic-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.9l12-7.5a1 1 0 0 0 0-1.8l-12-7.5A1 1 0 0 0 7 4.5z"/></svg>
         </button>
@@ -503,7 +503,7 @@ function page(T, lang) {
 
   <footer class="foot dark">
     <div class="in">
-      <span>© <span id="yr">${new Date().getFullYear()}</span> ${esc(C.company)}${C.abn ? ' · ABN ' + esc(C.abn) : ''} · ${T.rights}</span>
+      <span>© ${new Date().getFullYear()} ${esc(C.company)}${C.abn ? ' · ABN ' + esc(C.abn) : ''} · ${T.rights}</span>
       <span>${T.areaVal} · <a href="${tel}">${esc(C.phoneDisplay)}</a></span>
     </div>
   </footer>
@@ -514,7 +514,6 @@ function page(T, lang) {
   </div>
 
 </div>
-<script>window.SITE=${JSON.stringify(msgs)};</script>
 <script src="${R}assets/main.js" defer></script>
 </body>
 </html>
@@ -526,3 +525,43 @@ fs.writeFileSync(path.join(root, 'index.html'), page(EN, 'en'));
 fs.mkdirSync(path.join(root, 'vi'), { recursive: true });
 fs.writeFileSync(path.join(root, 'vi', 'index.html'), page(VI, 'vi'));
 console.log('Built index.html and vi/index.html');
+
+/* ---- private preview: one self-contained page with both languages (#en / #vi) ---- */
+function bodyOf(html) { return html.slice(html.indexOf('<body>\n') + 7, html.indexOf('\n<script src=')); }
+function forPreview(html, lang) {
+  let b = bodyOf(html).replace(/href="[^"]*" hreflang="(en|vi)"/g, 'href="#$1" hreflang="$1"');
+  if (lang === 'vi') {
+    b = b.replace(/ id="([^"]+)"/g, ' id="vi-$1"').replace(/ for="([^"]+)"/g, ' for="vi-$1"')
+      .replace(/href="#(?!en"|vi")([^"]+)"/g, 'href="#vi-$1"').replace(/url\(#gl\)/g, 'url(#vi-gl)')
+      .replace('<div class="pg', '<div hidden class="pg');
+  }
+  return b;
+}
+const css = fs.readFileSync(path.join(root, 'assets', 'styles.css'), 'utf8');
+const js = fs.readFileSync(path.join(root, 'assets', 'main.js'), 'utf8');
+const preview = `<title>Luke Duct Website</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400..700&amp;display=swap">
+<style>
+:root{color-scheme:dark}
+${css}
+</style>
+${forPreview(page(EN, 'en'), 'en')}
+${forPreview(page(VI, 'vi'), 'vi')}
+<script>
+${js}
+(function () {
+  function show() {
+    var h = location.hash.slice(1);
+    if (h !== 'en' && h !== 'vi') return;
+    document.querySelectorAll('.pg[data-lang]').forEach(function (p) { p.hidden = p.getAttribute('data-lang') !== h; });
+    document.documentElement.lang = h;
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', show);
+  show();
+})();
+</script>
+`;
+fs.mkdirSync(path.join(root, 'preview'), { recursive: true });
+fs.writeFileSync(path.join(root, 'preview', 'luke-duct-preview.html'), preview);
+console.log('Built preview/luke-duct-preview.html');

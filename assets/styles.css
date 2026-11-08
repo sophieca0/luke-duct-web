@@ -461,3 +461,4 @@ body{margin:0;background:#1C1B1A}
 @media (max-width:560px){
   .chips.c3{grid-template-columns:minmax(0,1fr)}
 }
+.top{top:env(safe-area-inset-top,0px)}
