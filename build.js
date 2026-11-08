@@ -75,7 +75,7 @@ const EN = {
   s4t: "Exhaust Fan", s4d: "Draws air through the system. Its position is set out on the drawings before anything is made.",
   s5t: "Discharge Point", s5d: "Where the exhaust leaves the building – roof, wall or shaft – planned from the start.",
   s6t: "Fresh Air Supply", s6d: "A supply fan and ductwork bring clean outside air back into the kitchen to replace what is exhausted.",
-  dgLabel: "Illustration of a typical commercial kitchen system, not to scale. Numbered 1 to 7: the canopy over the cooking equipment, an access panel on the vertical riser, the ductwork above the ceiling, the exhaust fan, the discharge point, the fresh air supply coming down into the kitchen, and the wall sheet behind the cooking line.",
+  dgLabel: "Illustration of a typical commercial kitchen system, not to scale. Numbered 1 to 7: the canopy over the cooking equipment, an access panel on the vertical riser, the ductwork above the ceiling, the exhaust fan, the discharge point, the fresh air supply coming down into the kitchen, and the fire-rated wall sheet behind the cooking line below the canopy.",
   dgTitle: 'TYPICAL KITCHEN SYSTEM', dgScale: 'NOT TO SCALE', dgCeiling: 'CEILING', dgExhaust: 'EXHAUST', dgFresh: 'FRESH AIR',
   workEyebrow: 'Our work', workH2: 'Look closely at the finish.', workSub: 'Real photos from our own jobs across Victoria.',
   ctaT: "Planning a New Kitchen or Upgrading an Existing One?", ctaS: "Whether you're fitting out a new commercial kitchen or upgrading an existing system, getting the exhaust and fresh air right from the start makes a difference.",
@@ -126,8 +126,8 @@ const EN = {
   contactIntro2: "Tell us a little about your project. We'll take the time to understand what you need and discuss the best way to approach the job.",
   footTag: "Commercial Kitchen Exhaust & Fresh Air Systems",
   navLabel: 'Main menu',
-  s7t: "Wall Sheet",
-  s7d: "Stainless steel sheeting on the wall behind the cooking line, so the area is easy to wipe down and keep clean.",
+  s7t: "Fire-Rated Wall Sheet",
+  s7d: "Fire-rated sheeting on the wall behind the cooking line, below the canopy, to help protect the wall from heat.",
   dgWall: "WALL SHEET"
 };
 
@@ -173,7 +173,7 @@ const VI = {
   s4t: "Quạt hút", s4d: "Hút khí qua toàn hệ thống. Vị trí quạt được xác định trên bản vẽ trước khi gia công.",
   s5t: "Điểm xả khí", s5d: "Nơi khí thải ra khỏi công trình – mái, tường hoặc hộp gen – được tính từ đầu.",
   s6t: "Cấp gió tươi", s6d: "Quạt cấp và đường ống đưa không khí sạch từ bên ngoài vào bếp, bù lại lượng khí đã hút ra.",
-  dgLabel: "Hình minh họa hệ thống bếp thương mại điển hình, không theo tỷ lệ. Đánh số 1 đến 7: chụp hút phía trên thiết bị nấu, cửa thăm trên ống đứng, đường ống trên trần, quạt hút, điểm xả khí, đường cấp gió tươi đi xuống bếp, và tấm ốp tường phía sau khu nấu.",
+  dgLabel: "Hình minh họa hệ thống bếp thương mại điển hình, không theo tỷ lệ. Đánh số 1 đến 7: chụp hút phía trên thiết bị nấu, cửa thăm trên ống đứng, đường ống trên trần, quạt hút, điểm xả khí, đường cấp gió tươi đi xuống bếp, và tấm ốp tường chống cháy phía sau khu nấu, bên dưới chụp hút.",
   dgTitle: 'HỆ THỐNG BẾP ĐIỂN HÌNH', dgScale: 'KHÔNG THEO TỶ LỆ', dgCeiling: 'TRẦN', dgExhaust: 'HÚT KHÓI', dgFresh: 'GIÓ TƯƠI',
   workEyebrow: 'Công trình', workH2: 'Xem kỹ phần hoàn thiện.', workSub: 'Ảnh thật từ chính các công trình bên mình đã làm ở Victoria.',
   ctaT: "Đang làm bếp mới hay nâng cấp bếp hiện có?", ctaS: "Dù anh chị đang làm bếp thương mại mới hay nâng cấp hệ thống hiện có, làm đúng phần hút khói và gió tươi ngay từ đầu sẽ tạo ra khác biệt.",
@@ -224,8 +224,8 @@ const VI = {
   contactIntro2: "Hãy kể sơ cho bên mình về công trình. Bên mình sẽ dành thời gian tìm hiểu nhu cầu của anh chị và cùng bàn cách làm phù hợp nhất.",
   footTag: "Hệ thống hút khói & cấp gió tươi cho bếp thương mại",
   navLabel: 'Menu chính',
-  s7t: "Tấm ốp tường (wall sheet)",
-  s7d: "Tấm inox ốp tường phía sau khu nấu, giúp khu vực này dễ lau chùi và luôn sạch sẽ."
+  s7t: "Tấm ốp chống cháy (fire-rated wall sheet)",
+  s7d: "Tấm ốp tường chống cháy phía sau khu nấu, bên dưới chụp hút, giúp bảo vệ tường khỏi nhiệt."
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -414,11 +414,11 @@ function page(T, lang) {
                 <rect class="sv-glow mk m0" x="486" y="56" width="72" height="80" rx="10" filter="url(#gl)"/>
 
                 <line class="sv-line d1" pathLength="1" x1="24" y1="380" x2="736" y2="380"/>
-                <rect class="sv-wall d1" pathLength="1" x="40" y="246" width="286" height="134"/>
-                <line class="sv-wseam" x1="88" y1="246" x2="88" y2="380"/>
-                <line class="sv-wseam" x1="136" y1="246" x2="136" y2="380"/>
-                <line class="sv-wseam" x1="232" y1="246" x2="232" y2="380"/>
-                <line class="sv-wseam" x1="280" y1="246" x2="280" y2="380"/>
+                <rect class="sv-wall d1" pathLength="1" x="40" y="300" width="286" height="80"/>
+                <line class="sv-wseam" x1="88" y1="300" x2="88" y2="380"/>
+                <line class="sv-wseam" x1="136" y1="300" x2="136" y2="380"/>
+                <line class="sv-wseam" x1="232" y1="300" x2="232" y2="380"/>
+                <line class="sv-wseam" x1="280" y1="300" x2="280" y2="380"/>
                 <rect class="sv-duct d1" pathLength="1" x="76" y="332" width="214" height="48" rx="8"/>
                 <line class="sv-mut" x1="96" y1="346" x2="136" y2="346"/>
                 <line class="sv-mut" x1="156" y1="346" x2="196" y2="346"/>
