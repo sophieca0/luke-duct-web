@@ -23,5 +23,5 @@ That regenerates all four pages.
 3. Run `node build.js`.
 
 ## Enquiry form
-Until `web3formsKey` is set in `build.js`, the forms open the visitor's SMS app addressed to 0478 844 995.
+Until `web3formsKey` is set in `build.js`, the forms open the visitor's SMS app addressed to 0466 404 868.
 To get enquiries by email instead, create a free key at https://web3forms.com, paste it into `web3formsKey`, and rebuild.

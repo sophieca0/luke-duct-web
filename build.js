@@ -10,8 +10,8 @@ const path = require('path');
 /* ====================== BUSINESS DETAILS ====================== */
 const CONFIG = {
   company: 'Luke Duct',
-  phoneDisplay: '0478 844 995',
-  phoneIntl: '+61478844995',
+  phoneDisplay: '0466 404 868',
+  phoneIntl: '+61466404868',
   email: '',          // e.g. 'hello@lukeduct.com.au' (shown when filled)
   abn: '',            // e.g. '12 345 678 901'
   licence: '',        // shown as a credential chip when filled
@@ -87,7 +87,7 @@ const CONFIG = {
 const EN = {
   htmlLang: 'en', ogLocale: 'en_AU',
   title: "Luke Duct · Commercial Kitchen Exhaust & Fresh Air Systems in Victoria",
-  metaDesc: "Luke Duct fabricates and installs commercial kitchen exhaust and fresh air systems across Victoria, with practical advice and neat, careful workmanship. Call 0478 844 995.",
+  metaDesc: "Luke Duct fabricates and installs commercial kitchen exhaust and fresh air systems across Victoria, with practical advice and neat, careful workmanship. Call 0466 404 868.",
   navSystem: "The System", navProcess: "Process", navContact: "Contact", navWork: "Our Work",
   call: 'Call', quote: "Request a Call Back", quoteShort: "Request a Call Back",
   eyebrow: "Commercial kitchen exhaust & fresh air · Victoria",
@@ -205,7 +205,7 @@ const EN = {
 const VI = {
   htmlLang: 'vi', ogLocale: 'vi_VN',
   title: "Luke Duct · Hệ thống hút khói & cấp gió tươi cho bếp thương mại tại Victoria",
-  metaDesc: "Luke Duct gia công và lắp đặt hệ thống hút khói và cấp gió tươi cho bếp thương mại khắp bang Victoria, tư vấn thực tế và thi công gọn gàng, cẩn thận. Gọi 0478 844 995.",
+  metaDesc: "Luke Duct gia công và lắp đặt hệ thống hút khói và cấp gió tươi cho bếp thương mại khắp bang Victoria, tư vấn thực tế và thi công gọn gàng, cẩn thận. Gọi 0466 404 868.",
   navSystem: "Hệ thống", navProcess: "Quy trình", navContact: "Liên hệ", navWork: "Công trình",
   call: 'Gọi', quote: "Yêu cầu gọi lại", quoteShort: "Yêu cầu gọi lại",
   eyebrow: "Hút khói & cấp gió tươi bếp thương mại · Victoria",
