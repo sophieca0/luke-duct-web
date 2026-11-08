@@ -726,26 +726,14 @@ out('gallery/index.html', page(EN, 'en', 'gallery'));
 out('vi/gallery/index.html', page(VI, 'vi', 'gallery'));
 console.log('Built index.html, vi/index.html, gallery/index.html, vi/gallery/index.html');
 
-/* ---- sitemap.xml + robots.txt (for Google) ---- */
+/* ---- sitemap.xml + robots.txt (for Google) ----
+   Plain sitemap: language alternates are already declared in each page's <head>. */
 {
   const today = new Date().toISOString().slice(0, 10);
   const U = CONFIG.siteUrl;
-  const pages = [['', 'gallery/'], ['vi/', 'vi/gallery/']];
-  const url = (loc, en, vi, pr) => `  <url>
-    <loc>${U}${loc}</loc>
-    <lastmod>${today}</lastmod>
-    <priority>${pr}</priority>
-    <xhtml:link rel="alternate" hreflang="en-AU" href="${U}${en}"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="${U}${vi}"/>
-  </url>`;
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${url('', '', 'vi/', '1.0')}
-${url('vi/', '', 'vi/', '0.9')}
-${url('gallery/', 'gallery/', 'vi/gallery/', '0.7')}
-${url('vi/gallery/', 'gallery/', 'vi/gallery/', '0.6')}
-</urlset>
-`;
+  const locs = ['', 'vi/', 'gallery/', 'vi/gallery/'];
+  const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    locs.map((l) => `  <url>\n    <loc>${U}${l}</loc>\n    <lastmod>${today}</lastmod>\n  </url>\n`).join('') + '</urlset>\n';
   out('sitemap.xml', xml);
   out('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${U}sitemap.xml\n`);
   console.log('Built sitemap.xml and robots.txt');

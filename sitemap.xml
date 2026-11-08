@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lukecomkitchen.com/</loc>
     <lastmod>2026-11-08</lastmod>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-AU" href="https://lukecomkitchen.com/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://lukecomkitchen.com/vi/"/>
   </url>
   <url>
     <loc>https://lukecomkitchen.com/vi/</loc>
     <lastmod>2026-11-08</lastmod>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en-AU" href="https://lukecomkitchen.com/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://lukecomkitchen.com/vi/"/>
   </url>
   <url>
     <loc>https://lukecomkitchen.com/gallery/</loc>
     <lastmod>2026-11-08</lastmod>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-AU" href="https://lukecomkitchen.com/gallery/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://lukecomkitchen.com/vi/gallery/"/>
   </url>
   <url>
     <loc>https://lukecomkitchen.com/vi/gallery/</loc>
     <lastmod>2026-11-08</lastmod>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en-AU" href="https://lukecomkitchen.com/gallery/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://lukecomkitchen.com/vi/gallery/"/>
   </url>
 </urlset>
