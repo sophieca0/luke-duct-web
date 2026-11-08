@@ -212,7 +212,7 @@ const VI = {
   call: "Gọi", quote: "Yêu cầu gọi lại", quoteShort: "Yêu cầu gọi lại",
   eyebrow: "Hệ thống hút khói và cấp gió tươi cho bếp thương mại tại Victoria",
   h1a: "Hệ thống hút khói và cấp gió tươi cho bếp thương mại,", h1b: "làm đúng ngay từ đầu.",
-  lede: "Luke chuyên gia công và lắp đặt hệ thống hút khói, cấp gió tươi cho các quán ăn, quán cà phê, nhà hàng và bếp thương mại quy mô lớn trên toàn bang Victoria.",
+  lede: "Luke Commercial Kitchen chuyên gia công và lắp đặt hệ thống hút khói, cấp gió tươi cho các quán ăn, quán cà phê, nhà hàng và bếp thương mại quy mô lớn trên toàn bang Victoria.",
   motionPause: 'Tạm dừng hiệu ứng', motionPlay: 'Phát hiệu ứng',
   formTitle: 'Yêu cầu gọi lại',
   formSub: "Để lại thông tin, Luke sẽ gọi lại để trao đổi về dự án của bạn.",
