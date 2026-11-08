@@ -98,7 +98,7 @@ const EN = {
   formSub: "Leave your details and we'll call you back to talk through the job.",
   fName: "Your Name", fPhone: "Phone", fEmail: "Email", fContact: "Phone or Email", phContact: "Number or email", contactHint: "Please provide at least one contact method – phone or email.", badEmail: "That email address doesn't look quite right. Please check it and try again.", fVenue: "Type of Kitchen", selectPh: "Select…",
   phName: 'Full name', phPhone: '04XX XXX XXX', phEmail: 'name@example.com', phSuburb: 'e.g. Footscray',
-  vTakeaway: 'Takeaway', vCafe: 'Café', vRestaurant: 'Restaurant', vHotel: 'Hotel', vSchool: 'School', vTruck: 'Food truck', vLarge: 'Large kitchen',
+  vTakeaway: 'Takeaway', vCafe: 'Café', vRestaurant: 'Restaurant', vHotel: 'Hotel', vSchool: 'School', vTruck: 'Food truck', vLarge: 'Large kitchen', vOther: 'Others',
   fSuburb: "Suburb", fDetails: "Project Details (Optional)",
   fDetailsPh: 'Hood size, cooking equipment, new fit-out or upgrade, where the exhaust should discharge…',
   fWant: 'What would you like?', wQuote: 'A quote', wCall: 'Call me back',
@@ -216,7 +216,7 @@ const VI = {
   formSub: 'Để lại thông tin, bên mình sẽ gọi lại để trao đổi về công trình.',
   fName: "Họ tên", fPhone: "Số điện thoại", fEmail: "Email", fContact: "Điện thoại hoặc email", phContact: "Số hoặc email", contactHint: "Vui lòng để lại ít nhất một cách liên hệ – điện thoại hoặc email.", badEmail: "Địa chỉ email có vẻ chưa đúng. Anh chị kiểm tra lại giúp bên mình nhé.", fVenue: "Loại bếp", selectPh: "Chọn…",
   phName: 'Họ và tên', phPhone: '04XX XXX XXX', phEmail: 'name@example.com', phSuburb: 'VD: Footscray',
-  vTakeaway: 'Tiệm takeaway', vCafe: 'Quán café', vRestaurant: 'Nhà hàng', vHotel: 'Khách sạn', vSchool: 'Trường học', vTruck: 'Xe food truck', vLarge: 'Bếp lớn',
+  vTakeaway: 'Tiệm takeaway', vCafe: 'Quán café', vRestaurant: 'Nhà hàng', vHotel: 'Khách sạn', vSchool: 'Trường học', vTruck: 'Xe food truck', vLarge: 'Bếp lớn', vOther: 'Khác',
   fSuburb: "Khu vực (suburb)", fDetails: "Thông tin công trình (không bắt buộc)",
   fDetailsPh: 'Cỡ hood, thiết bị nấu, làm mới hay nâng cấp, nơi xả khí…',
   fWant: 'Anh chị cần gì?', wQuote: 'Báo giá', wCall: 'Gọi lại cho tôi',
@@ -409,7 +409,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
   </main>`;
   const reviews = C.reviews.map((r) => `<blockquote class="quote"><p>${esc((lang === 'vi' && r.vi) || r.en)}</p><span class="mono by">${esc(r.by)}</span></blockquote>`).join('\n');
 
-  const venueList = (ph) => `<option value="" selected>${ph}</option>` + [T.vTakeaway, T.vCafe, T.vRestaurant, T.vHotel, T.vSchool, T.vTruck, T.vLarge].map((v) => `<option value="${v}">${v}</option>`).join('');
+  const venueList = (ph) => `<option value="" selected>${ph}</option>` + [T.vTakeaway, T.vCafe, T.vRestaurant, T.vHotel, T.vSchool, T.vTruck, T.vLarge, T.vOther].map((v) => `<option value="${v}">${v}</option>`).join('');
   const venueOpts = venueList(T.selectPh);
   const msgs = { badEmail: T.badEmail, required: T.required, okSent: T.okSent, okSms: T.okSms, errSend: T.errSend, sending: T.sending, smsHead: T.smsHead, phone: C.phoneDisplay, tel, sms, key: C.web3formsKey, company: C.company, pause: T.motionPause, play: T.motionPlay, labels: { name: T.fName, phone: T.fPhone, email: T.fEmail, suburb: T.fSuburb, kitchen_type: T.fVenue, request: T.fWant, system: T.fService, call_time: T.fTime, details: T.fDetails } };
 
