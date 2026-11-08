@@ -2,18 +2,25 @@
 
 Website for Luke Duct: commercial kitchen exhaust & fresh air systems, Victoria.
 
-- `index.html`: English
-- `vi/index.html`: Tiếng Việt
-- `assets/`: styles, script, favicon (and `assets/photos/` for project photos)
+- `index.html` / `vi/index.html`: home page (English / Tiếng Việt)
+- `gallery/index.html` / `vi/gallery/index.html`: full project photo gallery
+- `assets/`: styles, script, favicon, `photos/`
 
 ## Editing
-All text and business details live in `build.js`. After changing it, run:
+All text, business details and the photo list live in `build.js`. After changing it, run:
 
 ```bash
 node build.js
 ```
 
-That regenerates both `index.html` and `vi/index.html`.
+That regenerates all four pages.
+
+## Adding photos
+1. Put the photo in `assets/photos/` (JPEG, around 1600px on the long side).
+2. Add a line to `photos` in `build.js` with `src`, `cat` (canopies, ductwork, roof or fitout),
+   a short English and Vietnamese description, and `home: true` if it should also appear on the
+   home page (up to 8).
+3. Run `node build.js`.
 
 ## Enquiry form
 Until `web3formsKey` is set in `build.js`, the forms open the visitor's SMS app addressed to 0478 844 995.

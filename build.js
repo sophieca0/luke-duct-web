@@ -23,15 +23,18 @@ const CONFIG = {
   web3formsKey: '',
   siteUrl: 'https://sophieca0.github.io/luke-duct-web/',
   // Project photos: put files in assets/photos/ and list them here.
+  // Project photos (files in assets/photos/). The gallery page shows every photo;
+  // the home page shows the ones marked home: true (up to 8).
+  // cat: canopies | ductwork | roof | fitout  (used by the gallery filter buttons)
   photos: [
-    { src: 'assets/photos/canopy-front.jpg', en: 'Stainless steel canopy and wall sheet', vi: 'Chụp hút inox và tấm ốp tường' },
-    { src: 'assets/photos/twin-external-risers.jpg', en: 'Twin ducts running up an external wall', vi: 'Hai đường ống chạy dọc tường ngoài' },
-    { src: 'assets/photos/roof-discharge-cowl.jpg', en: 'Exhaust discharge cowl on a corrugated roof', vi: 'Chụp xả khí trên mái tôn' },
-    { src: 'assets/photos/island-canopy.jpg', en: 'Island canopy with grease filters', vi: 'Chụp hút đảo với lưới lọc mỡ' },
-    { src: 'assets/photos/external-duct-riser.jpg', en: 'Galvanised duct riser with a curved bend', vi: 'Ống đứng tôn mạ kẽm với đoạn co cong' },
-    { src: 'assets/photos/canopy-filters.jpg', en: 'Canopy with filters installed, protective film still on', vi: 'Chụp hút đã lắp lưới lọc, còn màng bảo vệ' },
-    { src: 'assets/photos/kitchen-canopies-wall-sheet.jpg', en: 'Kitchen with two canopies and wall sheeting', vi: 'Bếp với hai chụp hút và tấm ốp tường' },
-    { src: 'assets/photos/kitchen-ceiling-grilles.jpg', en: 'Kitchen fit-out with ceiling grilles', vi: 'Bếp đang hoàn thiện với miệng gió trên trần' },
+    { src: 'assets/photos/canopy-front.jpg', cat: 'canopies', home: true, en: 'Stainless steel canopy and wall sheet', vi: 'Chụp hút inox và tấm ốp tường' },
+    { src: 'assets/photos/twin-external-risers.jpg', cat: 'ductwork', home: true, en: 'Twin ducts running up an external wall', vi: 'Hai đường ống chạy dọc tường ngoài' },
+    { src: 'assets/photos/roof-discharge-cowl.jpg', cat: 'roof', home: true, en: 'Exhaust discharge cowl on a corrugated roof', vi: 'Chụp xả khí trên mái tôn' },
+    { src: 'assets/photos/island-canopy.jpg', cat: 'canopies', home: true, en: 'Island canopy with grease filters', vi: 'Chụp hút đảo với lưới lọc mỡ' },
+    { src: 'assets/photos/external-duct-riser.jpg', cat: 'ductwork', home: true, en: 'Galvanised duct riser with a curved bend', vi: 'Ống đứng tôn mạ kẽm với đoạn co cong' },
+    { src: 'assets/photos/canopy-filters.jpg', cat: 'canopies', home: true, en: 'Canopy with filters installed, protective film still on', vi: 'Chụp hút đã lắp lưới lọc, còn màng bảo vệ' },
+    { src: 'assets/photos/kitchen-canopies-wall-sheet.jpg', cat: 'fitout', home: true, en: 'Kitchen with two canopies and wall sheeting', vi: 'Bếp với hai chụp hút và tấm ốp tường' },
+    { src: 'assets/photos/kitchen-ceiling-grilles.jpg', cat: 'fitout', home: true, en: 'Kitchen fit-out with ceiling grilles', vi: 'Bếp đang hoàn thiện với miệng gió trên trần' },
   ],
   // Customer reviews (only real ones, with permission).
   reviews: [
@@ -140,7 +143,22 @@ const EN = {
   enlarge: "View larger photo",
   lbClose: "Close",
   lbPrev: "Previous photo",
-  lbNext: "Next photo"
+  lbNext: "Next photo",
+  viewAll: "View the Full Gallery",
+  galTitle: "Project Gallery · Luke Duct · Commercial Kitchen Exhaust, Victoria",
+  galMeta: "Photos of commercial kitchen canopies, ductwork, roof discharge and fit-outs fabricated and installed by Luke Duct across Victoria.",
+  galEyebrow: "Project gallery",
+  galH1: "Our Work, Up Close.",
+  galSub: "Canopies, ductwork, roof discharge and kitchen fit-outs from jobs across Victoria. Tap any photo to see it larger.",
+  galFilter: "Filter photos",
+  catAll: "All",
+  catCanopies: "Canopies",
+  catDuct: "Ductwork",
+  catRoof: "Roof & Discharge",
+  catFitout: "Kitchen Fit-outs",
+  galCtaT: "Like What You See?",
+  galCtaS: "Tell us about your kitchen and we'll get in touch to talk it through.",
+  galBack: "Back to home"
 };
 
 const VI = {
@@ -242,7 +260,22 @@ const VI = {
   enlarge: "Xem ảnh lớn",
   lbClose: "Đóng",
   lbPrev: "Ảnh trước",
-  lbNext: "Ảnh tiếp theo"
+  lbNext: "Ảnh tiếp theo",
+  viewAll: "Xem toàn bộ ảnh",
+  galTitle: "Thư viện ảnh công trình · Luke Duct · Hút khói bếp thương mại, Victoria",
+  galMeta: "Ảnh chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện do Luke Duct gia công và lắp đặt khắp bang Victoria.",
+  galEyebrow: "Thư viện ảnh",
+  galH1: "Công trình, nhìn cận cảnh.",
+  galSub: "Chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện từ các công trình khắp Victoria. Bấm vào ảnh để xem lớn hơn.",
+  galFilter: "Lọc ảnh",
+  catAll: "Tất cả",
+  catCanopies: "Chụp hút",
+  catDuct: "Đường ống",
+  catRoof: "Mái & điểm xả",
+  catFitout: "Bếp hoàn thiện",
+  galCtaT: "Ưng ý với tay nghề?",
+  galCtaS: "Kể cho bên mình về căn bếp của anh chị, bên mình sẽ liên hệ để cùng trao đổi.",
+  galBack: "Về trang chủ"
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -262,12 +295,19 @@ const ARROW = '<svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill=
 const PHONE_IC = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>';
 const SMOKE = (n) => '<div class="smoke" aria-hidden="true">' + '<i></i>'.repeat(n) + '</div>';
 
-function page(T, lang) {
+function page(T, lang, kind = 'home', mode = 'site') {
   const C = CONFIG;
-  const R = lang === 'vi' ? '../' : '';            // path back to site root
+  const isG = kind === 'gallery';
+  const view = (l, k) => (k === 'gallery' ? (l === 'vi' ? 'vi-gallery' : 'gallery') : l);
+  const pfx = (l, k) => ({ 'en-home': '', 'vi-home': 'vi-', 'en-gallery': 'g-', 'vi-gallery': 'vig-' })[l + '-' + k];
+  const up = (lang === 'vi' ? '../' : '') + (isG ? '../' : '');
+  const R = mode === 'preview' ? '' : up;           // path back to site root (for assets)
+  const HL = (a) => (!isG ? '#' + a : mode === 'preview' ? '#!' + pfx(lang, 'home') + a : '../#' + a);   // link to a home-page section
+  const GL = mode === 'preview' ? '#!' + view(lang, 'gallery') : 'gallery/';                                // home -> gallery
+  const LL = (to) => (mode === 'preview' ? '#!' + view(to, kind) : (up + (to === 'vi' ? 'vi/' : '') + (isG ? 'gallery/' : '')) || './');
   const tel = 'tel:' + C.phoneIntl;
   const sms = 'sms:' + C.phoneIntl;
-  const pageUrl = C.siteUrl + (lang === 'vi' ? 'vi/' : '');
+  const pageUrl = C.siteUrl + (lang === 'vi' ? 'vi/' : '') + (isG ? 'gallery/' : '');
 
   const chip = (icon, k, v) => `<li><span class="tic"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg></span><span>${k ? `<span class="mono k">${k}</span>` : ''}<span class="v">${v}</span></span></li>`;
   const IC = {
@@ -291,11 +331,41 @@ function page(T, lang) {
   if (C.years) chips.push(chip(IC.clock, T.trustExp, esc(/^\d+\+?$/.test(C.years) ? C.years + ' ' + T.yearsUnit : C.years)));
   if (chips.length % 4 !== 0) chips.push(chip(IC.phone, T.trustCall, `<a class="v" href="${tel}">${esc(C.phoneDisplay)}</a>`));
 
-  const photos = C.photos.map((p, i) => {
+  const tile = (p, i) => {
     const alt = (typeof p[lang] === 'string' ? p[lang] : p.en) || T.photoAlt + ' ' + (i + 1);
     const sz = jpegSize(p.src);
-    return `<li class="tile t${i + 1}"><button class="ph tilebtn" type="button" data-full="${R}${esc(p.src)}" data-alt="${esc(alt)}" aria-label="${esc(T.enlarge)}: ${esc(alt)}"><img class="pimg" src="${R}${esc(p.src)}" alt="${esc(alt)}" width="${sz.w}" height="${sz.h}" loading="lazy" decoding="async"></button></li>`;
-  }).join('\n');
+    return `<li class="tile" data-cat="${p.cat || ''}"><button class="ph tilebtn" type="button" data-full="${R}${esc(p.src)}" data-alt="${esc(alt)}" aria-label="${esc(T.enlarge)}: ${esc(alt)}"><img class="pimg" src="${R}${esc(p.src)}" alt="${esc(alt)}" width="${sz.w}" height="${sz.h}" loading="lazy" decoding="async"></button></li>`;
+  };
+  const homeList = (C.photos.some((p) => p.home) ? C.photos.filter((p) => p.home) : C.photos).slice(0, 8);
+  const photos = homeList.map(tile).join('\n');
+  const allTiles = C.photos.map(tile).join('\n');
+  const DIALOG = `<dialog class="lb" aria-label="${T.workEyebrow}"><img class="lbimg" src="" alt=""><button class="lbbtn lbclose" type="button" aria-label="${T.lbClose}">&times;</button><button class="lbbtn lbprev" type="button" aria-label="${T.lbPrev}">&#8249;</button><button class="lbbtn lbnext" type="button" aria-label="${T.lbNext}">&#8250;</button></dialog>`;
+  const cats = [['all', T.catAll], ['canopies', T.catCanopies], ['ductwork', T.catDuct], ['roof', T.catRoof], ['fitout', T.catFitout]].filter(([c]) => c === 'all' || C.photos.some((p) => p.cat === c));
+  const galleryMain = `
+  <main>
+  <section class="hero dark gal-top">
+    ${SMOKE(5)}
+    <div class="in">
+      <p class="tag">${T.galEyebrow}</p>
+      <h1 class="h1 gal-h1">${T.galH1}</h1>
+      <p class="lede">${T.galSub}</p>
+      ${cats.length > 2 ? `<div class="gfilters" role="group" aria-label="${T.galFilter}">${cats.map(([c, l], i) => `<button type="button" class="gf" data-f="${c}" aria-pressed="${i === 0}">${l}</button>`).join('')}</div>` : ''}
+    </div>
+  </section>
+  <section class="sec sheet light alt gal-grid" id="work">
+    <div class="in">
+      <ul class="tiles masonry">${allTiles}</ul>
+      ${DIALOG}
+    </div>
+  </section>
+  <section class="sec sheet dark gal-cta" id="contact">
+    ${SMOKE(5)}
+    <div class="in">
+      <div class="shead"><h2 class="h2">${T.galCtaT}</h2><p class="sub">${T.galCtaS}</p></div>
+      <div class="center gal-ctabtns"><a class="btn btn-primary" href="${HL('contact')}">${T.quote} ${ARROW}</a><a class="btn btn-ghost" href="${tel}">${PHONE_IC} ${T.call} ${esc(C.phoneDisplay)}</a></div>
+    </div>
+  </section>
+  </main>`;
   const reviews = C.reviews.map((r) => `<blockquote class="quote"><p>${esc((lang === 'vi' && r.vi) || r.en)}</p><span class="mono by">${esc(r.by)}</span></blockquote>`).join('\n');
 
   const venueList = (ph) => `<option value="" selected>${ph}</option>` + [T.vTakeaway, T.vCafe, T.vRestaurant, T.vHotel, T.vSchool, T.vTruck, T.vLarge].map((v) => `<option value="${v}">${v}</option>`).join('');
@@ -314,15 +384,15 @@ function page(T, lang) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(T.title)}</title>
-<meta name="description" content="${esc(T.metaDesc)}">
+<title>${esc(isG ? T.galTitle : T.title)}</title>
+<meta name="description" content="${esc(isG ? T.galMeta : T.metaDesc)}">
 <link rel="canonical" href="${pageUrl}">
-<link rel="alternate" hreflang="en-AU" href="${C.siteUrl}">
-<link rel="alternate" hreflang="vi" href="${C.siteUrl}vi/">
-<link rel="alternate" hreflang="x-default" href="${C.siteUrl}">
+<link rel="alternate" hreflang="en-AU" href="${C.siteUrl}${isG ? 'gallery/' : ''}">
+<link rel="alternate" hreflang="vi" href="${C.siteUrl}vi/${isG ? 'gallery/' : ''}">
+<link rel="alternate" hreflang="x-default" href="${C.siteUrl}${isG ? 'gallery/' : ''}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="${esc(T.title)}">
-<meta property="og:description" content="${esc(T.metaDesc)}">
+<meta property="og:title" content="${esc(isG ? T.galTitle : T.title)}">
+<meta property="og:description" content="${esc(isG ? T.galMeta : T.metaDesc)}">
 <meta property="og:url" content="${pageUrl}">
 <meta property="og:locale" content="${T.ogLocale}">
 <meta name="theme-color" content="#1C1B1A">
@@ -334,36 +404,37 @@ function page(T, lang) {
 <script type="application/ld+json">${JSON.stringify(ldjson)}</script>
 </head>
 <body>
-<div class="pg lang-${lang}" id="top" data-lang="${lang}" data-site="${esc(JSON.stringify(msgs))}">
+<div class="pg lang-${lang}" id="top" data-lang="${lang}" data-view="${view(lang, kind)}" data-site="${esc(JSON.stringify(msgs))}">
 
   <header class="top">
     <div class="in top-in">
-      <a class="logo" href="#top" aria-label="${esc(T.home)}">
+      <a class="logo" href="${HL('top')}" aria-label="${esc(T.home)}">
         <span class="lg-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h13M12 6l6 6-6 6"/></svg></span>
         <span class="lname">${esc(C.company)}</span>
       </a>
       <nav class="nav" aria-label="${T.navLabel}">
-        ${C.photos.length ? `<a href="#work">${T.navWork}</a>` : ''}
-        <a href="#why">${T.navWhy}</a>
-        <a href="#system">${T.navSystem}</a>
-        <a href="#process">${T.navProcess}</a>
-        <a href="#contact">${T.navContact}</a>
+        ${C.photos.length ? `<a href="${HL('work')}">${T.navWork}</a>` : ''}
+        <a href="${HL('why')}">${T.navWhy}</a>
+        <a href="${HL('system')}">${T.navSystem}</a>
+        <a href="${HL('process')}">${T.navProcess}</a>
+        <a href="${HL('contact')}">${T.navContact}</a>
       </nav>
       <div class="top-r">
         <a class="btn btn-ghost btn-sm hdr-cta" href="${tel}">${PHONE_IC}<span>${esc(C.phoneDisplay)}</span></a>
-        <a class="btn btn-primary btn-sm hdr-cta" href="#contact">${T.quote}</a>
+        <a class="btn btn-primary btn-sm hdr-cta" href="${HL('contact')}">${T.quote}</a>
         <button class="iconbtn js-motion" type="button" aria-label="${T.motionPause}" title="${T.motionPause}">
           <svg class="ic-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1.5"/><rect x="14" y="4" width="5" height="16" rx="1.5"/></svg>
           <svg class="ic-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.9l12-7.5a1 1 0 0 0 0-1.8l-12-7.5A1 1 0 0 0 7 4.5z"/></svg>
         </button>
         <nav class="lang" aria-label="${T.langLabel}">
-          <a href="${lang === 'vi' ? '../' : './'}" hreflang="en" lang="en"${lang === 'en' ? ' aria-current="page"' : ''}>EN</a>
-          <a href="${lang === 'vi' ? './' : 'vi/'}" hreflang="vi" lang="vi"${lang === 'vi' ? ' aria-current="page"' : ''}>VI</a>
+          <a href="${LL('en')}" hreflang="en" lang="en"${lang === 'en' ? ' aria-current="page"' : ''}>EN</a>
+          <a href="${LL('vi')}" hreflang="vi" lang="vi"${lang === 'vi' ? ' aria-current="page"' : ''}>VI</a>
         </nav>
       </div>
     </div>
   </header>
 
+  ${isG ? galleryMain : `
   <section class="hero dark">
     ${SMOKE(7)}
     <div class="in in-w">
@@ -398,7 +469,8 @@ function page(T, lang) {
       <div class="in">
         <div class="shead"><p class="tag">${T.workEyebrow}</p><h2 class="h2">${T.workH2}</h2><p class="sub">${T.workSub}</p></div>
         <ul class="tiles masonry">${photos}</ul>
-        <dialog class="lb" aria-label="${T.workEyebrow}"><img class="lbimg" src="" alt=""><button class="lbbtn lbclose" type="button" aria-label="${T.lbClose}">&times;</button><button class="lbbtn lbprev" type="button" aria-label="${T.lbPrev}">&#8249;</button><button class="lbbtn lbnext" type="button" aria-label="${T.lbNext}">&#8250;</button></dialog>
+        ${DIALOG}
+        <div class="center"><a class="btn btn-dark" href="${GL}">${T.viewAll} (${C.photos.length}) ${ARROW}</a></div>
       </div>
     </section>` : ''}
 
@@ -525,7 +597,7 @@ function page(T, lang) {
           <li><span class="tn" aria-hidden="true">05</span><div><h3>${T.st5t}</h3><p>${T.st5d}</p></div></li>
           <li><span class="tn" aria-hidden="true">06</span><div><h3>${T.st6t}</h3><p>${T.st6d}</p></div></li>
         </ol>
-        <div class="center"><a class="btn btn-dark" href="#contact">${T.quote} ${ARROW}</a></div>
+        <div class="center"><a class="btn btn-dark" href="${HL('contact')}">${T.quote} ${ARROW}</a></div>
       </div>
     </section>
   </main>
@@ -579,6 +651,7 @@ function page(T, lang) {
     </div>
   </section>
 
+`}
   <footer class="foot dark">
     <div class="in">
       <div class="foot-l"><strong class="foot-name">${esc(C.company)}</strong><span>${T.footTag}</span></div>
@@ -588,7 +661,7 @@ function page(T, lang) {
 
   <div class="stickybar">
     <a class="btn btn-ghost btn-sm" href="${tel}" aria-label="${T.call} ${esc(C.phoneDisplay)}">${PHONE_IC} <span class="lbl">${T.call}</span></a>
-    <a class="btn btn-primary btn-sm" href="#contact">${T.quote}</a>
+    <a class="btn btn-primary btn-sm" href="${HL('contact')}">${T.quote}</a>
   </div>
 
 </div>
@@ -599,20 +672,24 @@ function page(T, lang) {
 }
 
 const root = __dirname;
-fs.writeFileSync(path.join(root, 'index.html'), page(EN, 'en'));
-fs.mkdirSync(path.join(root, 'vi'), { recursive: true });
-fs.writeFileSync(path.join(root, 'vi', 'index.html'), page(VI, 'vi'));
-console.log('Built index.html and vi/index.html');
+const out = (rel, html) => { fs.mkdirSync(path.dirname(path.join(root, rel)), { recursive: true }); fs.writeFileSync(path.join(root, rel), html); };
+out('index.html', page(EN, 'en'));
+out('vi/index.html', page(VI, 'vi'));
+out('gallery/index.html', page(EN, 'en', 'gallery'));
+out('vi/gallery/index.html', page(VI, 'vi', 'gallery'));
+console.log('Built index.html, vi/index.html, gallery/index.html, vi/gallery/index.html');
 
-/* ---- private preview: one self-contained page with both languages (#en / #vi) ---- */
+/* ---- private preview: one self-contained page with all four views (#en #vi #gallery #vi-gallery) ---- */
 function bodyOf(html) { return html.slice(html.indexOf('<body>\n') + 7, html.indexOf('\n<script src=')); }
-function forPreview(html, lang) {
-  let b = bodyOf(html).replace(/href="[^"]*" hreflang="(en|vi)"/g, 'href="#$1" hreflang="$1"').replace(/"\.\.\/assets\//g, '"assets/');
-  if (lang === 'vi') {
-    b = b.replace(/ id="([^"]+)"/g, ' id="vi-$1"').replace(/ for="([^"]+)"/g, ' for="vi-$1"')
-      .replace(/href="#(?!en"|vi")([^"]+)"/g, 'href="#vi-$1"').replace(/url\(#gl\)/g, 'url(#vi-gl)')
-      .replace('<div class="pg', '<div hidden class="pg');
+function forPreview(html, prefix, hidden) {
+  let b = bodyOf(html);
+  if (prefix) {
+    b = b.replace(/ id="([^"]+)"/g, ` id="${prefix}$1"`).replace(/ for="([^"]+)"/g, ` for="${prefix}$1"`)
+      .replace(/aria-describedby="([^"]+)"/g, `aria-describedby="${prefix}$1"`)
+      .replace(/href="#(?!!)([^"]+)"/g, `href="#${prefix}$1"`).replace(/url\(#gl\)/g, `url(#${prefix}gl)`);
   }
+  b = b.replace(/href="#!/g, 'href="#');
+  if (hidden) b = b.replace('<div class="pg', '<div hidden class="pg');
   return b;
 }
 const css = fs.readFileSync(path.join(root, 'assets', 'styles.css'), 'utf8');
@@ -623,17 +700,22 @@ const preview = `<title>Luke Duct Website</title>
 :root{color-scheme:dark}
 ${css}
 </style>
-${forPreview(page(EN, 'en'), 'en')}
-${forPreview(page(VI, 'vi'), 'vi')}
+${forPreview(page(EN, 'en', 'home', 'preview'), '', false)}
+${forPreview(page(VI, 'vi', 'home', 'preview'), 'vi-', true)}
+${forPreview(page(EN, 'en', 'gallery', 'preview'), 'g-', true)}
+${forPreview(page(VI, 'vi', 'gallery', 'preview'), 'vig-', true)}
 <script>
 ${js}
 (function () {
+  var views = { en: 1, vi: 1, gallery: 1, 'vi-gallery': 1 };
   function show() {
-    var h = location.hash.slice(1);
-    if (h !== 'en' && h !== 'vi') return;
-    document.querySelectorAll('.pg[data-lang]').forEach(function (p) { p.hidden = p.getAttribute('data-lang') !== h; });
-    document.documentElement.lang = h;
-    window.scrollTo(0, 0);
+    var h = location.hash.slice(1), pg = null, target = null;
+    if (views[h]) pg = document.querySelector('.pg[data-view="' + h + '"]');
+    else if (h) { target = document.getElementById(h); if (target) pg = target.closest('.pg'); }
+    if (!pg) return;
+    document.querySelectorAll('.pg[data-view]').forEach(function (p) { p.hidden = p !== pg; });
+    document.documentElement.lang = pg.getAttribute('data-lang');
+    if (target && target !== pg) target.scrollIntoView(); else window.scrollTo(0, 0);
   }
   window.addEventListener('hashchange', show);
   show();

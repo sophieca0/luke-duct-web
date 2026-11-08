@@ -101,21 +101,33 @@
   });
 })();
 
-/* ---- photo lightbox ---- */
+/* ---- photo gallery: filter buttons + lightbox ---- */
 (function () {
   document.querySelectorAll('.pg').forEach(function (pg) {
+    var all = [].slice.call(pg.querySelectorAll('.tilebtn'));
+    var visible = function () { return all.filter(function (t) { return !t.closest('.tile').hidden; }); };
+
+    pg.querySelectorAll('.gf').forEach(function (btn, _, btns) {
+      btn.addEventListener('click', function () {
+        var f = btn.getAttribute('data-f');
+        btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+        pg.querySelectorAll('.tile').forEach(function (li) {
+          li.hidden = f !== 'all' && li.getAttribute('data-cat') !== f;
+        });
+      });
+    });
+
     var dlg = pg.querySelector('dialog.lb');
     if (!dlg || typeof dlg.showModal !== 'function') return;
-    var tiles = [].slice.call(pg.querySelectorAll('.tilebtn'));
     var img = dlg.querySelector('.lbimg');
-    var cur = 0;
+    var list = [], cur = 0;
     function show(i) {
-      cur = (i + tiles.length) % tiles.length;
-      img.src = tiles[cur].getAttribute('data-full');
-      img.alt = tiles[cur].getAttribute('data-alt');
+      cur = (i + list.length) % list.length;
+      img.src = list[cur].getAttribute('data-full');
+      img.alt = list[cur].getAttribute('data-alt');
     }
-    tiles.forEach(function (t, i) {
-      t.addEventListener('click', function () { show(i); dlg.showModal(); });
+    all.forEach(function (t) {
+      t.addEventListener('click', function () { list = visible(); show(list.indexOf(t)); dlg.showModal(); });
     });
     dlg.querySelector('.lbclose').addEventListener('click', function () { dlg.close(); });
     dlg.querySelector('.lbprev').addEventListener('click', function () { show(cur - 1); });
@@ -125,6 +137,6 @@
       if (e.key === 'ArrowLeft') show(cur - 1);
       if (e.key === 'ArrowRight') show(cur + 1);
     });
-    dlg.addEventListener('close', function () { if (tiles[cur]) tiles[cur].focus(); });
+    dlg.addEventListener('close', function () { if (list[cur]) list[cur].focus(); });
   });
 })();
