@@ -24,7 +24,14 @@ const CONFIG = {
   siteUrl: 'https://sophieca0.github.io/luke-duct-web/',
   // Project photos: put files in assets/photos/ and list them here.
   photos: [
-    // { src: 'assets/photos/job1.jpg', en: ['Restaurant, Richmond', 'Exhaust hood and duct run'], vi: ['Nhà hàng, Richmond', 'Hood và tuyến ống hút khói'] },
+    { src: 'assets/photos/canopy-front.jpg', en: 'Stainless steel canopy and wall sheet', vi: 'Chụp hút inox và tấm ốp tường' },
+    { src: 'assets/photos/roof-discharge-cowl.jpg', en: 'Exhaust discharge cowl on a corrugated roof', vi: 'Chụp xả khí trên mái tôn' },
+    { src: 'assets/photos/island-canopy.jpg', en: 'Island canopy with grease filters', vi: 'Chụp hút đảo với lưới lọc mỡ' },
+    { src: 'assets/photos/twin-external-risers.jpg', en: 'Twin ducts running up an external wall', vi: 'Hai đường ống chạy dọc tường ngoài', pos: 'center 30%' },
+    { src: 'assets/photos/canopy-filters.jpg', en: 'Canopy with filters installed, protective film still on', vi: 'Chụp hút đã lắp lưới lọc, còn màng bảo vệ' },
+    { src: 'assets/photos/external-duct-riser.jpg', en: 'Galvanised duct riser with a curved bend', vi: 'Ống đứng tôn mạ kẽm với đoạn co cong', pos: 'center 55%' },
+    { src: 'assets/photos/kitchen-canopies-wall-sheet.jpg', en: 'Kitchen with two canopies and wall sheeting', vi: 'Bếp với hai chụp hút và tấm ốp tường', pos: 'center 40%' },
+    { src: 'assets/photos/kitchen-ceiling-grilles.jpg', en: 'Kitchen fit-out with ceiling grilles', vi: 'Bếp đang hoàn thiện với miệng gió trên trần' },
   ],
   // Customer reviews (only real ones, with permission).
   reviews: [
@@ -37,7 +44,7 @@ const EN = {
   htmlLang: 'en', ogLocale: 'en_AU',
   title: "Luke Duct · Commercial Kitchen Exhaust & Fresh Air Systems in Victoria",
   metaDesc: "Luke Duct fabricates and installs commercial kitchen exhaust and fresh air systems across Victoria, with practical advice and neat, careful workmanship. Call 0478 844 995.",
-  navSystem: "The System", navProcess: "Process", navContact: "Contact", navWork: 'Work',
+  navSystem: "The System", navProcess: "Process", navContact: "Contact", navWork: "Our Work",
   call: 'Call', quote: "Request a Call Back", quoteShort: "Request a Call Back",
   eyebrow: "Commercial kitchen exhaust & fresh air · Victoria",
   h1a: "Commercial Kitchen Exhaust & Fresh Air,", h1b: "Done Right.",
@@ -77,7 +84,7 @@ const EN = {
   s6t: "Discharge Point", s6d: "Where the exhaust leaves the building – roof, wall or shaft – planned from the start.",
   dgLabel: "Illustration of a typical commercial kitchen system, not to scale. Numbered 1 to 7: the fire-rated wall sheet behind the cooking line under the canopy, the canopy over the cooking equipment, an access panel on the vertical riser, the ductwork above the ceiling, the exhaust fan, the discharge point, and the fresh air supply coming down into the kitchen.",
   dgTitle: 'TYPICAL KITCHEN SYSTEM', dgScale: 'NOT TO SCALE', dgCeiling: 'CEILING', dgExhaust: 'EXHAUST', dgFresh: 'FRESH AIR',
-  workEyebrow: 'Our work', workH2: 'Look closely at the finish.', workSub: 'Real photos from our own jobs across Victoria.',
+  workEyebrow: "Our work", workH2: "Look Closely at the Finish.", workSub: "Real photos from our own jobs across Victoria. Tap any photo to see it larger.",
   ctaT: "Planning a New Kitchen or Upgrading an Existing One?", ctaS: "Whether you're fitting out a new commercial kitchen or upgrading an existing system, getting the exhaust and fresh air right from the start makes a difference.",
   procEyebrow: "Process", procH2: "From First Visit to Final Handover.", procLink: 'Start with step 01',
   st1t: "Site Measure", st1d: "We visit, measure and check the duct routes, fresh air intake and discharge point.",
@@ -129,14 +136,18 @@ const EN = {
   s7t: "Fresh Air Supply",
   s7d: "A supply fan and ductwork bring clean outside air back into the kitchen to replace what is exhausted.",
   dgWall: "WALL SHEET",
-  photoAlt: "Luke Duct installation photo"
+  photoAlt: "Luke Duct installation photo",
+  enlarge: "View larger photo",
+  lbClose: "Close",
+  lbPrev: "Previous photo",
+  lbNext: "Next photo"
 };
 
 const VI = {
   htmlLang: 'vi', ogLocale: 'vi_VN',
   title: "Luke Duct · Hệ thống hút khói & cấp gió tươi cho bếp thương mại tại Victoria",
   metaDesc: "Luke Duct gia công và lắp đặt hệ thống hút khói và cấp gió tươi cho bếp thương mại khắp bang Victoria, tư vấn thực tế và thi công gọn gàng, cẩn thận. Gọi 0478 844 995.",
-  navSystem: "Hệ thống", navProcess: "Quy trình", navContact: "Liên hệ", navWork: 'Công trình',
+  navSystem: "Hệ thống", navProcess: "Quy trình", navContact: "Liên hệ", navWork: "Công trình",
   call: 'Gọi', quote: "Yêu cầu gọi lại", quoteShort: "Yêu cầu gọi lại",
   eyebrow: "Hút khói & cấp gió tươi bếp thương mại · Victoria",
   h1a: "Hút khói & cấp gió tươi cho bếp thương mại,", h1b: "làm đúng, làm đẹp.",
@@ -176,7 +187,7 @@ const VI = {
   s6t: "Điểm xả khí", s6d: "Nơi khí thải ra khỏi công trình – mái, tường hoặc hộp gen – được tính từ đầu.",
   dgLabel: "Hình minh họa hệ thống bếp thương mại điển hình, không theo tỷ lệ. Đánh số 1 đến 7: tấm ốp tường chống cháy phía sau khu nấu bên dưới chụp hút, chụp hút phía trên thiết bị nấu, cửa thăm trên ống đứng, đường ống trên trần, quạt hút, điểm xả khí, và đường cấp gió tươi đi xuống bếp.",
   dgTitle: 'HỆ THỐNG BẾP ĐIỂN HÌNH', dgScale: 'KHÔNG THEO TỶ LỆ', dgCeiling: 'TRẦN', dgExhaust: 'HÚT KHÓI', dgFresh: 'GIÓ TƯƠI',
-  workEyebrow: 'Công trình', workH2: 'Xem kỹ phần hoàn thiện.', workSub: 'Ảnh thật từ chính các công trình bên mình đã làm ở Victoria.',
+  workEyebrow: "Công trình", workH2: "Xem kỹ phần hoàn thiện.", workSub: "Ảnh thật từ chính các công trình bên mình đã làm ở Victoria. Bấm vào ảnh để xem lớn hơn.",
   ctaT: "Đang làm bếp mới hay nâng cấp bếp hiện có?", ctaS: "Dù anh chị đang làm bếp thương mại mới hay nâng cấp hệ thống hiện có, làm đúng phần hút khói và gió tươi ngay từ đầu sẽ tạo ra khác biệt.",
   procEyebrow: "Quy trình", procH2: "Từ lần khảo sát đầu tiên đến khi bàn giao.", procLink: 'Bắt đầu từ bước 01',
   st1t: "Khảo sát & đo đạc", st1d: "Đến tận nơi đo đạc, kiểm tra tuyến ống, chỗ lấy gió tươi và điểm xả khí.",
@@ -227,7 +238,11 @@ const VI = {
   navLabel: 'Menu chính',
   s7t: "Cấp gió tươi",
   s7d: "Quạt cấp và đường ống đưa không khí sạch từ bên ngoài vào bếp, bù lại lượng khí đã hút ra.",
-  photoAlt: "Ảnh công trình của Luke Duct"
+  photoAlt: "Ảnh công trình của Luke Duct",
+  enlarge: "Xem ảnh lớn",
+  lbClose: "Đóng",
+  lbPrev: "Ảnh trước",
+  lbNext: "Ảnh tiếp theo"
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -266,10 +281,9 @@ function page(T, lang) {
   if (chips.length % 4 !== 0) chips.push(chip(IC.phone, T.trustCall, `<a class="v" href="${tel}">${esc(C.phoneDisplay)}</a>`));
 
   const photos = C.photos.map((p, i) => {
-    const cap = p[lang] || p.en || ['', ''];
-    const alt = cap.filter(Boolean).join(', ') || T.photoAlt + ' ' + (i + 1);
-    const capHtml = cap[0] || cap[1] ? `<div class="cap">${cap[0] ? `<strong>${esc(cap[0])}</strong>` : ''}${cap[1] ? `<span class="sm">${esc(cap[1])}</span>` : ''}</div>` : '';
-    return `<li class="tile t${i + 1}"><div class="ph"><img class="pimg" src="${R}${esc(p.src)}" alt="${esc(alt)}" loading="lazy" decoding="async"></div>${capHtml}</li>`;
+    const alt = (typeof p[lang] === 'string' ? p[lang] : p.en) || T.photoAlt + ' ' + (i + 1);
+    const pos = p.pos ? ` style="object-position:${p.pos}"` : '';
+    return `<li class="tile t${i + 1}"><button class="ph tilebtn" type="button" data-full="${R}${esc(p.src)}" data-alt="${esc(alt)}" aria-label="${esc(T.enlarge)}: ${esc(alt)}"><img class="pimg" src="${R}${esc(p.src)}" alt="${esc(alt)}"${pos} loading="lazy" decoding="async"></button></li>`;
   }).join('\n');
   const reviews = C.reviews.map((r) => `<blockquote class="quote"><p>${esc((lang === 'vi' && r.vi) || r.en)}</p><span class="mono by">${esc(r.by)}</span></blockquote>`).join('\n');
 
@@ -372,7 +386,8 @@ function page(T, lang) {
     ${C.photos.length ? `<section class="sec sheet light alt" id="work">
       <div class="in">
         <div class="shead"><p class="tag">${T.workEyebrow}</p><h2 class="h2">${T.workH2}</h2><p class="sub">${T.workSub}</p></div>
-        <ul class="tiles">${photos}</ul>
+        <ul class="tiles tiles-feat ${(C.photos.length - 2) % 4 === 0 ? 'row4' : 'row3'}">${photos}</ul>
+        <dialog class="lb" aria-label="${T.workEyebrow}"><img class="lbimg" src="" alt=""><button class="lbbtn lbclose" type="button" aria-label="${T.lbClose}">&times;</button><button class="lbbtn lbprev" type="button" aria-label="${T.lbPrev}">&#8249;</button><button class="lbbtn lbnext" type="button" aria-label="${T.lbNext}">&#8250;</button></dialog>
       </div>
     </section>` : ''}
 
@@ -581,7 +596,7 @@ console.log('Built index.html and vi/index.html');
 /* ---- private preview: one self-contained page with both languages (#en / #vi) ---- */
 function bodyOf(html) { return html.slice(html.indexOf('<body>\n') + 7, html.indexOf('\n<script src=')); }
 function forPreview(html, lang) {
-  let b = bodyOf(html).replace(/href="[^"]*" hreflang="(en|vi)"/g, 'href="#$1" hreflang="$1"');
+  let b = bodyOf(html).replace(/href="[^"]*" hreflang="(en|vi)"/g, 'href="#$1" hreflang="$1"').replace(/"\.\.\/assets\//g, '"assets/');
   if (lang === 'vi') {
     b = b.replace(/ id="([^"]+)"/g, ' id="vi-$1"').replace(/ for="([^"]+)"/g, ' for="vi-$1"')
       .replace(/href="#(?!en"|vi")([^"]+)"/g, 'href="#vi-$1"').replace(/url\(#gl\)/g, 'url(#vi-gl)')

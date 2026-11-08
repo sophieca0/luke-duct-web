@@ -550,3 +550,44 @@ body{margin:0;background:#1C1B1A}
   .tl h3{margin-top:.6rem}
 }
 .tile .ph:only-child{aspect-ratio:4/3}
+
+/* ===== gallery: 9 photos (1 large + 8) and lightbox ===== */
+.t7,.t8,.t9{grid-column:span 2}
+.tilebtn{width:100%;padding:0;border:0;cursor:zoom-in;font:inherit}
+.tile .tilebtn{aspect-ratio:4/3}
+.tile.t1 .tilebtn{aspect-ratio:auto;height:100%;min-height:20rem}
+.tilebtn:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+@media (max-width:900px){
+  .t6{grid-column:span 1}
+  .t6 .ph{aspect-ratio:4/3}
+  .tile.t1 .tilebtn{min-height:0;aspect-ratio:16/10}
+}
+.lb{max-width:none;max-height:none;width:100vw;height:100vh;margin:0;padding:0;border:0;background:transparent}
+.lb::backdrop{background:rgba(12,11,10,.92)}
+.lb[open]{display:grid;place-items:center}
+.lbimg{max-width:min(92vw,1600px);max-height:86vh;object-fit:contain;border-radius:16px}
+.lbbtn{position:fixed;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(28,27,26,.7);color:#fff;font:400 2rem/1 var(--f-body);cursor:pointer}
+.lbbtn:hover{background:rgba(255,107,61,.85);color:#1C1B1A}
+.lbclose{top:calc(16px + env(safe-area-inset-top,0px));right:16px}
+.lbprev{left:16px;top:50%;transform:translateY(-50%)}
+.lbnext{right:16px;top:50%;transform:translateY(-50%)}
+@media (max-width:640px){.lbprev,.lbnext{top:auto;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:none}}
+
+/* gallery v2: two featured photos, then rows of 3 (8 photos) or 4 (10 photos) */
+.tiles.tiles-feat{grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.tiles-feat .tile{grid-column:span 4;grid-row:auto}
+.tiles-feat.row4 .tile{grid-column:span 3}
+.tiles-feat .tile.t1,.tiles-feat .tile.t2{grid-column:span 6}
+.tiles-feat .tile .tilebtn,.tiles-feat .tile.t1 .tilebtn{aspect-ratio:4/3;height:auto;min-height:0}
+.tiles-feat .tile.t1 .tilebtn,.tiles-feat .tile.t2 .tilebtn{aspect-ratio:3/2}
+@media (max-width:900px){
+  .tiles.tiles-feat{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .tiles-feat .tile,.tiles-feat.row4 .tile{grid-column:span 1}
+  .tiles-feat .tile.t1{grid-column:1/-1}
+  .tiles-feat .tile.t2{grid-column:span 1}
+  .tiles-feat .tile.t2 .tilebtn{aspect-ratio:4/3}
+}
+@media (max-width:900px){
+  .tiles-feat .tile.t2{grid-column:1/-1}
+  .tiles-feat .tile.t2 .tilebtn{aspect-ratio:3/2}
+}
