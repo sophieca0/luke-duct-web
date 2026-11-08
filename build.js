@@ -38,12 +38,12 @@ const EN = {
   title: 'Luke Duct · Commercial Kitchen Exhaust & Fresh Air Systems, Victoria',
   metaDesc: 'Luke Duct fabricates and installs commercial kitchen exhaust and fresh air systems across Victoria. Takeaways, cafés, restaurants and large kitchens. Call 0478 844 995.',
   navSystem: 'The system', navProcess: 'Process', navContact: 'Contact', navWork: 'Work',
-  call: 'Call', quote: 'Request a quote',
+  call: 'Call', quote: 'Request a call back', quoteShort: 'Call me back',
   eyebrow: 'Commercial kitchen exhaust & fresh air · Victoria',
   h1a: 'Kitchen exhaust & fresh air,', h1b: 'made and installed right.',
   lede: 'We fabricate and install exhaust and fresh air systems for commercial kitchens across Victoria: takeaways, cafés, restaurants and large kitchens. Built to the drawings, finished neatly, with straight answers to your technical questions.',
   motionPause: 'Pause animation', motionPlay: 'Play animation',
-  formTitle: 'Request a quote or a call back',
+  formTitle: 'Request a call back',
   formSub: "Leave your details and we'll call you back to talk through the job.",
   fName: 'Your name', fPhone: 'Phone', fEmail: 'Email (optional)', fVenue: 'Type of kitchen', selectPh: 'Select…',
   phName: 'Full name', phPhone: '04XX XXX XXX', phEmail: 'name@example.com', phSuburb: 'e.g. Footscray',
@@ -54,7 +54,7 @@ const EN = {
   fService: 'System needed', svExhaust: 'Exhaust', svFresh: 'Fresh air', svBoth: 'Both',
   fTime: 'Best time to call', tAny: 'Any time', tMorning: 'Morning', tAfternoon: 'Afternoon', tEvening: 'After 5pm',
   plansT: 'Have plans or photos?', plansS: 'Text them to',
-  send: 'Send my request', sending: 'Sending…', prefer: 'Prefer to talk?',
+  send: 'Call me back', sending: 'Sending…', prefer: 'Prefer to talk?',
   required: 'Please enter your name and phone number.',
   okSent: "Thanks! We've got your request and will call you back soon.",
   okSms: 'Your messaging app should open with your details. Just press send. If it does not, call us on',
@@ -78,7 +78,7 @@ const EN = {
   dgLabel: 'Illustration of a typical commercial kitchen system, not to scale. Numbered 1 to 6: the hood over the cooking equipment, an access hatch on the vertical riser, the duct run above the ceiling, the exhaust fan, the discharge point, and the fresh air supply coming down into the kitchen.',
   dgTitle: 'TYPICAL KITCHEN SYSTEM', dgScale: 'NOT TO SCALE', dgCeiling: 'CEILING', dgExhaust: 'EXHAUST', dgFresh: 'FRESH AIR',
   workEyebrow: 'Our work', workH2: 'Look closely at the finish.', workSub: 'Real photos from our own jobs across Victoria.',
-  ctaT: 'Planning a kitchen fit-out?', ctaS: "Send us the plans. We'll talk it through with you and give you a clear quote.",
+  ctaT: 'Planning a kitchen fit-out?', ctaS: "Leave your number and we'll call you back to talk through the job.",
   procEyebrow: 'Process', procH2: 'How a job runs', procLink: 'Start with step 01',
   st1t: 'Site measure', st1d: 'We visit, listen to what you need, measure, and check the duct routes, fresh air intake and where the exhaust discharges.',
   st2t: 'Quote', st2d: 'A clear quote for the whole scope of work.',
@@ -109,12 +109,12 @@ const VI = {
   title: 'Luke Duct · Hệ thống hút khói & cấp gió tươi cho bếp thương mại tại Victoria',
   metaDesc: 'Luke Duct sản xuất và lắp đặt hệ thống hút khói và cấp gió tươi cho bếp thương mại khắp bang Victoria: tiệm takeaway, quán café, nhà hàng và bếp lớn. Gọi 0478 844 995.',
   navSystem: 'Hệ thống', navProcess: 'Quy trình', navContact: 'Liên hệ', navWork: 'Công trình',
-  call: 'Gọi', quote: 'Hỏi báo giá',
+  call: 'Gọi', quote: 'Yêu cầu gọi lại', quoteShort: 'Gọi lại cho tôi',
   eyebrow: 'Hút khói & cấp gió tươi bếp thương mại · Victoria',
   h1a: 'Hệ thống hút khói & gió tươi cho bếp,', h1b: 'sản xuất và lắp đặt tận tâm.',
   lede: 'Bên mình tự sản xuất và lắp đặt hệ thống hút khói và cấp gió tươi cho bếp thương mại trên khắp bang Victoria: tiệm takeaway, quán café, nhà hàng và bếp lớn. Làm đúng bản vẽ, thi công gọn đẹp, và trả lời thẳng thắn mọi câu hỏi kỹ thuật của anh chị.',
   motionPause: 'Tạm dừng hiệu ứng', motionPlay: 'Phát hiệu ứng',
-  formTitle: 'Hỏi báo giá hoặc hẹn gọi lại',
+  formTitle: 'Yêu cầu gọi lại',
   formSub: 'Để lại thông tin, bên mình sẽ gọi lại để trao đổi về công trình.',
   fName: 'Họ tên', fPhone: 'Số điện thoại', fEmail: 'Email (không bắt buộc)', fVenue: 'Loại bếp', selectPh: 'Chọn…',
   phName: 'Họ và tên', phPhone: '04XX XXX XXX', phEmail: 'name@example.com', phSuburb: 'VD: Footscray',
@@ -125,7 +125,7 @@ const VI = {
   fService: 'Hệ thống cần làm', svExhaust: 'Hút khói', svFresh: 'Gió tươi', svBoth: 'Cả hai',
   fTime: 'Giờ tiện gọi', tAny: 'Giờ nào cũng được', tMorning: 'Buổi sáng', tAfternoon: 'Buổi chiều', tEvening: 'Sau 5 giờ chiều',
   plansT: 'Có bản vẽ hoặc ảnh?', plansS: 'Nhắn tin gửi qua số',
-  send: 'Gửi yêu cầu', sending: 'Đang gửi…', prefer: 'Muốn nói chuyện trực tiếp?',
+  send: 'Gọi lại cho tôi', sending: 'Đang gửi…', prefer: 'Muốn nói chuyện trực tiếp?',
   required: 'Anh chị vui lòng nhập họ tên và số điện thoại.',
   okSent: 'Cảm ơn anh chị! Bên mình đã nhận yêu cầu và sẽ gọi lại sớm.',
   okSms: 'Ứng dụng tin nhắn sẽ mở sẵn thông tin của anh chị, chỉ cần bấm gửi. Nếu không mở được, anh chị gọi',
@@ -149,7 +149,7 @@ const VI = {
   dgLabel: 'Hình minh họa hệ thống bếp thương mại điển hình, không theo tỷ lệ. Đánh số 1 đến 6: hood phía trên thiết bị nấu, cửa thăm trên ống đứng, tuyến ống trên trần, quạt hút, cửa xả khí, và đường cấp gió tươi đi xuống bếp.',
   dgTitle: 'HỆ THỐNG BẾP ĐIỂN HÌNH', dgScale: 'KHÔNG THEO TỶ LỆ', dgCeiling: 'TRẦN', dgExhaust: 'HÚT KHÓI', dgFresh: 'GIÓ TƯƠI',
   workEyebrow: 'Công trình', workH2: 'Xem kỹ phần hoàn thiện.', workSub: 'Ảnh thật từ chính các công trình bên mình đã làm ở Victoria.',
-  ctaT: 'Đang chuẩn bị làm bếp?', ctaS: 'Gửi bản vẽ cho bên mình. Bên mình sẽ trao đổi kỹ với anh chị và báo giá rõ ràng.',
+  ctaT: 'Đang chuẩn bị làm bếp?', ctaS: 'Để lại số điện thoại, bên mình sẽ gọi lại để trao đổi về công trình.',
   procEyebrow: 'Quy trình', procH2: 'Một công trình diễn ra thế nào', procLink: 'Bắt đầu từ bước 01',
   st1t: 'Đo đạc tại chỗ', st1d: 'Đến xem mặt bằng, lắng nghe nhu cầu, đo đạc, kiểm tra lối đi ống, chỗ lấy gió tươi và vị trí xả khí.',
   st2t: 'Báo giá', st2d: 'Báo giá rõ ràng cho toàn bộ phạm vi công việc.',
@@ -460,13 +460,7 @@ function page(T, lang) {
           <p class="sub">${T.formSub}</p>
           <form class="form js-enquiry" novalidate>
             <input type="hidden" name="source" value="Contact form (${lang.toUpperCase()})">
-            <fieldset class="fs">
-              <legend class="legend">${T.fWant}</legend>
-              <div class="chips">
-                <label class="chip"><input type="radio" name="request" value="${T.wQuote}" checked><span>${T.wQuote}</span></label>
-                <label class="chip"><input type="radio" name="request" value="${T.wCall}"><span>${T.wCall}</span></label>
-              </div>
-            </fieldset>
+            <input type="hidden" name="request" value="${T.wCall}">
             <div class="row2">
               <div class="field"><label for="c-name">${T.fName} <span class="req" aria-hidden="true">*</span></label><input id="c-name" type="text" name="name" autocomplete="name" placeholder="${T.phName}" required></div>
               <div class="field"><label for="c-phone">${T.fPhone} <span class="req" aria-hidden="true">*</span></label><input id="c-phone" type="tel" name="phone" autocomplete="tel" placeholder="${T.phPhone}" required></div>
@@ -510,7 +504,7 @@ function page(T, lang) {
 
   <div class="stickybar">
     <a class="btn btn-ghost btn-sm" href="${tel}">${PHONE_IC} ${T.call}</a>
-    <a class="btn btn-primary btn-sm" href="#contact">${T.quote}</a>
+    <a class="btn btn-primary btn-sm" href="#contact">${T.quoteShort}</a>
   </div>
 
 </div>
