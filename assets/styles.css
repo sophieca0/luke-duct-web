@@ -626,3 +626,10 @@ body{margin:0;background:#1C1B1A}
   .logo{font-size:.85rem;font-stretch:100%}
   .btn{white-space:normal;text-align:center;line-height:1.2}
 }
+
+/* Photos must always be visible: Safari's scroll-driven animations can leave
+   tiles inside a multi-column (masonry) layout stuck at opacity 0, so the
+   photo tiles never use the scroll reveal. */
+.pg .tile{animation:none!important;opacity:1!important;transform:none}
+.masonry .tilebtn{-webkit-appearance:none;appearance:none;background:none;border-radius:0}
+.masonry .pimg{-webkit-transform:translateZ(0)}
