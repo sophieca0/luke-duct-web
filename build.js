@@ -21,7 +21,7 @@ const CONFIG = {
   // that should receive enquiries), then paste the key here. While empty, the forms
   // open the visitor's SMS app with their details addressed to the phone above.
   web3formsKey: '335a515e-727e-4c8e-8eaf-f16c578c7db8',
-  siteUrl: 'https://sophieca0.github.io/luke-duct-web/',
+  siteUrl: 'https://lukecomkitchen.com/',
   // Project photos: put files in assets/photos/ and list them here.
   // Project photos (files in assets/photos/). The gallery page shows every photo;
   // the home page shows the ones marked home: true (up to 8).
