@@ -454,7 +454,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
   <header class="top">
     <div class="in top-in">
       <a class="logo" href="${HL('top')}" aria-label="${esc(T.home)}">
-        <span class="lg-mark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7.5V2.5M9.6 4.8 12 2.4l2.4 2.4"/><path d="M5.5 8h13l2.5 6H3z" fill="currentColor"/><path d="M8 17.2q1 1.2 0 2.6M12 17.2q1 1.2 0 2.6M16 17.2q1 1.2 0 2.6" stroke-width="1.7"/></svg></span>
+        <span class="lg-mark"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-linecap="round" aria-hidden="true"><path d="M5 2.5h4.8v12.2a2 2 0 0 0 2 2H20v4.8h-8.2A6.8 6.8 0 0 1 5 14.7z" fill="currentColor"/><path d="M5 8.4h4.8M15.4 16.7v4.8" stroke="#FF8A55" stroke-width="1.1"/></svg></span>
         <span class="lname">${esc(C.company).replace(/^(\S+) /, '$1 <span class="lname2">').replace(/$/, C.company.includes(' ') ? '</span>' : '')}</span>
       </a>
       <nav class="nav" aria-label="${T.navLabel}">
