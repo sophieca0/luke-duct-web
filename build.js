@@ -45,14 +45,14 @@ const EN = {
   motionPause: 'Pause animation', motionPlay: 'Play animation',
   formTitle: 'Request a call back',
   formSub: "Leave your details and we'll call you back to talk through the job.",
-  fName: 'Your name', fPhone: 'Phone', fEmail: 'Email', fContact: 'Phone or email', phContact: '04XX XXX XXX or email', contactHint: 'Phone or email: one is enough.', badEmail: 'Please check the email address.', fVenue: 'Type of kitchen', selectPh: 'Select…',
+  fName: "Your Name", fPhone: 'Phone', fEmail: 'Email', fContact: 'Phone or email', phContact: '04XX XXX XXX or email', contactHint: "Please provide at least one contact method – phone or email.", badEmail: 'Please check the email address.', fVenue: "Type of Kitchen", selectPh: 'Select…',
   phName: 'Full name', phPhone: '04XX XXX XXX', phEmail: 'name@example.com', phSuburb: 'e.g. Footscray',
   vTakeaway: 'Takeaway', vCafe: 'Café', vRestaurant: 'Restaurant', vHotel: 'Hotel', vSchool: 'School', vTruck: 'Food truck', vLarge: 'Large kitchen',
-  fSuburb: 'Suburb', fDetails: 'Project details (optional)',
+  fSuburb: 'Suburb', fDetails: "Project Details (Optional)",
   fDetailsPh: 'Hood size, cooking equipment, new fit-out or upgrade, where the exhaust should discharge…',
   fWant: 'What would you like?', wQuote: 'A quote', wCall: 'Call me back',
   fService: 'System needed', svExhaust: 'Exhaust', svFresh: 'Fresh air', svBoth: 'Both',
-  fTime: 'Best time to call', tAny: 'Any time', tMorning: 'Morning', tAfternoon: 'Afternoon', tEvening: 'After 5pm',
+  fTime: "Best Time to Call", tAny: 'Any time', tMorning: 'Morning', tAfternoon: 'Afternoon', tEvening: 'After 5pm',
   plansT: 'Have plans or photos?', plansS: 'Text them to',
   send: 'Call me back', sending: 'Sending…', prefer: 'Prefer to talk?',
   required: 'Please enter your name, plus a phone number or email.',
@@ -92,16 +92,23 @@ const EN = {
   e3t: 'Exhaust and fresh air, one team', e3d: 'One team plans the air going out and the fresh air coming in, so the two systems are worked out together.',
   e4t: 'Straight technical answers', e4d: 'Routes, access and discharge are worked out on the drawings before anything is made, and your questions get clear answers.',
   proofH: 'In their words',
-  contactEyebrow: 'Contact', contactH2: 'Tell us about your kitchen',
-  sendH: 'For an accurate quote, it helps to have:',
-  l1: 'The site address',
-  l2: 'Plans: the floor plan and any mechanical drawings',
-  l3: 'Cooking equipment list or hood layout',
-  l4: 'Where the exhaust should discharge: roof, wall or shaft',
-  l5: 'Your target install date',
-  kPhone: 'Phone', kEmail: 'Email', kArea: 'Area',
+  contactEyebrow: 'Contact', contactH2: "Let's Talk About Your Kitchen",
+  sendH: "Helpful information to have:",
+  l1: "Site address",
+  l2: "Available plans, including floor plans and mechanical drawings",
+  l3: "Cooking equipment list or hood layout",
+  l4: "Proposed exhaust discharge location (roof, wall or shaft)",
+  l5: "Your target installation date",
+  kPhone: 'Phone', kEmail: 'Email', kArea: "Service Area",
   langLabel: 'Language', home: 'Luke Duct home',
   rights: 'All rights reserved.',
+  contactIntro: "Planning a new commercial kitchen or looking to upgrade your existing exhaust system? Get in touch and tell us a little about your project. The more details you can share, the better we can understand your requirements and prepare an accurate quote.",
+  cFormTitle: "Request a Call Back",
+  cFormSub: "Have a project in mind? Leave your details below and we'll get in touch to discuss it.",
+  cSelectPh: "Select your kitchen type",
+  cDetailsPh: "Tell us a little about your project, such as hood size, cooking equipment, whether it's a new fit-out or upgrade, and your preferred exhaust discharge location.",
+  cSend: "Request a Call Back",
+  preferC: "Prefer to speak with us directly?"
 };
 
 const VI = {
@@ -116,7 +123,7 @@ const VI = {
   motionPause: 'Tạm dừng hiệu ứng', motionPlay: 'Phát hiệu ứng',
   formTitle: 'Yêu cầu gọi lại',
   formSub: 'Để lại thông tin, bên mình sẽ gọi lại để trao đổi về công trình.',
-  fName: 'Họ tên', fPhone: 'Số điện thoại', fEmail: 'Email', fContact: 'Điện thoại hoặc email', phContact: '04XX XXX XXX hoặc email', contactHint: 'Chỉ cần điện thoại hoặc email.', badEmail: 'Email chưa đúng, anh chị kiểm tra lại giúp.', fVenue: 'Loại bếp', selectPh: 'Chọn…',
+  fName: 'Họ tên', fPhone: 'Số điện thoại', fEmail: 'Email', fContact: 'Điện thoại hoặc email', phContact: '04XX XXX XXX hoặc email', contactHint: "Vui lòng để lại ít nhất một cách liên hệ – điện thoại hoặc email.", badEmail: 'Email chưa đúng, anh chị kiểm tra lại giúp.', fVenue: 'Loại bếp', selectPh: 'Chọn…',
   phName: 'Họ và tên', phPhone: '04XX XXX XXX', phEmail: 'name@example.com', phSuburb: 'VD: Footscray',
   vTakeaway: 'Tiệm takeaway', vCafe: 'Quán café', vRestaurant: 'Nhà hàng', vHotel: 'Khách sạn', vSchool: 'Trường học', vTruck: 'Xe food truck', vLarge: 'Bếp lớn',
   fSuburb: 'Khu vực (suburb)', fDetails: 'Thông tin công trình (không bắt buộc)',
@@ -163,16 +170,23 @@ const VI = {
   e3t: 'Hút khói và gió tươi, một đội lo', e3d: 'Một đội tính cả đường khí thải ra lẫn gió tươi đưa vào, nên hai hệ thống được thiết kế ăn khớp với nhau.',
   e4t: 'Trả lời kỹ thuật rõ ràng', e4d: 'Tuyến ống, lối tiếp cận và điểm xả khí được tính trên bản vẽ trước khi làm; câu hỏi nào cũng được giải thích dễ hiểu.',
   proofH: 'Khách hàng nói gì',
-  contactEyebrow: 'Liên hệ', contactH2: 'Kể cho bên mình về căn bếp của anh chị',
-  sendH: 'Để báo giá chính xác, anh chị chuẩn bị giúp:',
-  l1: 'Địa chỉ công trình',
-  l2: 'Bản vẽ: mặt bằng và bản vẽ cơ điện nếu có',
-  l3: 'Danh sách thiết bị nấu hoặc vị trí hood',
-  l4: 'Nơi xả khí: mái, tường hay hộp gen',
-  l5: 'Ngày dự kiến lắp',
-  kPhone: 'Điện thoại', kEmail: 'Email', kArea: 'Khu vực',
+  contactEyebrow: 'Liên hệ', contactH2: "Cùng trao đổi về căn bếp của anh chị",
+  sendH: "Thông tin hữu ích nên chuẩn bị:",
+  l1: "Địa chỉ công trình",
+  l2: "Bản vẽ hiện có, gồm mặt bằng và bản vẽ cơ điện",
+  l3: "Danh sách thiết bị nấu hoặc bố trí hood",
+  l4: "Vị trí xả khí dự kiến (mái, tường hoặc hộp gen)",
+  l5: "Ngày dự kiến lắp đặt",
+  kPhone: 'Điện thoại', kEmail: 'Email', kArea: "Khu vực phục vụ",
   langLabel: 'Ngôn ngữ', home: 'Trang chủ Luke Duct',
   rights: 'Bảo lưu mọi quyền.',
+  contactIntro: "Anh chị đang chuẩn bị làm bếp thương mại mới hoặc muốn nâng cấp hệ thống hút khói hiện có? Hãy liên hệ và kể sơ cho bên mình về công trình. Anh chị chia sẻ càng chi tiết, bên mình càng hiểu rõ yêu cầu và báo giá càng chính xác.",
+  cFormTitle: "Yêu cầu gọi lại",
+  cFormSub: "Anh chị có công trình cần làm? Để lại thông tin bên dưới, bên mình sẽ liên hệ để trao đổi.",
+  cSelectPh: "Chọn loại bếp",
+  cDetailsPh: "Kể sơ về công trình, như cỡ hood, thiết bị nấu, làm mới hay nâng cấp, và vị trí xả khí mong muốn.",
+  cSend: "Yêu cầu gọi lại",
+  preferC: "Muốn nói chuyện trực tiếp với bên mình?"
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -214,7 +228,8 @@ function page(T, lang) {
   }).join('\n');
   const reviews = C.reviews.map((r) => `<blockquote class="quote"><p>${esc((lang === 'vi' && r.vi) || r.en)}</p><span class="mono by">${esc(r.by)}</span></blockquote>`).join('\n');
 
-  const venueOpts = `<option value="" selected>${T.selectPh}</option>` + [T.vTakeaway, T.vCafe, T.vRestaurant, T.vHotel, T.vSchool, T.vTruck, T.vLarge].map((v) => `<option value="${v}">${v}</option>`).join('');
+  const venueList = (ph) => `<option value="" selected>${ph}</option>` + [T.vTakeaway, T.vCafe, T.vRestaurant, T.vHotel, T.vSchool, T.vTruck, T.vLarge].map((v) => `<option value="${v}">${v}</option>`).join('');
+  const venueOpts = venueList(T.selectPh);
   const msgs = { badEmail: T.badEmail, required: T.required, okSent: T.okSent, okSms: T.okSms, errSend: T.errSend, sending: T.sending, smsHead: T.smsHead, phone: C.phoneDisplay, tel, sms, key: C.web3formsKey, company: C.company, pause: T.motionPause, play: T.motionPlay, labels: { name: T.fName, phone: T.fPhone, email: T.fEmail, suburb: T.fSuburb, kitchen_type: T.fVenue, request: T.fWant, system: T.fService, call_time: T.fTime, details: T.fDetails } };
 
   const ldjson = {
@@ -445,6 +460,7 @@ function page(T, lang) {
       <div class="contact-l">
         <p class="tag">${T.contactEyebrow}</p>
         <h2 class="h2">${T.contactH2}</h2>
+        <p class="lede cintro">${T.contactIntro}</p>
         <h3 class="sendh">${T.sendH}</h3>
         <ul class="sendlist"><li>${T.l1}</li><li>${T.l2}</li><li>${T.l3}</li><li>${T.l4}</li><li>${T.l5}</li></ul>
         <div class="reach">
@@ -456,8 +472,8 @@ function page(T, lang) {
 
       <div class="contact-r">
         <div class="fcard">
-          <h2>${T.formTitle}</h2>
-          <p class="sub">${T.formSub}</p>
+          <h2>${T.cFormTitle}</h2>
+          <p class="sub">${T.cFormSub}</p>
           <form class="form js-enquiry" novalidate>
             <input type="hidden" name="source" value="Contact form (${lang.toUpperCase()})">
             <input type="hidden" name="request" value="${T.wCall}">
@@ -470,17 +486,17 @@ function page(T, lang) {
                 <div class="field"><label for="c-phone">${T.fPhone}</label><input id="c-phone" type="tel" name="phone" autocomplete="tel" placeholder="${T.phPhone}" aria-describedby="c-hint"></div>
                 <div class="field"><label for="c-email">${T.fEmail}</label><input id="c-email" type="email" name="email" autocomplete="email" placeholder="${T.phEmail}" aria-describedby="c-hint"></div>
               </div>
-              <p class="hint" id="c-hint"><span class="req" aria-hidden="true">*</span> ${T.contactHint}</p>
+              <p class="hint" id="c-hint">${T.contactHint}</p>
             </div>
             <div class="row2">
-              <div class="field"><label for="c-venue">${T.fVenue}</label><span class="sel"><select id="c-venue" name="kitchen_type">${venueOpts}</select></span></div>
+              <div class="field"><label for="c-venue">${T.fVenue}</label><span class="sel"><select id="c-venue" name="kitchen_type">${venueList(T.cSelectPh)}</select></span></div>
               <div class="field"><label for="c-time">${T.fTime}</label><span class="sel"><select id="c-time" name="call_time"><option value="${T.tAny}">${T.tAny}</option><option value="${T.tMorning}">${T.tMorning}</option><option value="${T.tAfternoon}">${T.tAfternoon}</option><option value="${T.tEvening}">${T.tEvening}</option></select></span></div>
             </div>
-            <div class="field"><label for="c-details">${T.fDetails}</label><textarea id="c-details" name="details" rows="3" placeholder="${T.fDetailsPh}"></textarea></div>
-            <button class="btn btn-primary btn-block" type="submit">${T.send} ${ARROW}</button>
+            <div class="field"><label for="c-details">${T.fDetails}</label><textarea id="c-details" name="details" rows="3" placeholder="${T.cDetailsPh}"></textarea></div>
+            <button class="btn btn-primary btn-block" type="submit">${T.cSend} ${ARROW}</button>
           </form>
           <p class="notice" role="status" hidden></p>
-          <p class="talk">${T.prefer} <a href="${tel}">${T.call} ${esc(C.phoneDisplay)}</a></p>
+          <p class="talk">${T.preferC} <a href="${tel}">${T.call} ${esc(C.phoneDisplay)}</a>.</p>
         </div>
       </div>
     </div>

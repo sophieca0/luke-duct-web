@@ -472,3 +472,4 @@ body{margin:0;background:#1C1B1A}
 .field input,.field textarea,.field select{transition:border-color .25s ease,background .25s ease,box-shadow .25s ease}
 .contactpair{display:flex;flex-direction:column;gap:.45rem}
 .hint{font-size:.875rem;color:var(--muted)}
+.cintro{margin-top:1.1rem;font-size:1.0625rem}
