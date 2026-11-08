@@ -25,12 +25,12 @@ const CONFIG = {
   // Project photos: put files in assets/photos/ and list them here.
   photos: [
     { src: 'assets/photos/canopy-front.jpg', en: 'Stainless steel canopy and wall sheet', vi: 'Chụp hút inox và tấm ốp tường' },
+    { src: 'assets/photos/twin-external-risers.jpg', en: 'Twin ducts running up an external wall', vi: 'Hai đường ống chạy dọc tường ngoài' },
     { src: 'assets/photos/roof-discharge-cowl.jpg', en: 'Exhaust discharge cowl on a corrugated roof', vi: 'Chụp xả khí trên mái tôn' },
     { src: 'assets/photos/island-canopy.jpg', en: 'Island canopy with grease filters', vi: 'Chụp hút đảo với lưới lọc mỡ' },
-    { src: 'assets/photos/twin-external-risers.jpg', en: 'Twin ducts running up an external wall', vi: 'Hai đường ống chạy dọc tường ngoài', pos: 'center 30%' },
+    { src: 'assets/photos/external-duct-riser.jpg', en: 'Galvanised duct riser with a curved bend', vi: 'Ống đứng tôn mạ kẽm với đoạn co cong' },
     { src: 'assets/photos/canopy-filters.jpg', en: 'Canopy with filters installed, protective film still on', vi: 'Chụp hút đã lắp lưới lọc, còn màng bảo vệ' },
-    { src: 'assets/photos/external-duct-riser.jpg', en: 'Galvanised duct riser with a curved bend', vi: 'Ống đứng tôn mạ kẽm với đoạn co cong', pos: 'center 55%' },
-    { src: 'assets/photos/kitchen-canopies-wall-sheet.jpg', en: 'Kitchen with two canopies and wall sheeting', vi: 'Bếp với hai chụp hút và tấm ốp tường', pos: 'center 40%' },
+    { src: 'assets/photos/kitchen-canopies-wall-sheet.jpg', en: 'Kitchen with two canopies and wall sheeting', vi: 'Bếp với hai chụp hút và tấm ốp tường' },
     { src: 'assets/photos/kitchen-ceiling-grilles.jpg', en: 'Kitchen fit-out with ceiling grilles', vi: 'Bếp đang hoàn thiện với miệng gió trên trần' },
   ],
   // Customer reviews (only real ones, with permission).
@@ -246,6 +246,17 @@ const VI = {
 };
 
 /* ====================== TEMPLATE ====================== */
+function jpegSize(file) {
+  const buf = fs.readFileSync(path.join(__dirname, file));
+  let i = 2;
+  while (i < buf.length) {
+    if (buf[i] !== 0xff) { i++; continue; }
+    const m = buf[i + 1];
+    if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) return { h: buf.readUInt16BE(i + 5), w: buf.readUInt16BE(i + 7) };
+    i += 2 + buf.readUInt16BE(i + 2);
+  }
+  return { w: 4, h: 3 };
+}
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const ARROW = '<svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 const PHONE_IC = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>';
@@ -282,8 +293,8 @@ function page(T, lang) {
 
   const photos = C.photos.map((p, i) => {
     const alt = (typeof p[lang] === 'string' ? p[lang] : p.en) || T.photoAlt + ' ' + (i + 1);
-    const pos = p.pos ? ` style="object-position:${p.pos}"` : '';
-    return `<li class="tile t${i + 1}"><button class="ph tilebtn" type="button" data-full="${R}${esc(p.src)}" data-alt="${esc(alt)}" aria-label="${esc(T.enlarge)}: ${esc(alt)}"><img class="pimg" src="${R}${esc(p.src)}" alt="${esc(alt)}"${pos} loading="lazy" decoding="async"></button></li>`;
+    const sz = jpegSize(p.src);
+    return `<li class="tile t${i + 1}"><button class="ph tilebtn" type="button" data-full="${R}${esc(p.src)}" data-alt="${esc(alt)}" aria-label="${esc(T.enlarge)}: ${esc(alt)}"><img class="pimg" src="${R}${esc(p.src)}" alt="${esc(alt)}" width="${sz.w}" height="${sz.h}" loading="lazy" decoding="async"></button></li>`;
   }).join('\n');
   const reviews = C.reviews.map((r) => `<blockquote class="quote"><p>${esc((lang === 'vi' && r.vi) || r.en)}</p><span class="mono by">${esc(r.by)}</span></blockquote>`).join('\n');
 
@@ -386,7 +397,7 @@ function page(T, lang) {
     ${C.photos.length ? `<section class="sec sheet light alt" id="work">
       <div class="in">
         <div class="shead"><p class="tag">${T.workEyebrow}</p><h2 class="h2">${T.workH2}</h2><p class="sub">${T.workSub}</p></div>
-        <ul class="tiles tiles-feat ${(C.photos.length - 2) % 4 === 0 ? 'row4' : 'row3'}">${photos}</ul>
+        <ul class="tiles masonry">${photos}</ul>
         <dialog class="lb" aria-label="${T.workEyebrow}"><img class="lbimg" src="" alt=""><button class="lbbtn lbclose" type="button" aria-label="${T.lbClose}">&times;</button><button class="lbbtn lbprev" type="button" aria-label="${T.lbPrev}">&#8249;</button><button class="lbbtn lbnext" type="button" aria-label="${T.lbNext}">&#8250;</button></dialog>
       </div>
     </section>` : ''}

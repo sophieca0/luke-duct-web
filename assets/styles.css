@@ -591,3 +591,10 @@ body{margin:0;background:#1C1B1A}
   .tiles-feat .tile.t2{grid-column:1/-1}
   .tiles-feat .tile.t2 .tilebtn{aspect-ratio:3/2}
 }
+
+/* gallery v3: masonry – every photo keeps its own shape, nothing is cropped */
+.tiles.masonry{display:block;columns:3 260px;column-gap:16px}
+.masonry .tile{display:block;break-inside:avoid;margin:0 0 16px;grid-column:auto}
+.masonry .tile .tilebtn{display:block;aspect-ratio:auto;height:auto;min-height:0}
+.masonry .pimg{position:static;width:100%;height:auto;display:block}
+@media (max-width:900px){.tiles.masonry{columns:2;column-gap:12px}.masonry .tile{margin-bottom:12px}}
