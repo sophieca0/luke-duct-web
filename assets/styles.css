@@ -427,8 +427,8 @@ body{margin:0;background:#1C1B1A}
 .part.fa .pc{animation:none}
 .part.fa .pc:hover{border-color:color-mix(in srgb,var(--fa) 75%,transparent);background-color:color-mix(in srgb,var(--fa) 12%,transparent)}
 .pill.r{--tx:-100%}
-.p6 .pi b{background:var(--fa);color:#0B1B2B}
-.p6 .pi{animation:none}
+.p7 .pi b{background:var(--fa);color:#0B1B2B}
+.p7 .pi{animation:none}
 .sv-fa{fill:color-mix(in srgb,var(--fa) 10%,var(--band-3));stroke:color-mix(in srgb,var(--band-ink) 82%,transparent);stroke-width:1.6;stroke-linejoin:round}
 .sv-falv{stroke:var(--fa);stroke-width:1.4;opacity:.8}
 .sv-fahot{fill:var(--fa)}
@@ -438,7 +438,7 @@ body{margin:0;background:#1C1B1A}
 .sv-lgd{font-family:var(--f-mono);font-size:11px;letter-spacing:1px}
 .pg.motion-off .sv-faflow{animation-play-state:paused}
 @supports selector(:has(a)){
-  .sgrid:has(.part:nth-child(6):hover) .p6 .pi{border-color:var(--fa);box-shadow:0 0 0 5px color-mix(in srgb,var(--fa) 25%,transparent)}
+  .sgrid:has(.part:nth-child(7):hover) .p7 .pi{border-color:var(--fa);box-shadow:0 0 0 5px color-mix(in srgb,var(--fa) 25%,transparent)}
 }
 
 /* contact form extras */
@@ -508,8 +508,8 @@ body{margin:0;background:#1C1B1A}
 /* wall sheet (7) */
 .sv-wall{fill:color-mix(in srgb,var(--band-ink) 7%,var(--band-2));stroke:var(--band-muted);stroke-width:1.2;stroke-linejoin:round}
 .sv-wseam{stroke:var(--band-muted);stroke-width:1;opacity:.45}
-.p7 .pi,.part:nth-child(7) .pc{animation:none}
+.p1 .pi,.part:nth-child(1) .pc{animation:none}
 @supports selector(:has(a)){
-  .sgrid:has(.part:nth-child(7):hover) .p7 .pi{border-color:var(--acc);background-color:color-mix(in srgb,var(--acc) 30%,var(--pill));box-shadow:0 0 0 5px color-mix(in srgb,var(--acc) 25%,transparent)}
+  .sgrid:has(.part:nth-child(6):hover) .p6 .pi{border-color:var(--acc);background-color:color-mix(in srgb,var(--acc) 30%,var(--pill));box-shadow:0 0 0 5px color-mix(in srgb,var(--acc) 25%,transparent)}
 }
 @media (min-width:1041px){.parts{grid-template-columns:repeat(4,minmax(0,1fr))}}
