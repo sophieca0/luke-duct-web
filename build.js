@@ -12,7 +12,7 @@ const CONFIG = {
   company: 'Luke Commercial Kitchen',
   phoneDisplay: '0466 404 868',
   phoneIntl: '+61466404868',
-  email: '',          // e.g. 'hello@lukeduct.com.au' (shown when filled)
+  email: 'lukecomkitchen@gmail.com',
   abn: '',            // e.g. '12 345 678 901'
   licence: '',        // shown as a credential chip when filled
   insurance: '',      // e.g. '$20M public liability'
