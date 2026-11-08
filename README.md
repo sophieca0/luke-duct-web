@@ -1,6 +1,6 @@
-# Luke Mechanical Website
+# Luke Commercial Kitchen Website
 
-Website for Luke Mechanical: commercial kitchen exhaust & fresh air systems, Victoria.
+Website for Luke Commercial Kitchen: commercial kitchen exhaust & fresh air systems, Victoria.
 
 - `index.html` / `vi/index.html`: home page (English / Tiếng Việt)
 - `gallery/index.html` / `vi/gallery/index.html`: full project photo gallery

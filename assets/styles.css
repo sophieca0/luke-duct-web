@@ -633,3 +633,11 @@ body{margin:0;background:#1C1B1A}
 .pg .tile{animation:none!important;opacity:1!important;transform:none}
 .masonry .tilebtn{-webkit-appearance:none;appearance:none;background:none;border-radius:0}
 .masonry .pimg{-webkit-transform:translateZ(0)}
+
+/* longer brand name: wider header on desktop, two-line logo on phones */
+.top .in{max-width:1320px}
+@media (max-width:1700px){.top .hdr-cta.btn-ghost{display:none}}
+@media (max-width:560px){
+  .lname{display:flex;flex-direction:column;white-space:normal;overflow:visible;text-overflow:clip;line-height:1.05}
+  .lname2{font-size:.78em;font-weight:700;color:var(--band-muted)}
+}

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
- * Luke Mechanical website builder.
+ * Luke Commercial Kitchen website builder.
  * Edit the CONFIG and the EN / VI text below, then run:  node build.js
  * It writes index.html (English) and vi/index.html (Tiếng Việt).
  */
@@ -9,7 +9,7 @@ const path = require('path');
 
 /* ====================== BUSINESS DETAILS ====================== */
 const CONFIG = {
-  company: 'Luke Mechanical',
+  company: 'Luke Commercial Kitchen',
   phoneDisplay: '0466 404 868',
   phoneIntl: '+61466404868',
   email: '',          // e.g. 'hello@lukeduct.com.au' (shown when filled)
@@ -86,8 +86,8 @@ const CONFIG = {
 /* ====================== TEXT ====================== */
 const EN = {
   htmlLang: 'en', ogLocale: 'en_AU',
-  title: "Luke Mechanical · Commercial Kitchen Exhaust & Fresh Air Systems in Victoria",
-  metaDesc: "Luke Mechanical fabricates and installs commercial kitchen exhaust and fresh air systems across Victoria, with practical advice and neat, careful workmanship. Call 0466 404 868.",
+  title: "Luke Commercial Kitchen · Commercial Kitchen Exhaust & Fresh Air Systems in Victoria",
+  metaDesc: "Luke Commercial Kitchen fabricates and installs commercial kitchen exhaust and fresh air systems across Victoria, with practical advice and neat, careful workmanship. Call 0466 404 868.",
   navSystem: "The System", navProcess: "Process", navContact: "Contact", navWork: "Our Work",
   call: 'Call', quote: "Request a Call Back", quoteShort: "Request a Call Back",
   eyebrow: "Commercial kitchen exhaust & fresh air · Victoria",
@@ -151,7 +151,7 @@ const EN = {
   l4: "Proposed exhaust discharge location (roof, wall or shaft)",
   l5: "Target installation date",
   kPhone: "Phone", kEmail: 'Email', kArea: "Service Area",
-  langLabel: 'Language', home: 'Luke Mechanical home',
+  langLabel: 'Language', home: 'Luke Commercial Kitchen home',
   rights: "All rights reserved.",
   contactIntro: "Planning a new commercial kitchen or looking to upgrade your existing exhaust and fresh air system?",
   cFormTitle: "Request a Call Back",
@@ -170,7 +170,7 @@ const EN = {
   hl4: "Servicing All of Victoria",
   hlLabel: "What we do",
   expSub: "A good result takes the right technical knowledge, practical thinking and care in every detail.",
-  expSub2: "Here's what you can expect when working with Luke Mechanical.",
+  expSub2: "Here's what you can expect when working with Luke Commercial Kitchen.",
   ctaS2: "Let's talk through your plans and work out a practical solution for your space.",
   scopeSub2: "Both systems need to work together. We fabricate and install the complete exhaust and fresh air setup, planned to suit your kitchen and project requirements.",
   procSub: "We keep the process straightforward and make sure the important details are worked through before the installation begins.",
@@ -180,14 +180,14 @@ const EN = {
   s7t: "Fresh Air Supply",
   s7d: "A supply fan and ductwork bring clean outside air back into the kitchen to replace what is exhausted.",
   dgWall: "WALL SHEET",
-  photoAlt: "Luke Mechanical installation photo",
+  photoAlt: "Luke Commercial Kitchen installation photo",
   enlarge: "View larger photo",
   lbClose: "Close",
   lbPrev: "Previous photo",
   lbNext: "Next photo",
   viewAll: "View the Full Gallery",
-  galTitle: "Project Gallery · Luke Mechanical · Commercial Kitchen Exhaust, Victoria",
-  galMeta: "Photos of commercial kitchen canopies, ductwork, roof discharge and fit-outs fabricated and installed by Luke Mechanical across Victoria.",
+  galTitle: "Project Gallery · Luke Commercial Kitchen · Commercial Kitchen Exhaust, Victoria",
+  galMeta: "Photos of commercial kitchen canopies, ductwork, roof discharge and fit-outs fabricated and installed by Luke Commercial Kitchen across Victoria.",
   galEyebrow: "Project gallery",
   galH1: "Our Work, Up Close.",
   galSub: "Canopies, ductwork, roof discharge and kitchen fit-outs from jobs across Victoria. Tap any photo to see it larger.",
@@ -206,8 +206,8 @@ const EN = {
 
 const VI = {
   htmlLang: 'vi', ogLocale: 'vi_VN',
-  title: "Luke Mechanical · Hệ thống hút khói và cấp gió tươi cho bếp thương mại tại Victoria",
-  metaDesc: "Luke Mechanical gia công và lắp đặt hệ thống hút khói, cấp gió tươi cho bếp thương mại trên toàn bang Victoria. Gọi 0466 404 868.",
+  title: "Luke Commercial Kitchen · Hệ thống hút khói và cấp gió tươi cho bếp thương mại tại Victoria",
+  metaDesc: "Luke Commercial Kitchen gia công và lắp đặt hệ thống hút khói, cấp gió tươi cho bếp thương mại trên toàn bang Victoria. Gọi 0466 404 868.",
   navSystem: "Hệ thống", navProcess: "Quy trình", navContact: "Liên hệ", navWork: "Công trình đã thực hiện",
   call: "Gọi", quote: "Yêu cầu gọi lại", quoteShort: "Yêu cầu gọi lại",
   eyebrow: "Hệ thống hút khói và cấp gió tươi cho bếp thương mại tại Victoria",
@@ -227,14 +227,14 @@ const VI = {
   plansT: 'Có bản vẽ hoặc ảnh?', plansS: 'Nhắn tin gửi qua số',
   send: "Yêu cầu gọi lại", sending: "Đang gửi…", prefer: 'Muốn nói chuyện trực tiếp?',
   required: "Vui lòng nhập họ và tên, cùng số điện thoại hoặc email để Luke liên hệ lại.",
-  okSent: "Cảm ơn bạn! Luke Mechanical đã nhận được thông tin và sẽ sớm liên hệ để trao đổi.",
+  okSent: "Cảm ơn bạn! Luke Commercial Kitchen đã nhận được thông tin và sẽ sớm liên hệ để trao đổi.",
   okSms: "Ứng dụng tin nhắn sẽ mở sẵn thông tin của bạn, chỉ cần bấm gửi. Nếu không mở được, vui lòng gọi số",
   errSend: "Xin lỗi, yêu cầu chưa gửi được. Bạn vui lòng thử lại, hoặc gọi trực tiếp số",
   smsHead: "Yêu cầu gọi lại từ website",
   trustDo: "Dịch vụ", trustDoV: 'Hút khói + gió tươi',
   trustMade: 'Tự sản xuất', trustMadeV: 'Gia công theo bản vẽ',
   trustArea: 'Khu vực phục vụ', areaVal: "Toàn bang Victoria",
-  trustCall: "Gọi Luke Mechanical",
+  trustCall: "Gọi Luke Commercial Kitchen",
   trustLicence: 'Giấy phép', trustInsured: 'Bảo hiểm', trustExp: 'Kinh nghiệm', yearsUnit: 'năm',
   scopeEyebrow: "Hệ thống",
   scopeH2: "Hút khí ra ngoài, cấp gió tươi vào trong.",
@@ -271,7 +271,7 @@ const VI = {
   l4: "Vị trí dự kiến xả khí (mái nhà, tường hoặc trục kỹ thuật)",
   l5: "Thời gian dự kiến lắp đặt",
   kPhone: "Điện thoại", kEmail: 'Email', kArea: "Khu vực phục vụ",
-  langLabel: 'Ngôn ngữ', home: "Trang chủ Luke Mechanical",
+  langLabel: 'Ngôn ngữ', home: "Trang chủ Luke Commercial Kitchen",
   rights: "Bảo lưu mọi quyền.",
   contactIntro: "Bạn đang chuẩn bị xây dựng bếp thương mại mới hay muốn nâng cấp hệ thống hút khói và cấp gió tươi hiện tại?",
   cFormTitle: "Yêu cầu gọi lại",
@@ -290,7 +290,7 @@ const VI = {
   hl4: "Phục vụ trên toàn bang Victoria",
   hlLabel: "Điểm nổi bật",
   expSub: "Một công trình hoàn thiện tốt cần có kiến thức kỹ thuật, tư duy thực tế và sự cẩn thận trong từng chi tiết.",
-  expSub2: "Đây là những gì anh chị có thể trông đợi khi làm việc với Luke Mechanical.",
+  expSub2: "Đây là những gì anh chị có thể trông đợi khi làm việc với Luke Commercial Kitchen.",
   ctaS2: "Hãy cùng Luke trao đổi về kế hoạch và tìm giải pháp thực tế cho không gian của anh chị.",
   scopeSub2: "Hai hệ thống cần được thiết kế và vận hành đồng bộ. Luke nhận gia công và lắp đặt trọn bộ hệ thống hút khói và cấp gió tươi, với phương án được cân nhắc dựa trên đặc điểm khu bếp và yêu cầu của từng dự án.",
   procSub: "Quy trình được triển khai rõ ràng, các chi tiết quan trọng đều được xem xét trước khi bắt đầu thi công.",
@@ -299,14 +299,14 @@ const VI = {
   navLabel: "Menu chính",
   s7t: "Cửa cấp gió tươi",
   s7d: "Quạt cấp và đường ống đưa không khí sạch từ bên ngoài vào bếp, bù lại lượng khí đã hút ra.",
-  photoAlt: "Ảnh công trình của Luke Mechanical",
+  photoAlt: "Ảnh công trình của Luke Commercial Kitchen",
   enlarge: "Xem ảnh lớn",
   lbClose: "Đóng",
   lbPrev: "Ảnh trước",
   lbNext: "Ảnh tiếp theo",
   viewAll: "Xem toàn bộ thư viện ảnh",
-  galTitle: "Thư viện ảnh công trình · Luke Mechanical · Hút khói bếp thương mại, Victoria",
-  galMeta: "Hình ảnh chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện do Luke Mechanical gia công và lắp đặt trên toàn bang Victoria.",
+  galTitle: "Thư viện ảnh công trình · Luke Commercial Kitchen · Hút khói bếp thương mại, Victoria",
+  galMeta: "Hình ảnh chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện do Luke Commercial Kitchen gia công và lắp đặt trên toàn bang Victoria.",
   galEyebrow: "Thư viện ảnh",
   galH1: "Chỉn chu trong từng chi tiết.",
   galSub: "Chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện từ các công trình trên toàn bang Victoria. Nhấn vào từng ảnh để xem kích thước lớn hơn.",
@@ -455,7 +455,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
     <div class="in top-in">
       <a class="logo" href="${HL('top')}" aria-label="${esc(T.home)}">
         <span class="lg-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h13M12 6l6 6-6 6"/></svg></span>
-        <span class="lname">${esc(C.company)}</span>
+        <span class="lname">${esc(C.company).replace(/^(\S+) /, '$1 <span class="lname2">').replace(/$/, C.company.includes(' ') ? '</span>' : '')}</span>
       </a>
       <nav class="nav" aria-label="${T.navLabel}">
         ${C.photos.length ? `<a href="${HL('work')}">${T.navWork}</a>` : ''}
@@ -741,7 +741,7 @@ function forPreview(html, prefix, hidden) {
 }
 const css = fs.readFileSync(path.join(root, 'assets', 'styles.css'), 'utf8');
 const js = fs.readFileSync(path.join(root, 'assets', 'main.js'), 'utf8');
-const preview = `<title>Luke Mechanical Website</title>
+const preview = `<title>Luke Commercial Kitchen Website</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400..700&amp;display=swap">
 <style>
 :root{color-scheme:dark}
