@@ -513,3 +513,40 @@ body{margin:0;background:#1C1B1A}
   .sgrid:has(.part:nth-child(6):hover) .p6 .pi{border-color:var(--acc);background-color:color-mix(in srgb,var(--acc) 30%,var(--pill));box-shadow:0 0 0 5px color-mix(in srgb,var(--acc) 25%,transparent)}
 }
 @media (min-width:1041px){.parts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* ===== trimmed layout ===== */
+.expect{grid-template-columns:repeat(4,minmax(0,1fr))}
+.fc{padding:1.5rem}
+.fc h3{font-size:1.15rem}
+@media (max-width:1040px){.expect{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.expect{grid-template-columns:minmax(0,1fr)}}
+
+/* diagram legend: only needed where the pill labels collapse to numbers */
+.dlegend{display:none}
+@media (max-width:640px){
+  .dlegend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem 1rem;margin-top:.25rem}
+  .dlegend li{display:flex;align-items:center;gap:.55rem;min-width:0;color:var(--band-ink);font-size:.9375rem;font-weight:500}
+  .dlegend b{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--grad);color:var(--acc-ink);font:700 .8125rem/1 var(--f-mono)}
+  .dlegend .fa b{background:var(--fa);color:#0B1B2B}
+}
+
+/* process timeline */
+.tl{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.tl::before{content:"";position:absolute;left:24px;right:24px;top:24px;height:2px;background:linear-gradient(90deg,var(--acc),var(--acc-2));opacity:.35}
+.tl li{position:relative;min-width:0}
+.tn{position:relative;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--surface);border:2px solid var(--acc);color:var(--accent);font:700 .9375rem/1 var(--f-mono);transition:background .2s,color .2s}
+.tl li:hover .tn{background:var(--accent);color:#fff}
+.tl h3{margin-top:1rem;font-size:1.1rem;font-weight:700;font-stretch:110%;line-height:1.25}
+.tl p{margin-top:.35rem;color:var(--muted);font-size:.9375rem;line-height:1.55}
+@media (max-width:1040px){
+  .tl{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:28px}
+  .tl::before{display:none}
+}
+@media (max-width:640px){
+  .tl{grid-template-columns:minmax(0,1fr);gap:18px}
+  .tl::before{display:block;left:23px;right:auto;top:24px;bottom:24px;width:2px;height:auto;background:linear-gradient(180deg,var(--acc),var(--acc-2))}
+  .tl li{display:flex;gap:1rem;align-items:flex-start}
+  .tn{flex:none}
+  .tl h3{margin-top:.6rem}
+}
+.tile .ph:only-child{aspect-ratio:4/3}

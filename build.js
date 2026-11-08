@@ -41,7 +41,7 @@ const EN = {
   call: 'Call', quote: "Request a Call Back", quoteShort: "Request a Call Back",
   eyebrow: "Commercial kitchen exhaust & fresh air · Victoria",
   h1a: "Commercial Kitchen Exhaust & Fresh Air,", h1b: "Done Right.",
-  lede: "From cafés and takeaways to restaurants and large commercial kitchens, we fabricate and install exhaust and fresh air systems across Victoria.",
+  lede: "We fabricate and install exhaust and fresh air systems for cafés, takeaways, restaurants and large commercial kitchens across Victoria. Luke brings strong technical experience, practical advice and neat, careful workmanship to every job – from straightforward installs to the tricky ones.",
   motionPause: 'Pause animation', motionPlay: 'Play animation',
   formTitle: 'Request a call back',
   formSub: "Leave your details and we'll call you back to talk through the job.",
@@ -80,17 +80,17 @@ const EN = {
   workEyebrow: 'Our work', workH2: 'Look closely at the finish.', workSub: 'Real photos from our own jobs across Victoria.',
   ctaT: "Planning a New Kitchen or Upgrading an Existing One?", ctaS: "Whether you're fitting out a new commercial kitchen or upgrading an existing system, getting the exhaust and fresh air right from the start makes a difference.",
   procEyebrow: "Process", procH2: "From First Visit to Final Handover.", procLink: 'Start with step 01',
-  st1t: "Site Measure", st1d: "We visit the site, listen to what you need and take measurements. We check the duct routes, fresh air intake and discharge point, and flag anything that needs extra thought.",
-  st2t: "Quote", st2d: "A clear quote that sets out the full scope of work, so you know exactly what is included.",
-  st3t: "Drawings", st3d: "We prepare drawings for you to review. Any questions or changes are sorted out here, before anything is made.",
-  st4t: "Fabrication", st4d: "Ductwork and fittings are made in-house to the approved drawings, ready to fit your space.",
-  st5t: "Installation", st5d: "Exhaust and fresh air installed neatly and carefully, with access for cleaning where required. We keep you updated as the job progresses.",
-  st6t: "Handover", st6d: "We walk you through the finished work and make sure you are happy with the result.",
+  st1t: "Site Measure", st1d: "We visit, measure and check the duct routes, fresh air intake and discharge point.",
+  st2t: "Quote", st2d: "A clear quote that sets out the full scope of work.",
+  st3t: "Drawings", st3d: "Drawings to review, so any changes are sorted before anything is made.",
+  st4t: "Fabrication", st4d: "Ductwork and fittings made in-house to the approved drawings.",
+  st5t: "Installation", st5d: "Installed neatly and carefully, with updates as the job progresses.",
+  st6t: "Handover", st6d: "We walk you through the finished work and make sure you're happy.",
   expEyebrow: "Why work with Luke Duct?", expH2: "More Than Just Installation.",
-  e1t: "Quality Workmanship, Down to the Details", e1d: "We take pride in doing things properly. From neatly routed ductwork and clean joins to the finer installation details, we put care into every part of the job. We want the finished work to look as good as it performs.",
-  e2t: "Practical Advice That Works for You", e2d: "Every kitchen and project is different. We take the time to understand your requirements, talk through the options and find practical ways to make the job work better. Our focus is on finding the right solution, not simply doing what's easiest.",
-  e3t: "Technical Experience for Challenging Jobs", e3d: "With a strong hands-on technical background, Luke understands how different systems and site conditions work together. This experience helps us plan carefully, work through technical challenges and find practical solutions, even when a job isn't straightforward.",
-  e4t: "Your Satisfaction Matters", e4d: "We care about the result just as much as the work that goes into it. From the first discussion to the final installation, we aim to make the process straightforward, deliver work we're proud of and leave you happy with the outcome.",
+  e1t: "Quality Workmanship, Down to the Details", e1d: "Neatly routed ductwork, clean joins and careful finishing. We want the finished work to look as good as it performs.",
+  e2t: "Practical Advice That Works for You", e2d: "We take the time to understand your project, talk through the options and find the right solution – not just the easiest one.",
+  e3t: "Technical Experience for Challenging Jobs", e3d: "Luke's hands-on technical background helps us plan carefully and find practical solutions when a site isn't straightforward.",
+  e4t: "Your Satisfaction Matters", e4d: "Clear communication from the first chat to handover, and a result we're both proud of.",
   proofH: 'In their words',
   contactEyebrow: "Contact", contactH2: "Let's Talk About Your Kitchen.",
   sendH: "Helpful information to have:",
@@ -118,7 +118,7 @@ const EN = {
   hl3: "Made In-House",
   hl4: "Servicing All of Victoria",
   hlLabel: "What we do",
-  expSub: "A good result takes more than just putting things together. It takes the right technical knowledge, practical thinking and care in every detail.",
+  expSub: "A good result takes the right technical knowledge, practical thinking and care in every detail.",
   expSub2: "Here's what you can expect when working with Luke Duct.",
   ctaS2: "Let's talk through your plans and work out a practical solution for your space.",
   scopeSub2: "Both systems need to work together. We fabricate and install the complete exhaust and fresh air setup, planned to suit your kitchen and project requirements.",
@@ -128,7 +128,8 @@ const EN = {
   navLabel: 'Main menu',
   s7t: "Fresh Air Supply",
   s7d: "A supply fan and ductwork bring clean outside air back into the kitchen to replace what is exhausted.",
-  dgWall: "WALL SHEET"
+  dgWall: "WALL SHEET",
+  photoAlt: "Luke Duct installation photo"
 };
 
 const VI = {
@@ -139,7 +140,7 @@ const VI = {
   call: 'Gọi', quote: "Yêu cầu gọi lại", quoteShort: "Yêu cầu gọi lại",
   eyebrow: "Hút khói & cấp gió tươi bếp thương mại · Victoria",
   h1a: "Hút khói & cấp gió tươi cho bếp thương mại,", h1b: "làm đúng, làm đẹp.",
-  lede: "Từ quán café, tiệm takeaway đến nhà hàng và bếp thương mại lớn, bên mình gia công và lắp đặt hệ thống hút khói và cấp gió tươi trên khắp bang Victoria.",
+  lede: "Bên mình gia công và lắp đặt hệ thống hút khói và cấp gió tươi cho quán café, tiệm takeaway, nhà hàng và bếp thương mại lớn khắp bang Victoria. Luke mang đến nền tảng kỹ thuật vững, lời khuyên thiết thực và tay nghề gọn gàng, cẩn thận cho từng công trình – từ việc lắp đặt đơn giản đến những công trình khó.",
   motionPause: 'Tạm dừng hiệu ứng', motionPlay: 'Phát hiệu ứng',
   formTitle: 'Yêu cầu gọi lại',
   formSub: 'Để lại thông tin, bên mình sẽ gọi lại để trao đổi về công trình.',
@@ -178,17 +179,17 @@ const VI = {
   workEyebrow: 'Công trình', workH2: 'Xem kỹ phần hoàn thiện.', workSub: 'Ảnh thật từ chính các công trình bên mình đã làm ở Victoria.',
   ctaT: "Đang làm bếp mới hay nâng cấp bếp hiện có?", ctaS: "Dù anh chị đang làm bếp thương mại mới hay nâng cấp hệ thống hiện có, làm đúng phần hút khói và gió tươi ngay từ đầu sẽ tạo ra khác biệt.",
   procEyebrow: "Quy trình", procH2: "Từ lần khảo sát đầu tiên đến khi bàn giao.", procLink: 'Bắt đầu từ bước 01',
-  st1t: "Khảo sát & đo đạc", st1d: "Bên mình đến tận nơi, lắng nghe nhu cầu và đo đạc. Kiểm tra tuyến ống, chỗ lấy gió tươi và điểm xả khí, đồng thời lưu ý những chỗ cần tính kỹ hơn.",
-  st2t: "Báo giá", st2d: "Báo giá rõ ràng, liệt kê đầy đủ phạm vi công việc để anh chị biết chính xác những gì được bao gồm.",
-  st3t: "Bản vẽ", st3d: "Bên mình chuẩn bị bản vẽ để anh chị xem trước. Mọi thắc mắc hay thay đổi được giải quyết ở bước này, trước khi gia công.",
-  st4t: "Gia công", st4d: "Đường ống và phụ kiện được gia công tại xưởng theo bản vẽ đã duyệt, vừa khít với không gian của anh chị.",
-  st5t: "Lắp đặt", st5d: "Lắp đặt hút khói và gió tươi gọn gàng, cẩn thận, chừa lối vệ sinh ở những chỗ cần thiết. Bên mình cập nhật cho anh chị trong suốt quá trình làm.",
-  st6t: "Bàn giao", st6d: "Bên mình cùng anh chị xem lại công trình đã hoàn thiện và đảm bảo anh chị hài lòng với kết quả.",
+  st1t: "Khảo sát & đo đạc", st1d: "Đến tận nơi đo đạc, kiểm tra tuyến ống, chỗ lấy gió tươi và điểm xả khí.",
+  st2t: "Báo giá", st2d: "Báo giá rõ ràng, liệt kê đầy đủ phạm vi công việc.",
+  st3t: "Bản vẽ", st3d: "Bản vẽ để anh chị xem trước, mọi thay đổi được chốt trước khi gia công.",
+  st4t: "Gia công", st4d: "Đường ống và phụ kiện gia công tại xưởng theo bản vẽ đã duyệt.",
+  st5t: "Lắp đặt", st5d: "Lắp đặt gọn gàng, cẩn thận, cập nhật cho anh chị trong suốt quá trình.",
+  st6t: "Bàn giao", st6d: "Cùng anh chị xem lại công trình và đảm bảo anh chị hài lòng.",
   expEyebrow: "Vì sao chọn Luke Duct?", expH2: "Không chỉ là lắp đặt.",
-  e1t: "Tay nghề chỉn chu đến từng chi tiết", e1d: "Bên mình tự hào vì làm việc đến nơi đến chốn. Từ tuyến ống đi gọn gàng, mối nối sạch sẽ đến những chi tiết lắp đặt nhỏ nhất, phần nào cũng được làm cẩn thận. Bên mình muốn công trình hoàn thiện vừa đẹp mắt vừa vận hành tốt.",
-  e2t: "Tư vấn thực tế, hợp với anh chị", e2d: "Mỗi căn bếp, mỗi công trình đều khác nhau. Bên mình dành thời gian hiểu yêu cầu của anh chị, cùng bàn các phương án và tìm cách thực tế để công việc hiệu quả hơn. Điều bên mình chú trọng là giải pháp phù hợp, chứ không phải cách làm dễ nhất.",
-  e3t: "Vững kỹ thuật cho cả công trình khó", e3d: "Với nền tảng kỹ thuật thực hành vững, Luke hiểu các hệ thống và điều kiện công trình ảnh hưởng lẫn nhau ra sao. Kinh nghiệm này giúp bên mình lên kế hoạch kỹ, xử lý các vấn đề kỹ thuật và tìm ra giải pháp thực tế, kể cả khi công việc không đơn giản.",
-  e4t: "Sự hài lòng của anh chị là điều quan trọng", e4d: "Bên mình quan tâm đến kết quả cuối cùng không kém gì công sức bỏ ra. Từ buổi trao đổi đầu tiên đến khi lắp đặt xong, bên mình cố gắng để mọi việc rõ ràng, suôn sẻ, làm ra công trình mà bên mình tự hào và anh chị hài lòng.",
+  e1t: "Tay nghề chỉn chu đến từng chi tiết", e1d: "Đường ống đi gọn gàng, mối nối sạch sẽ, hoàn thiện cẩn thận. Bên mình muốn công trình vừa đẹp mắt vừa vận hành tốt.",
+  e2t: "Tư vấn thực tế, hợp với anh chị", e2d: "Bên mình dành thời gian hiểu công trình, cùng anh chị bàn các phương án và chọn giải pháp phù hợp – không phải cách dễ nhất.",
+  e3t: "Vững kỹ thuật cho cả công trình khó", e3d: "Nền tảng kỹ thuật thực hành của Luke giúp bên mình lên kế hoạch kỹ và tìm giải pháp thực tế khi công trình không đơn giản.",
+  e4t: "Sự hài lòng của anh chị là điều quan trọng", e4d: "Trao đổi rõ ràng từ buổi nói chuyện đầu tiên đến khi bàn giao, và một kết quả mà cả hai bên đều hài lòng.",
   proofH: 'Khách hàng nói gì',
   contactEyebrow: "Liên hệ", contactH2: "Cùng trao đổi về căn bếp của anh chị.",
   sendH: "Thông tin hữu ích nên chuẩn bị:",
@@ -216,7 +217,7 @@ const VI = {
   hl3: "Tự sản xuất tại xưởng",
   hl4: "Phục vụ toàn bang Victoria",
   hlLabel: "Bên mình làm",
-  expSub: "Một kết quả tốt cần nhiều hơn việc lắp cho xong. Nó cần hiểu biết kỹ thuật đúng, cách nghĩ thực tế và sự chăm chút trong từng chi tiết.",
+  expSub: "Một kết quả tốt cần hiểu biết kỹ thuật đúng, cách nghĩ thực tế và sự chăm chút trong từng chi tiết.",
   expSub2: "Đây là những gì anh chị có thể trông đợi khi làm việc với Luke Duct.",
   ctaS2: "Hãy cùng bên mình trao đổi về kế hoạch và tìm giải pháp thực tế cho không gian của anh chị.",
   scopeSub2: "Hai hệ thống cần vận hành ăn khớp với nhau. Bên mình gia công và lắp đặt trọn bộ hút khói và gió tươi, tính toán phù hợp với căn bếp và yêu cầu của từng công trình.",
@@ -225,7 +226,8 @@ const VI = {
   footTag: "Hệ thống hút khói & cấp gió tươi cho bếp thương mại",
   navLabel: 'Menu chính',
   s7t: "Cấp gió tươi",
-  s7d: "Quạt cấp và đường ống đưa không khí sạch từ bên ngoài vào bếp, bù lại lượng khí đã hút ra."
+  s7d: "Quạt cấp và đường ống đưa không khí sạch từ bên ngoài vào bếp, bù lại lượng khí đã hút ra.",
+  photoAlt: "Ảnh công trình của Luke Duct"
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -265,7 +267,9 @@ function page(T, lang) {
 
   const photos = C.photos.map((p, i) => {
     const cap = p[lang] || p.en || ['', ''];
-    return `<li class="tile t${i + 1}"><div class="ph"><img class="pimg" src="${R}${esc(p.src)}" alt="${esc(cap.filter(Boolean).join(', '))}" loading="lazy" decoding="async"></div><div class="cap"><strong>${esc(cap[0] || '')}</strong><span class="sm">${esc(cap[1] || '')}</span></div></li>`;
+    const alt = cap.filter(Boolean).join(', ') || T.photoAlt + ' ' + (i + 1);
+    const capHtml = cap[0] || cap[1] ? `<div class="cap">${cap[0] ? `<strong>${esc(cap[0])}</strong>` : ''}${cap[1] ? `<span class="sm">${esc(cap[1])}</span>` : ''}</div>` : '';
+    return `<li class="tile t${i + 1}"><div class="ph"><img class="pimg" src="${R}${esc(p.src)}" alt="${esc(alt)}" loading="lazy" decoding="async"></div>${capHtml}</li>`;
   }).join('\n');
   const reviews = C.reviews.map((r) => `<blockquote class="quote"><p>${esc((lang === 'vi' && r.vi) || r.en)}</p><span class="mono by">${esc(r.by)}</span></blockquote>`).join('\n');
 
@@ -341,7 +345,6 @@ function page(T, lang) {
       <p class="tag">${T.eyebrow}</p>
       <h1 class="h1"><span class="l1">${T.h1a}</span> <span class="l2">${T.h1b}</span></h1>
       <p class="lede">${T.lede}</p>
-      <p class="lede lede2">${T.lede2}</p>
 
       <div class="qwrap" id="quote">
         <h2 class="qtitle">${T.heroFormT}</h2>
@@ -379,7 +382,6 @@ function page(T, lang) {
           <p class="tag">${T.expEyebrow}</p>
           <h2 class="h2">${T.expH2}</h2>
           <p class="sub">${T.expSub}</p>
-          <p class="sub sub2">${T.expSub2}</p>
         </div>
         <div class="expect">
           <div class="fc"><span class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16 16 3l5 5L8 21z M7 12l2 2 M10 9l2 2 M13 6l2 2"/></svg></span><h3>${T.e1t}</h3><p>${T.e1d}</p></div>
@@ -388,11 +390,6 @@ function page(T, lang) {
           <div class="fc"><span class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H10l-4 4v-4H4z"/></svg></span><h3>${T.e4t}</h3><p>${T.e4d}</p></div>
         </div>
         ${C.reviews.length ? `<h3 class="mono proofh">${T.proofH}</h3><div class="quotes">${reviews}</div>` : ''}
-        <div class="cta dark">
-          ${SMOKE(5)}
-          <div class="ctatext"><h3>${T.ctaT}</h3><p>${T.ctaS}</p><p>${T.ctaS2}</p></div>
-          <a class="btn btn-primary" href="#contact">${T.quote} ${ARROW}</a>
-        </div>
       </div>
     </section>
 
@@ -478,14 +475,14 @@ function page(T, lang) {
               <span class="pill p7 r" style="--x:620;--y:237;--k:5"><span class="pw"><span class="pi"><b>7</b><span class="pl">${T.s7t.replace(/\s*\(.*\)$/, '')}</span></span></span></span>
             </div>
           </figure>
-          <ol class="parts">
-            <li class="part" style="--k:6"><div class="pc"><span class="num" aria-hidden="true">1</span><div><h3>${T.s1t}</h3><p>${T.s1d}</p></div></div></li>
-            <li class="part" style="--k:0"><div class="pc"><span class="num" aria-hidden="true">2</span><div><h3>${T.s2t}</h3><p>${T.s2d}</p></div></div></li>
-            <li class="part" style="--k:1"><div class="pc"><span class="num" aria-hidden="true">3</span><div><h3>${T.s3t}</h3><p>${T.s3d}</p></div></div></li>
-            <li class="part" style="--k:2"><div class="pc"><span class="num" aria-hidden="true">4</span><div><h3>${T.s4t}</h3><p>${T.s4d}</p></div></div></li>
-            <li class="part" style="--k:3"><div class="pc"><span class="num" aria-hidden="true">5</span><div><h3>${T.s5t}</h3><p>${T.s5d}</p></div></div></li>
-            <li class="part" style="--k:4"><div class="pc"><span class="num" aria-hidden="true">6</span><div><h3>${T.s6t}</h3><p>${T.s6d}</p></div></div></li>
-            <li class="part fa" style="--k:5"><div class="pc"><span class="num" aria-hidden="true">7</span><div><h3>${T.s7t}</h3><p>${T.s7d}</p></div></div></li>
+          <ol class="dlegend">
+            <li><b aria-hidden="true">1</b>${T.s1t.replace(/\s*\(.*\)$/, '')}</li>
+            <li><b aria-hidden="true">2</b>${T.s2t.replace(/\s*\(.*\)$/, '')}</li>
+            <li><b aria-hidden="true">3</b>${T.s3t.replace(/\s*\(.*\)$/, '')}</li>
+            <li><b aria-hidden="true">4</b>${T.s4t.replace(/\s*\(.*\)$/, '')}</li>
+            <li><b aria-hidden="true">5</b>${T.s5t.replace(/\s*\(.*\)$/, '')}</li>
+            <li><b aria-hidden="true">6</b>${T.s6t.replace(/\s*\(.*\)$/, '')}</li>
+            <li class="fa"><b aria-hidden="true">7</b>${T.s7t.replace(/\s*\(.*\)$/, '')}</li>
           </ol>
         </div>
       </div>
@@ -494,13 +491,13 @@ function page(T, lang) {
     <section class="sec sheet light alt" id="process">
       <div class="in">
         <div class="shead"><p class="tag">${T.procEyebrow}</p><h2 class="h2">${T.procH2}</h2><p class="sub">${T.procSub}</p></div>
-        <ol class="steps">
-          <li class="step" style="--k:0"><div class="sc"><div class="top2"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18v8H3z M7 8v3 M11 8v4 M15 8v3 M19 8v4"/></svg></span><span class="n" aria-hidden="true">01</span></div><h3>${T.st1t}</h3><p>${T.st1d}</p></div></li>
-          <li class="step" style="--k:1"><div class="sc"><div class="top2"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z M15 3v4h4 M9 12h7 M9 16h7"/></svg></span><span class="n" aria-hidden="true">02</span></div><h3>${T.st2t}</h3><p>${T.st2d}</p></div></li>
-          <li class="step" style="--k:2"><div class="sc"><div class="top2"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1-4L16 5l3 3L8 19z M14 7l3 3"/></svg></span><span class="n" aria-hidden="true">03</span></div><h3>${T.st3t}</h3><p>${T.st3d}</p></div></li>
-          <li class="step" style="--k:3"><div class="sc"><div class="top2"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3 M12 18v3 M3 12h3 M18 12h3 M5.6 5.6l2.1 2.1 M16.3 16.3l2.1 2.1 M18.4 5.6l-2.1 2.1 M7.7 16.3l-2.1 2.1"/></svg></span><span class="n" aria-hidden="true">04</span></div><h3>${T.st4t}</h3><p>${T.st4d}</p></div></li>
-          <li class="step" style="--k:4"><div class="sc"><div class="top2"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a4 4 0 0 0 5 5L11 20a2.1 2.1 0 0 1-3-3z"/></svg></span><span class="n" aria-hidden="true">05</span></div><h3>${T.st5t}</h3><p>${T.st5d}</p></div></li>
-          <li class="step" style="--k:5"><div class="sc"><div class="top2"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg></span><span class="n" aria-hidden="true">06</span></div><h3>${T.st6t}</h3><p>${T.st6d}</p></div></li>
+        <ol class="tl">
+          <li><span class="tn" aria-hidden="true">01</span><div><h3>${T.st1t}</h3><p>${T.st1d}</p></div></li>
+          <li><span class="tn" aria-hidden="true">02</span><div><h3>${T.st2t}</h3><p>${T.st2d}</p></div></li>
+          <li><span class="tn" aria-hidden="true">03</span><div><h3>${T.st3t}</h3><p>${T.st3d}</p></div></li>
+          <li><span class="tn" aria-hidden="true">04</span><div><h3>${T.st4t}</h3><p>${T.st4d}</p></div></li>
+          <li><span class="tn" aria-hidden="true">05</span><div><h3>${T.st5t}</h3><p>${T.st5d}</p></div></li>
+          <li><span class="tn" aria-hidden="true">06</span><div><h3>${T.st6t}</h3><p>${T.st6d}</p></div></li>
         </ol>
         <div class="center"><a class="btn btn-dark" href="#contact">${T.quote} ${ARROW}</a></div>
       </div>
