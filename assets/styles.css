@@ -611,3 +611,18 @@ body{margin:0;background:#1C1B1A}
 .gal-cta{padding-bottom:clamp(56px,8vw,96px)}
 .gal-ctabtns{flex-wrap:wrap;gap:12px}
 #work .center{margin-top:clamp(20px,3vw,32px)}
+.reach-h{color:var(--band-muted);font-weight:500}
+
+/* Vietnamese menu labels are longer: widen the header, tighten the links, and
+   drop the header phone button (the number stays in the hero, contact and footer) */
+.lang-vi .top .in{max-width:1320px}
+.lang-vi .nav a{padding:0 .6rem;font-size:.875rem}
+@media (max-width:1700px){.lang-vi .top .hdr-cta.btn-ghost{display:none}}
+@media (max-width:1399px){.lang-vi .nav{display:none}}
+@media (max-width:1399px){.top .hdr-cta.btn-ghost{display:none}}
+@media (max-width:560px){.logo{flex:1 1 auto;min-width:0}}
+@media (max-width:389px){
+  .lg-mark{display:none}
+  .logo{font-size:.85rem;font-stretch:100%}
+  .btn{white-space:normal;text-align:center;line-height:1.2}
+}

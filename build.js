@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
- * Luke Duct website builder.
+ * Luke Mechanical website builder.
  * Edit the CONFIG and the EN / VI text below, then run:  node build.js
  * It writes index.html (English) and vi/index.html (Tiếng Việt).
  */
@@ -9,7 +9,7 @@ const path = require('path');
 
 /* ====================== BUSINESS DETAILS ====================== */
 const CONFIG = {
-  company: 'Luke Duct',
+  company: 'Luke Mechanical',
   phoneDisplay: '0466 404 868',
   phoneIntl: '+61466404868',
   email: '',          // e.g. 'hello@lukeduct.com.au' (shown when filled)
@@ -27,14 +27,14 @@ const CONFIG = {
   // the home page shows the ones marked home: true (up to 8).
   // cat: canopies | ductwork | roof | fitout  (used by the gallery filter buttons)
   photos: [
-    { src: 'assets/photos/p51.jpg', cat: 'canopies', home: true, en: "Finished stainless steel canopy with wall sheeting", vi: "Chụp hút inox hoàn thiện với tấm ốp tường" },
-    { src: 'assets/photos/p59.jpg', cat: 'roof', home: true, en: "Rooftop exhaust discharge at dusk", vi: "Điểm xả khí trên mái lúc hoàng hôn" },
-    { src: 'assets/photos/p42.jpg', cat: 'canopies', home: true, en: "Long canopy in a finished commercial kitchen", vi: "Chụp hút dài trong bếp thương mại đã hoàn thiện" },
-    { src: 'assets/photos/p39.jpg', cat: 'ductwork', home: true, en: "Galvanised exhaust riser on an external wall", vi: "Ống đứng tôn mạ kẽm chạy dọc tường ngoài" },
-    { src: 'assets/photos/p58.jpg', cat: 'canopies', home: true, en: "Canopy with fresh air supply grilles and wall sheeting", vi: "Chụp hút với miệng cấp gió tươi và tấm ốp tường" },
-    { src: 'assets/photos/p31.jpg', cat: 'canopies', home: true, en: "Canopy fabricated in our workshop, ready for delivery", vi: "Chụp hút gia công tại xưởng, sẵn sàng giao" },
-    { src: 'assets/photos/p38.jpg', cat: 'roof', home: true, en: "Exhaust fan and ductwork on a roof beside solar panels", vi: "Quạt hút và đường ống trên mái cạnh pin mặt trời" },
-    { src: 'assets/photos/p49.jpg', cat: 'ductwork', home: true, en: "Large ductwork rising to a high warehouse ceiling", vi: "Đường ống lớn đi lên trần nhà xưởng cao" },
+    { src: 'assets/photos/p51.jpg', cat: 'canopies', home: true, en: "Finished stainless steel canopy with wall sheeting", vi: "Chụp hút khói inox hoàn thiện cùng tấm ốp tường" },
+    { src: 'assets/photos/p59.jpg', cat: 'roof', home: true, en: "Rooftop exhaust discharge at dusk", vi: "Cửa xả hệ thống hút khói trên mái vào lúc hoàng hôn" },
+    { src: 'assets/photos/p42.jpg', cat: 'canopies', home: true, en: "Long canopy in a finished commercial kitchen", vi: "Hệ thống chụp hút dài trong khu bếp thương mại đã hoàn thiện" },
+    { src: 'assets/photos/p39.jpg', cat: 'ductwork', home: true, en: "Galvanised exhaust riser on an external wall", vi: "Đường ống hút khói mạ kẽm lắp đặt bên ngoài công trình" },
+    { src: 'assets/photos/p58.jpg', cat: 'canopies', home: true, en: "Canopy with fresh air supply grilles and wall sheeting", vi: "Chụp hút khói tích hợp các cửa cấp gió tươi và tấm ốp tường" },
+    { src: 'assets/photos/p31.jpg', cat: 'canopies', home: true, en: "Canopy fabricated in our workshop, ready for delivery", vi: "Chụp hút được gia công tại xưởng, sẵn sàng bàn giao" },
+    { src: 'assets/photos/p38.jpg', cat: 'roof', home: true, en: "Exhaust fan and ductwork on a roof beside solar panels", vi: "Quạt hút và hệ thống đường ống trên mái, cạnh các tấm pin năng lượng mặt trời" },
+    { src: 'assets/photos/p49.jpg', cat: 'ductwork', home: true, en: "Large ductwork rising to a high warehouse ceiling", vi: "Hệ thống đường ống kích thước lớn dẫn lên trần nhà xưởng cao" },
     { src: 'assets/photos/p02.jpg', cat: 'canopies', en: "Stainless steel canopy and wall sheet", vi: "Chụp hút inox và tấm ốp tường" },
     { src: 'assets/photos/p44.jpg', cat: 'roof', en: "Two exhaust cowls on a grey metal roof", vi: "Hai chụp xả khí trên mái tôn xám" },
     { src: 'assets/photos/p40.jpg', cat: 'ductwork', en: "Canopy and twin risers in a warehouse kitchen", vi: "Chụp hút và hai ống đứng trong bếp nhà xưởng" },
@@ -86,17 +86,17 @@ const CONFIG = {
 /* ====================== TEXT ====================== */
 const EN = {
   htmlLang: 'en', ogLocale: 'en_AU',
-  title: "Luke Duct · Commercial Kitchen Exhaust & Fresh Air Systems in Victoria",
-  metaDesc: "Luke Duct fabricates and installs commercial kitchen exhaust and fresh air systems across Victoria, with practical advice and neat, careful workmanship. Call 0466 404 868.",
+  title: "Luke Mechanical · Commercial Kitchen Exhaust & Fresh Air Systems in Victoria",
+  metaDesc: "Luke Mechanical fabricates and installs commercial kitchen exhaust and fresh air systems across Victoria, with practical advice and neat, careful workmanship. Call 0466 404 868.",
   navSystem: "The System", navProcess: "Process", navContact: "Contact", navWork: "Our Work",
   call: 'Call', quote: "Request a Call Back", quoteShort: "Request a Call Back",
   eyebrow: "Commercial kitchen exhaust & fresh air · Victoria",
   h1a: "Commercial Kitchen Exhaust & Fresh Air,", h1b: "Done Right.",
-  lede: "We fabricate and install exhaust and fresh air systems for cafés, takeaways, restaurants and large commercial kitchens across Victoria. Luke brings strong technical experience, practical advice and neat, careful workmanship to every job – from straightforward installs to the tricky ones.",
+  lede: "We fabricate and install exhaust and fresh air systems for cafés, takeaways, restaurants and large commercial kitchens across Victoria.",
   motionPause: 'Pause animation', motionPlay: 'Play animation',
   formTitle: 'Request a call back',
   formSub: "Leave your details and we'll call you back to talk through the job.",
-  fName: "Your Name", fPhone: "Phone", fEmail: "Email", fContact: "Phone or Email", phContact: "Number or email", contactHint: "Please provide at least one contact method – phone or email.", badEmail: "That email address doesn't look quite right. Please check it and try again.", fVenue: "Type of Kitchen", selectPh: "Select…",
+  fName: "Your Name", fPhone: "Phone", fEmail: "Email", fContact: "Phone or Email", phContact: "Number or email", contactHint: "Please provide at least one contact method, phone or email.", badEmail: "That email address doesn't look quite right. Please check it and try again.", fVenue: "Type of Kitchen", selectPh: "Select…",
   phName: 'Full name', phPhone: '04XX XXX XXX', phEmail: 'name@example.com', phSuburb: 'e.g. Footscray',
   vTakeaway: 'Takeaway', vCafe: 'Café', vRestaurant: 'Restaurant', vHotel: 'Hotel', vSchool: 'School', vTruck: 'Food truck', vLarge: 'Large kitchen', vOther: 'Others',
   fSuburb: "Suburb", fDetails: "Project Details (Optional)",
@@ -137,31 +137,31 @@ const EN = {
   st4t: "Fabrication", st4d: "Ductwork and fittings made in-house to the approved drawings.",
   st5t: "Installation", st5d: "Installed neatly and carefully, with updates as the job progresses.",
   st6t: "Handover", st6d: "We walk you through the finished work and make sure you're happy.",
-  expEyebrow: "Why work with Luke Duct?", expH2: "More Than Just Installation.",
+  expEyebrow: "Why Us", expH2: "More Than Just Installation.",
   e1t: "Quality Workmanship, Down to the Details", e1d: "Neatly routed ductwork, clean joins and careful finishing. We want the finished work to look as good as it performs.",
   e2t: "Practical Advice That Works for You", e2d: "We take the time to understand your project, talk through the options and find the right solution – not just the easiest one.",
   e3t: "Technical Experience for Challenging Jobs", e3d: "Luke's hands-on technical background helps us plan carefully and find practical solutions when a site isn't straightforward.",
   e4t: "Your Satisfaction Matters", e4d: "Clear communication from the first chat to handover, and a result we're both proud of.",
   proofH: 'In their words',
   contactEyebrow: "Contact", contactH2: "Let's Talk About Your Kitchen.",
-  sendH: "Helpful information to have:",
+  sendH: "Helpful Information to Have",
   l1: "Site address",
   l2: "Floor plans and mechanical drawings",
   l3: "Cooking equipment list or hood layout",
   l4: "Proposed exhaust discharge location (roof, wall or shaft)",
   l5: "Target installation date",
   kPhone: "Phone", kEmail: 'Email', kArea: "Service Area",
-  langLabel: 'Language', home: 'Luke Duct home',
+  langLabel: 'Language', home: 'Luke Mechanical home',
   rights: "All rights reserved.",
   contactIntro: "Planning a new commercial kitchen or looking to upgrade your existing exhaust and fresh air system?",
   cFormTitle: "Request a Call Back",
   cFormSub: "Have a project in mind? Leave your details below and we'll get in touch to talk it through.",
   cSelectPh: "Select your kitchen type",
-  cDetailsPh: "Tell us a little about your project – hood size, cooking equipment, new fit-out or upgrade, and where the exhaust should discharge.",
+  cDetailsPh: "Tell us a little about your project, including hood size, cooking equipment, whether it's a new fit-out or an upgrade, and where the exhaust should discharge.",
   cSend: "Request a Call Back",
   preferC: "Prefer to speak with us directly?",
   navWhy: "Why Us",
-  lede2: "With strong technical experience and a hands-on approach, Luke brings practical advice, quality workmanship and attention to detail to every project – from straightforward installations to more challenging jobs.",
+  lede2: "Luke brings strong technical experience, practical advice and neat, careful workmanship to every job, from straightforward installations to more challenging projects.",
   heroFormT: "Let's Talk About Your Project",
   heroFormS: "Tell us a little about your kitchen and what you're planning. We'll get in touch to discuss your needs and how we can help.",
   hl1: "Exhaust & Fresh Air Systems",
@@ -170,7 +170,7 @@ const EN = {
   hl4: "Servicing All of Victoria",
   hlLabel: "What we do",
   expSub: "A good result takes the right technical knowledge, practical thinking and care in every detail.",
-  expSub2: "Here's what you can expect when working with Luke Duct.",
+  expSub2: "Here's what you can expect when working with Luke Mechanical.",
   ctaS2: "Let's talk through your plans and work out a practical solution for your space.",
   scopeSub2: "Both systems need to work together. We fabricate and install the complete exhaust and fresh air setup, planned to suit your kitchen and project requirements.",
   procSub: "We keep the process straightforward and make sure the important details are worked through before the installation begins.",
@@ -180,14 +180,14 @@ const EN = {
   s7t: "Fresh Air Supply",
   s7d: "A supply fan and ductwork bring clean outside air back into the kitchen to replace what is exhausted.",
   dgWall: "WALL SHEET",
-  photoAlt: "Luke Duct installation photo",
+  photoAlt: "Luke Mechanical installation photo",
   enlarge: "View larger photo",
   lbClose: "Close",
   lbPrev: "Previous photo",
   lbNext: "Next photo",
   viewAll: "View the Full Gallery",
-  galTitle: "Project Gallery · Luke Duct · Commercial Kitchen Exhaust, Victoria",
-  galMeta: "Photos of commercial kitchen canopies, ductwork, roof discharge and fit-outs fabricated and installed by Luke Duct across Victoria.",
+  galTitle: "Project Gallery · Luke Mechanical · Commercial Kitchen Exhaust, Victoria",
+  galMeta: "Photos of commercial kitchen canopies, ductwork, roof discharge and fit-outs fabricated and installed by Luke Mechanical across Victoria.",
   galEyebrow: "Project gallery",
   galH1: "Our Work, Up Close.",
   galSub: "Canopies, ductwork, roof discharge and kitchen fit-outs from jobs across Victoria. Tap any photo to see it larger.",
@@ -199,124 +199,128 @@ const EN = {
   catFitout: "Kitchen Fit-outs",
   galCtaT: "Like What You See?",
   galCtaS: "Tell us about your kitchen and we'll get in touch to talk it through.",
-  galBack: "Back to home"
+  galBack: "Back to home",
+  contactDetails: "Contact Details",
+  footArea: "Victoria-wide"
 };
 
 const VI = {
   htmlLang: 'vi', ogLocale: 'vi_VN',
-  title: "Luke Duct · Hệ thống hút khói & cấp gió tươi cho bếp thương mại tại Victoria",
-  metaDesc: "Luke Duct gia công và lắp đặt hệ thống hút khói và cấp gió tươi cho bếp thương mại khắp bang Victoria, tư vấn thực tế và thi công gọn gàng, cẩn thận. Gọi 0466 404 868.",
-  navSystem: "Hệ thống", navProcess: "Quy trình", navContact: "Liên hệ", navWork: "Công trình",
-  call: 'Gọi', quote: "Yêu cầu gọi lại", quoteShort: "Yêu cầu gọi lại",
-  eyebrow: "Hút khói & cấp gió tươi bếp thương mại · Victoria",
-  h1a: "Hút khói & cấp gió tươi cho bếp thương mại,", h1b: "làm đúng, làm đẹp.",
-  lede: "Luke Duct gia công và lắp đặt hệ thống hút khói và cấp gió tươi cho quán café, tiệm takeaway, nhà hàng và bếp thương mại lớn khắp bang Victoria. Với nền tảng kỹ thuật vững, Luke mang đến lời khuyên thiết thực và tay nghề gọn gàng, cẩn thận cho từng công trình – từ việc lắp đặt đơn giản đến những công trình khó.",
+  title: "Luke Mechanical · Hệ thống hút khói và cấp gió tươi cho bếp thương mại tại Victoria",
+  metaDesc: "Luke Mechanical gia công và lắp đặt hệ thống hút khói, cấp gió tươi cho bếp thương mại trên toàn bang Victoria. Gọi 0466 404 868.",
+  navSystem: "Hệ thống", navProcess: "Quy trình", navContact: "Liên hệ", navWork: "Công trình đã thực hiện",
+  call: "Gọi", quote: "Yêu cầu gọi lại", quoteShort: "Yêu cầu gọi lại",
+  eyebrow: "Hệ thống hút khói và cấp gió tươi cho bếp thương mại tại Victoria",
+  h1a: "Hệ thống hút khói và cấp gió tươi cho bếp thương mại,", h1b: "làm đúng ngay từ đầu.",
+  lede: "Luke chuyên gia công và lắp đặt hệ thống hút khói, cấp gió tươi cho các quán ăn, quán cà phê, nhà hàng và bếp thương mại quy mô lớn trên toàn bang Victoria.",
   motionPause: 'Tạm dừng hiệu ứng', motionPlay: 'Phát hiệu ứng',
   formTitle: 'Yêu cầu gọi lại',
-  formSub: "Để lại thông tin, Luke Duct sẽ gọi lại để trao đổi về công trình.",
-  fName: "Họ tên", fPhone: "Số điện thoại", fEmail: "Email", fContact: "Điện thoại hoặc email", phContact: "Số hoặc email", contactHint: "Vui lòng để lại ít nhất một cách liên hệ – điện thoại hoặc email.", badEmail: "Địa chỉ email có vẻ chưa đúng. Anh chị vui lòng kiểm tra lại.", fVenue: "Loại bếp", selectPh: "Chọn…",
-  phName: 'Họ và tên', phPhone: '04XX XXX XXX', phEmail: 'name@example.com', phSuburb: 'VD: Footscray',
+  formSub: "Để lại thông tin, Luke sẽ gọi lại để trao đổi về dự án của bạn.",
+  fName: "Họ và tên", fPhone: "Số điện thoại", fEmail: "Email", fContact: "Số điện thoại hoặc Email", phContact: "Số hoặc email", contactHint: "Vui lòng cung cấp ít nhất một thông tin liên hệ, số điện thoại hoặc email.", badEmail: "Địa chỉ email có vẻ chưa đúng. Bạn vui lòng kiểm tra lại.", fVenue: "Loại hình bếp", selectPh: "Chọn…",
+  phName: 'Họ và tên', phPhone: '04XX XXX XXX', phEmail: 'name@example.com', phSuburb: "VD: Footscray",
   vTakeaway: 'Tiệm takeaway', vCafe: 'Quán café', vRestaurant: 'Nhà hàng', vHotel: 'Khách sạn', vSchool: 'Trường học', vTruck: 'Xe food truck', vLarge: 'Bếp lớn', vOther: 'Khác',
-  fSuburb: "Khu vực (suburb)", fDetails: "Thông tin công trình (không bắt buộc)",
+  fSuburb: "Khu vực", fDetails: "Thông tin dự án (Không bắt buộc)",
   fDetailsPh: 'Cỡ hood, thiết bị nấu, làm mới hay nâng cấp, nơi xả khí…',
   fWant: 'Anh chị cần gì?', wQuote: 'Báo giá', wCall: 'Gọi lại cho tôi',
   fService: 'Hệ thống cần làm', svExhaust: 'Hút khói', svFresh: 'Gió tươi', svBoth: 'Cả hai',
-  fTime: "Giờ tiện gọi", tAny: 'Giờ nào cũng được', tMorning: 'Buổi sáng', tAfternoon: 'Buổi chiều', tEvening: 'Sau 5 giờ chiều',
+  fTime: "Thời gian thuận tiện để liên hệ", tAny: 'Giờ nào cũng được', tMorning: 'Buổi sáng', tAfternoon: 'Buổi chiều', tEvening: 'Sau 5 giờ chiều',
   plansT: 'Có bản vẽ hoặc ảnh?', plansS: 'Nhắn tin gửi qua số',
   send: "Yêu cầu gọi lại", sending: "Đang gửi…", prefer: 'Muốn nói chuyện trực tiếp?',
-  required: "Anh chị vui lòng nhập họ tên và số điện thoại hoặc email để được liên hệ lại.",
-  okSent: "Cảm ơn anh chị! Luke Duct đã nhận được thông tin và sẽ sớm liên hệ để trao đổi.",
-  okSms: "Ứng dụng tin nhắn sẽ mở sẵn thông tin của anh chị – chỉ cần bấm gửi. Nếu không mở được, anh chị gọi giúp số",
-  errSend: "Xin lỗi, yêu cầu chưa gửi được. Anh chị vui lòng thử lại, hoặc gọi trực tiếp số",
+  required: "Vui lòng nhập họ và tên, cùng số điện thoại hoặc email để Luke liên hệ lại.",
+  okSent: "Cảm ơn bạn! Luke Mechanical đã nhận được thông tin và sẽ sớm liên hệ để trao đổi.",
+  okSms: "Ứng dụng tin nhắn sẽ mở sẵn thông tin của bạn, chỉ cần bấm gửi. Nếu không mở được, vui lòng gọi số",
+  errSend: "Xin lỗi, yêu cầu chưa gửi được. Bạn vui lòng thử lại, hoặc gọi trực tiếp số",
   smsHead: "Yêu cầu gọi lại từ website",
   trustDo: "Dịch vụ", trustDoV: 'Hút khói + gió tươi',
   trustMade: 'Tự sản xuất', trustMadeV: 'Gia công theo bản vẽ',
   trustArea: 'Khu vực phục vụ', areaVal: "Toàn bang Victoria",
-  trustCall: "Gọi Luke Duct",
+  trustCall: "Gọi Luke Mechanical",
   trustLicence: 'Giấy phép', trustInsured: 'Bảo hiểm', trustExp: 'Kinh nghiệm', yearsUnit: 'năm',
   scopeEyebrow: "Hệ thống",
-  scopeH2: "Hút khói ra, gió tươi vào.",
-  scopeSub: "Bếp thương mại cần một hệ thống thông gió được tính toán kỹ. Hệ thống hút đưa khói, hơi nóng và hơi dầu mỡ ra ngoài, còn hệ thống gió tươi đưa không khí sạch từ bên ngoài trở lại bếp.",
+  scopeH2: "Hút khí ra ngoài, cấp gió tươi vào trong.",
+  scopeSub: "Một khu bếp thương mại cần có hệ thống thông gió được tính toán và bố trí hợp lý. Hệ thống hút khói giúp loại bỏ khói, nhiệt và không khí chứa dầu mỡ, trong khi hệ thống cấp gió tươi đưa không khí sạch từ bên ngoài vào khu bếp.",
   fact1: 'Hệ thống hút khói', fact2: 'Hệ thống gió tươi', fact3: 'Tự gia công', fact4: 'Toàn bang Victoria',
-  s1t: "Tấm ốp chống cháy (fire-rated wall sheet)", s1d: "Tấm ốp tường chống cháy phía sau khu nấu, bên dưới chụp hút, giúp bảo vệ tường khỏi nhiệt.",
-  s2t: "Chụp hút (canopy)", s2d: "Đặt phía trên khu nấu, giữ lại khói, hơi nóng và hơi dầu mỡ ngay từ nguồn.",
-  s3t: "Cửa thăm (access panel)", s3d: "Bố trí dọc tuyến ống ở những chỗ cần thiết để kiểm tra và vệ sinh hệ thống.",
-  s4t: "Đường ống (ductwork)", s4d: "Dẫn khí thải từ chụp hút đến quạt, đi ống gọn gàng theo đúng bản vẽ đã duyệt.",
+  s1t: "Tấm ốp tường chống cháy", s1d: "Tấm ốp tường chống cháy phía sau khu nấu, bên dưới chụp hút, giúp bảo vệ tường khỏi nhiệt.",
+  s2t: "Chụp hút khói", s2d: "Đặt phía trên khu nấu, giữ lại khói, hơi nóng và hơi dầu mỡ ngay từ nguồn.",
+  s3t: "Cửa thăm kỹ thuật", s3d: "Bố trí dọc tuyến ống ở những chỗ cần thiết để kiểm tra và vệ sinh hệ thống.",
+  s4t: "Đường ống dẫn khí", s4d: "Dẫn khí thải từ chụp hút đến quạt, đi ống gọn gàng theo đúng bản vẽ đã duyệt.",
   s5t: "Quạt hút", s5d: "Hút khí qua toàn hệ thống. Vị trí quạt được xác định trên bản vẽ trước khi gia công.",
   s6t: "Điểm xả khí", s6d: "Nơi khí thải ra khỏi công trình – mái, tường hoặc hộp gen – được tính từ đầu.",
-  dgLabel: "Hình minh họa hệ thống bếp thương mại điển hình, không theo tỷ lệ. Đánh số 1 đến 7: tấm ốp tường chống cháy phía sau khu nấu bên dưới chụp hút, chụp hút phía trên thiết bị nấu, cửa thăm trên ống đứng, đường ống trên trần, quạt hút, điểm xả khí, và đường cấp gió tươi đi xuống bếp.",
-  dgTitle: 'HỆ THỐNG BẾP ĐIỂN HÌNH', dgScale: 'KHÔNG THEO TỶ LỆ', dgCeiling: 'TRẦN', dgExhaust: 'HÚT KHÓI', dgFresh: 'GIÓ TƯƠI',
-  workEyebrow: "Công trình", workH2: "Xem kỹ phần hoàn thiện.", workSub: "Ảnh thật từ chính các công trình Luke Duct đã thực hiện ở Victoria. Bấm vào ảnh để xem lớn hơn.",
+  dgLabel: "Sơ đồ minh họa hệ thống bếp thương mại điển hình, không theo tỷ lệ. Đánh số 1 đến 7: tấm ốp tường chống cháy, chụp hút khói, cửa thăm kỹ thuật, đường ống dẫn khí, quạt hút, điểm xả khí và cửa cấp gió tươi.",
+  dgTitle: "HỆ THỐNG BẾP ĐIỂN HÌNH", dgScale: "SƠ ĐỒ MINH HỌA, KHÔNG THEO TỶ LỆ", dgCeiling: "TRẦN NHÀ", dgExhaust: "HÚT KHÓI", dgFresh: "CẤP GIÓ TƯƠI",
+  workEyebrow: "Công trình đã thực hiện", workH2: "Chỉn chu trong từng chi tiết.", workSub: "Hình ảnh thực tế từ các công trình Luke đã thực hiện tại Victoria. Nhấn vào từng ảnh để xem kích thước lớn hơn.",
   ctaT: "Đang làm bếp mới hay nâng cấp bếp hiện có?", ctaS: "Dù anh chị đang làm bếp thương mại mới hay nâng cấp hệ thống hiện có, làm đúng phần hút khói và gió tươi ngay từ đầu sẽ tạo ra khác biệt.",
-  procEyebrow: "Quy trình", procH2: "Từ lần khảo sát đầu tiên đến khi bàn giao.", procLink: 'Bắt đầu từ bước 01',
-  st1t: "Khảo sát & đo đạc", st1d: "Đến tận nơi đo đạc, kiểm tra tuyến ống, chỗ lấy gió tươi và điểm xả khí.",
-  st2t: "Báo giá", st2d: "Báo giá rõ ràng, liệt kê đầy đủ phạm vi công việc.",
-  st3t: "Bản vẽ", st3d: "Bản vẽ để anh chị xem trước, mọi thay đổi được chốt trước khi gia công.",
-  st4t: "Gia công", st4d: "Đường ống và phụ kiện gia công tại xưởng theo bản vẽ đã duyệt.",
-  st5t: "Lắp đặt", st5d: "Lắp đặt gọn gàng, cẩn thận, cập nhật cho anh chị trong suốt quá trình.",
-  st6t: "Bàn giao", st6d: "Cùng anh chị xem lại công trình và đảm bảo anh chị hài lòng.",
-  expEyebrow: "Vì sao chọn Luke Duct?", expH2: "Không chỉ là lắp đặt.",
-  e1t: "Tay nghề chỉn chu đến từng chi tiết", e1d: "Đường ống đi gọn gàng, mối nối sạch sẽ, hoàn thiện cẩn thận. Mục tiêu là công trình vừa đẹp mắt vừa vận hành tốt.",
-  e2t: "Tư vấn thực tế, hợp với anh chị", e2d: "Luke dành thời gian tìm hiểu công trình, cùng anh chị bàn các phương án và chọn giải pháp phù hợp – không phải cách dễ nhất.",
-  e3t: "Vững kỹ thuật cho cả công trình khó", e3d: "Nền tảng kỹ thuật thực hành giúp Luke lên kế hoạch kỹ và tìm ra giải pháp thực tế khi công trình không đơn giản.",
-  e4t: "Sự hài lòng của anh chị là điều quan trọng", e4d: "Trao đổi rõ ràng từ buổi nói chuyện đầu tiên đến khi bàn giao, và một kết quả mà cả hai bên đều hài lòng.",
+  procEyebrow: "Quy trình", procH2: "Từ khảo sát ban đầu đến khi hoàn thiện công trình.", procLink: 'Bắt đầu từ bước 01',
+  st1t: "Khảo sát và đo đạc", st1d: "Luke đến công trình để khảo sát, đo đạc và kiểm tra hướng đi đường ống, vị trí lấy gió tươi cũng như điểm xả khí.",
+  st2t: "Báo giá", st2d: "Báo giá rõ ràng, thể hiện phạm vi công việc và các hạng mục cần thực hiện.",
+  st3t: "Bản vẽ kỹ thuật", st3d: "Bản vẽ được gửi để khách hàng xem xét. Các điều chỉnh cần thiết sẽ được thống nhất trước khi tiến hành gia công.",
+  st4t: "Gia công", st4d: "Đường ống và các phụ kiện được gia công trực tiếp tại xưởng theo bản vẽ đã thống nhất.",
+  st5t: "Lắp đặt", st5d: "Thi công gọn gàng, cẩn thận và cập nhật tiến độ trong quá trình thực hiện.",
+  st6t: "Bàn giao", st6d: "Kiểm tra công trình hoàn thiện, cùng khách hàng xem xét kết quả và đảm bảo các hạng mục đã thực hiện đúng như thống nhất.",
+  expEyebrow: "Tại sao chọn chúng tôi?", expH2: "Không chỉ đơn thuần là lắp đặt.",
+  e1t: "Thi công chỉn chu trong từng chi tiết", e1d: "Đường ống được bố trí gọn gàng, các mối nối được xử lý cẩn thận và bề mặt hoàn thiện được chú trọng. Chúng tôi muốn mỗi công trình không chỉ vận hành tốt mà còn có tính thẩm mỹ cao.",
+  e2t: "Tư vấn thực tế, giải pháp phù hợp", e2d: "Luke dành thời gian tìm hiểu nhu cầu, trao đổi các phương án và cân nhắc giải pháp phù hợp nhất cho từng dự án, thay vì chỉ chọn cách làm đơn giản nhất.",
+  e3t: "Nền tảng kỹ thuật cho những công trình phức tạp", e3d: "Kinh nghiệm thực tế cùng kiến thức kỹ thuật giúp Luke đánh giá các điều kiện tại công trình và tìm ra hướng xử lý phù hợp, kể cả với những mặt bằng có yêu cầu phức tạp.",
+  e4t: "Sự hài lòng của khách hàng là điều quan trọng", e4d: "Từ lần trao đổi đầu tiên đến khi hoàn tất công trình, chúng tôi luôn chú trọng giao tiếp rõ ràng và đảm bảo kết quả cuối cùng đáp ứng kỳ vọng của khách hàng.",
   proofH: 'Khách hàng nói gì',
-  contactEyebrow: "Liên hệ", contactH2: "Cùng trao đổi về căn bếp của anh chị.",
-  sendH: "Thông tin hữu ích nên chuẩn bị:",
+  contactEyebrow: "Liên hệ", contactH2: "Cùng trao đổi về khu bếp của bạn.",
+  sendH: "Những thông tin nên chuẩn bị:",
   l1: "Địa chỉ công trình",
-  l2: "Bản vẽ mặt bằng và bản vẽ cơ điện",
-  l3: "Danh sách thiết bị nấu hoặc bố trí hood",
-  l4: "Vị trí xả khí dự kiến (mái, tường hoặc hộp gen)",
+  l2: "Mặt bằng và bản vẽ cơ điện (nếu có)",
+  l3: "Danh sách thiết bị bếp hoặc bố trí chụp hút",
+  l4: "Vị trí dự kiến xả khí (mái nhà, tường hoặc trục kỹ thuật)",
   l5: "Thời gian dự kiến lắp đặt",
   kPhone: "Điện thoại", kEmail: 'Email', kArea: "Khu vực phục vụ",
-  langLabel: 'Ngôn ngữ', home: 'Trang chủ Luke Duct',
+  langLabel: 'Ngôn ngữ', home: "Trang chủ Luke Mechanical",
   rights: "Bảo lưu mọi quyền.",
-  contactIntro: "Anh chị đang chuẩn bị làm bếp thương mại mới, hoặc muốn nâng cấp hệ thống hút khói và gió tươi hiện có?",
+  contactIntro: "Bạn đang chuẩn bị xây dựng bếp thương mại mới hay muốn nâng cấp hệ thống hút khói và cấp gió tươi hiện tại?",
   cFormTitle: "Yêu cầu gọi lại",
-  cFormSub: "Anh chị có công trình cần làm? Để lại thông tin bên dưới, Luke Duct sẽ liên hệ để cùng trao đổi.",
-  cSelectPh: "Chọn loại bếp",
-  cDetailsPh: "Kể sơ về công trình – cỡ hood, thiết bị nấu, làm mới hay nâng cấp, và khí thải nên xả ra đâu.",
+  cFormSub: "Bạn đang có dự án cần triển khai? Để lại thông tin bên dưới, Luke sẽ liên hệ để cùng trao đổi chi tiết hơn.",
+  cSelectPh: "Chọn loại hình bếp",
+  cDetailsPh: "Chia sẻ thêm về dự án của bạn, chẳng hạn như kích thước chụp hút, thiết bị bếp, công trình mới hay nâng cấp hệ thống hiện tại, và vị trí dự kiến xả khí.",
   cSend: "Yêu cầu gọi lại",
-  preferC: "Muốn trao đổi trực tiếp?",
-  navWhy: "Điểm mạnh",
-  lede2: "Với nền tảng kỹ thuật vững và cách làm sát thực tế, Luke mang đến lời khuyên thiết thực, tay nghề chắc và sự tỉ mỉ cho từng công trình – từ việc lắp đặt đơn giản đến những công trình khó hơn.",
-  heroFormT: "Kể về công trình của anh chị",
-  heroFormS: "Chia sẻ đôi chút về căn bếp và dự định của anh chị. Luke Duct sẽ liên hệ để tìm hiểu nhu cầu và tư vấn cách làm phù hợp.",
-  hl1: "Hệ thống hút khói & gió tươi",
+  preferC: "Bạn muốn trao đổi trực tiếp?",
+  navWhy: "Tại sao chọn chúng tôi",
+  lede2: "Với nền tảng kỹ thuật vững chắc, tư vấn thực tế và sự chỉn chu trong từng công đoạn, Luke luôn hướng đến giải pháp phù hợp và chất lượng hoàn thiện tốt nhất cho mỗi dự án, từ những công trình đơn giản đến các hạng mục phức tạp.",
+  heroFormT: "Trao đổi về dự án của bạn",
+  heroFormS: "Hãy chia sẻ một vài thông tin về khu bếp và kế hoạch của bạn. Luke sẽ liên hệ để tìm hiểu nhu cầu và trao đổi về phương án phù hợp.",
+  hl1: "Hệ thống hút khói và cấp gió tươi",
   hl2: "Gia công theo yêu cầu",
-  hl3: "Tự sản xuất tại xưởng",
-  hl4: "Phục vụ toàn bang Victoria",
-  hlLabel: "Dịch vụ của Luke Duct",
-  expSub: "Một kết quả tốt cần hiểu biết kỹ thuật đúng, cách nghĩ thực tế và sự chăm chút trong từng chi tiết.",
-  expSub2: "Đây là những gì anh chị có thể trông đợi khi làm việc với Luke Duct.",
+  hl3: "Sản xuất trực tiếp tại xưởng",
+  hl4: "Phục vụ trên toàn bang Victoria",
+  hlLabel: "Điểm nổi bật",
+  expSub: "Một công trình hoàn thiện tốt cần có kiến thức kỹ thuật, tư duy thực tế và sự cẩn thận trong từng chi tiết.",
+  expSub2: "Đây là những gì anh chị có thể trông đợi khi làm việc với Luke Mechanical.",
   ctaS2: "Hãy cùng Luke trao đổi về kế hoạch và tìm giải pháp thực tế cho không gian của anh chị.",
-  scopeSub2: "Hai hệ thống cần vận hành ăn khớp với nhau. Luke Duct gia công và lắp đặt trọn bộ hút khói và gió tươi, tính toán phù hợp với căn bếp và yêu cầu của từng công trình.",
-  procSub: "Quy trình đơn giản, rõ ràng, và mọi chi tiết quan trọng đều được tính kỹ trước khi bắt đầu lắp đặt.",
-  contactIntro2: "Hãy kể sơ về công trình của anh chị. Luke sẽ dành thời gian tìm hiểu nhu cầu và cùng anh chị bàn cách làm phù hợp nhất.",
-  footTag: "Hệ thống hút khói & cấp gió tươi cho bếp thương mại",
-  navLabel: 'Menu chính',
-  s7t: "Cấp gió tươi",
+  scopeSub2: "Hai hệ thống cần được thiết kế và vận hành đồng bộ. Luke nhận gia công và lắp đặt trọn bộ hệ thống hút khói và cấp gió tươi, với phương án được cân nhắc dựa trên đặc điểm khu bếp và yêu cầu của từng dự án.",
+  procSub: "Quy trình được triển khai rõ ràng, các chi tiết quan trọng đều được xem xét trước khi bắt đầu thi công.",
+  contactIntro2: "Hãy chia sẻ một vài thông tin về dự án. Luke sẽ dành thời gian tìm hiểu nhu cầu và trao đổi về hướng triển khai phù hợp.",
+  footTag: "Hệ thống hút khói và cấp gió tươi cho bếp thương mại",
+  navLabel: "Menu chính",
+  s7t: "Cửa cấp gió tươi",
   s7d: "Quạt cấp và đường ống đưa không khí sạch từ bên ngoài vào bếp, bù lại lượng khí đã hút ra.",
-  photoAlt: "Ảnh công trình của Luke Duct",
+  photoAlt: "Ảnh công trình của Luke Mechanical",
   enlarge: "Xem ảnh lớn",
   lbClose: "Đóng",
   lbPrev: "Ảnh trước",
   lbNext: "Ảnh tiếp theo",
-  viewAll: "Xem toàn bộ ảnh",
-  galTitle: "Thư viện ảnh công trình · Luke Duct · Hút khói bếp thương mại, Victoria",
-  galMeta: "Ảnh chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện do Luke Duct gia công và lắp đặt khắp bang Victoria.",
+  viewAll: "Xem toàn bộ thư viện ảnh",
+  galTitle: "Thư viện ảnh công trình · Luke Mechanical · Hút khói bếp thương mại, Victoria",
+  galMeta: "Hình ảnh chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện do Luke Mechanical gia công và lắp đặt trên toàn bang Victoria.",
   galEyebrow: "Thư viện ảnh",
-  galH1: "Công trình, nhìn cận cảnh.",
-  galSub: "Chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện từ các công trình khắp Victoria. Bấm vào ảnh để xem lớn hơn.",
+  galH1: "Chỉn chu trong từng chi tiết.",
+  galSub: "Chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện từ các công trình trên toàn bang Victoria. Nhấn vào từng ảnh để xem kích thước lớn hơn.",
   galFilter: "Lọc ảnh",
   catAll: "Tất cả",
-  catCanopies: "Chụp hút",
+  catCanopies: "Chụp hút khói",
   catDuct: "Đường ống",
   catRoof: "Mái & điểm xả",
   catFitout: "Bếp hoàn thiện",
-  galCtaT: "Ưng ý với tay nghề?",
-  galCtaS: "Kể về căn bếp của anh chị, Luke Duct sẽ liên hệ để cùng trao đổi.",
-  galBack: "Về trang chủ"
+  galCtaT: "Bạn có dự án cần trao đổi?",
+  galCtaS: "Hãy chia sẻ một vài thông tin về khu bếp của bạn, Luke sẽ liên hệ để cùng trao đổi.",
+  galBack: "Về trang chủ",
+  contactDetails: "Thông tin liên hệ",
+  footArea: "Phục vụ trên toàn bang Victoria"
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -482,6 +486,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
       <p class="tag">${T.eyebrow}</p>
       <h1 class="h1"><span class="l1">${T.h1a}</span> <span class="l2">${T.h1b}</span></h1>
       <p class="lede">${T.lede}</p>
+      <p class="lede lede2">${T.lede2}</p>
 
       <div class="qwrap" id="quote">
         <h2 class="qtitle">${T.heroFormT}</h2>
@@ -601,8 +606,8 @@ function page(T, lang, kind = 'home', mode = 'site') {
 
                 <line class="sv-line" x1="24" y1="396" x2="736" y2="396"/>
                 <text class="sv-ttl" x="24" y="416">${T.dgTitle}</text>
-                <text class="sv-lgd" x="300" y="416" fill="#FF6B3D">● ${T.dgExhaust}</text>
-                <text class="sv-lgd" x="420" y="416" fill="#7CC0FF">● ${T.dgFresh}</text>
+                <text class="sv-lgd" x="24" y="32" fill="#FF6B3D">● ${T.dgExhaust}</text>
+                <text class="sv-lgd" x="24" y="50" fill="#7CC0FF">● ${T.dgFresh}</text>
                 <text class="sv-ttl" x="736" y="416" text-anchor="end">${T.dgScale}</text>
               </svg>
               <span class="pill p1" style="--x:344;--y:345;--k:6"><span class="pw"><span class="pi"><b>1</b><span class="pl">${T.s1t.replace(/\s*\(.*\)$/, '')}</span></span></span></span>
@@ -654,6 +659,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
         <h3 class="sendh">${T.sendH}</h3>
         <ul class="sendlist"><li>${T.l1}</li><li>${T.l2}</li><li>${T.l3}</li><li>${T.l4}</li><li>${T.l5}</li></ul>
         <div class="reach">
+          <h3 class="mono reach-h">${T.contactDetails}</h3>
           <div class="r"><span class="mono k">${T.kPhone}</span><a class="big" href="${tel}">${esc(C.phoneDisplay)}</a></div>
           ${C.email ? `<div class="r"><span class="mono k">${T.kEmail}</span><a class="v" href="mailto:${esc(C.email)}">${esc(C.email)}</a></div>` : ''}
           <div class="r"><span class="mono k">${T.kArea}</span><span>${T.areaVal}</span></div>
@@ -696,7 +702,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
   <footer class="foot dark">
     <div class="in">
       <div class="foot-l"><strong class="foot-name">${esc(C.company)}</strong><span>${T.footTag}</span></div>
-      <div class="foot-r"><span>${T.areaVal} · <a href="${tel}">${esc(C.phoneDisplay)}</a></span><span>© ${new Date().getFullYear()} ${esc(C.company)}${C.abn ? ' · ABN ' + esc(C.abn) : ''} · ${T.rights}</span></div>
+      <div class="foot-r"><span>${T.footArea} · <a href="${tel}">${esc(C.phoneDisplay)}</a></span><span>© ${new Date().getFullYear()} ${esc(C.company)}${C.abn ? ' · ABN ' + esc(C.abn) : ''}. ${T.rights}</span></div>
     </div>
   </footer>
 
@@ -735,7 +741,7 @@ function forPreview(html, prefix, hidden) {
 }
 const css = fs.readFileSync(path.join(root, 'assets', 'styles.css'), 'utf8');
 const js = fs.readFileSync(path.join(root, 'assets', 'main.js'), 'utf8');
-const preview = `<title>Luke Duct Website</title>
+const preview = `<title>Luke Mechanical Website</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400..700&amp;display=swap">
 <style>
 :root{color-scheme:dark}
