@@ -49,11 +49,26 @@
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         var data = new FormData(form);
-        var name = (data.get('name') || '').toString().trim();
-        var phone = (data.get('phone') || '').toString().trim();
-        if (!name || !phone) {
+        var get = function (k) { return (data.get(k) || '').toString().trim(); };
+        var name = get('name');
+        var phone = get('phone');
+        var email = get('email');
+        var contact = get('contact');           /* hero form: one box for phone or email */
+        if (contact) {
+          if (contact.indexOf('@') > -1) email = contact; else phone = contact;
+          data.delete('contact');
+          if (phone) data.set('phone', phone);
+          if (email) data.set('email', email);
+        }
+        var firstContact = form.querySelector('[name=contact],[name=phone]');
+        if (!name || (!phone && !email)) {
           notice(form, '', S.required, false);
-          (name ? form.querySelector('[name=phone]') : form.querySelector('[name=name]')).focus();
+          (name ? firstContact : form.querySelector('[name=name]')).focus();
+          return;
+        }
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          notice(form, '', S.badEmail, false);
+          (form.querySelector('[name=email]') || firstContact).focus();
           return;
         }
 
@@ -70,7 +85,7 @@
         submit.disabled = true;
         submit.textContent = S.sending;
         data.append('access_key', S.key);
-        data.append('subject', S.company + ' website: ' + name + ' (' + phone + ')');
+        data.append('subject', S.company + ' website: ' + name + ' (' + (phone || email) + ')');
         data.append('from_name', S.company + ' website');
         fetch('https://api.web3forms.com/submit', { method: 'POST', body: data, headers: { Accept: 'application/json' } })
           .then(function (r) { return r.json(); })

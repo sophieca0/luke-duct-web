@@ -470,3 +470,5 @@ body{margin:0;background:#1C1B1A}
 .pg .field input:focus,.pg .field textarea:focus,.pg .field select:focus,
 .pg .field input:focus-visible,.pg .field textarea:focus-visible,.pg .field select:focus-visible{outline:0;background:#fff;border-color:var(--line-strong);box-shadow:0 0 0 4px rgba(28,27,26,.06)}
 .field input,.field textarea,.field select{transition:border-color .25s ease,background .25s ease,box-shadow .25s ease}
+.contactpair{display:flex;flex-direction:column;gap:.45rem}
+.hint{font-size:.875rem;color:var(--muted)}

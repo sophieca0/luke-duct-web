@@ -45,7 +45,7 @@ const EN = {
   motionPause: 'Pause animation', motionPlay: 'Play animation',
   formTitle: 'Request a call back',
   formSub: "Leave your details and we'll call you back to talk through the job.",
-  fName: 'Your name', fPhone: 'Phone', fEmail: 'Email (optional)', fVenue: 'Type of kitchen', selectPh: 'Select…',
+  fName: 'Your name', fPhone: 'Phone', fEmail: 'Email', fContact: 'Phone or email', phContact: '04XX XXX XXX or email', contactHint: 'Phone or email: one is enough.', badEmail: 'Please check the email address.', fVenue: 'Type of kitchen', selectPh: 'Select…',
   phName: 'Full name', phPhone: '04XX XXX XXX', phEmail: 'name@example.com', phSuburb: 'e.g. Footscray',
   vTakeaway: 'Takeaway', vCafe: 'Café', vRestaurant: 'Restaurant', vHotel: 'Hotel', vSchool: 'School', vTruck: 'Food truck', vLarge: 'Large kitchen',
   fSuburb: 'Suburb', fDetails: 'Project details (optional)',
@@ -55,7 +55,7 @@ const EN = {
   fTime: 'Best time to call', tAny: 'Any time', tMorning: 'Morning', tAfternoon: 'Afternoon', tEvening: 'After 5pm',
   plansT: 'Have plans or photos?', plansS: 'Text them to',
   send: 'Call me back', sending: 'Sending…', prefer: 'Prefer to talk?',
-  required: 'Please enter your name and phone number.',
+  required: 'Please enter your name, plus a phone number or email.',
   okSent: "Thanks! We've got your request and will call you back soon.",
   okSms: 'Your messaging app should open with your details. Just press send. If it does not, call us on',
   errSend: "Sorry, that didn't go through. Please call us on",
@@ -116,7 +116,7 @@ const VI = {
   motionPause: 'Tạm dừng hiệu ứng', motionPlay: 'Phát hiệu ứng',
   formTitle: 'Yêu cầu gọi lại',
   formSub: 'Để lại thông tin, bên mình sẽ gọi lại để trao đổi về công trình.',
-  fName: 'Họ tên', fPhone: 'Số điện thoại', fEmail: 'Email (không bắt buộc)', fVenue: 'Loại bếp', selectPh: 'Chọn…',
+  fName: 'Họ tên', fPhone: 'Số điện thoại', fEmail: 'Email', fContact: 'Điện thoại hoặc email', phContact: '04XX XXX XXX hoặc email', contactHint: 'Chỉ cần điện thoại hoặc email.', badEmail: 'Email chưa đúng, anh chị kiểm tra lại giúp.', fVenue: 'Loại bếp', selectPh: 'Chọn…',
   phName: 'Họ và tên', phPhone: '04XX XXX XXX', phEmail: 'name@example.com', phSuburb: 'VD: Footscray',
   vTakeaway: 'Tiệm takeaway', vCafe: 'Quán café', vRestaurant: 'Nhà hàng', vHotel: 'Khách sạn', vSchool: 'Trường học', vTruck: 'Xe food truck', vLarge: 'Bếp lớn',
   fSuburb: 'Khu vực (suburb)', fDetails: 'Thông tin công trình (không bắt buộc)',
@@ -126,7 +126,7 @@ const VI = {
   fTime: 'Giờ tiện gọi', tAny: 'Giờ nào cũng được', tMorning: 'Buổi sáng', tAfternoon: 'Buổi chiều', tEvening: 'Sau 5 giờ chiều',
   plansT: 'Có bản vẽ hoặc ảnh?', plansS: 'Nhắn tin gửi qua số',
   send: 'Gọi lại cho tôi', sending: 'Đang gửi…', prefer: 'Muốn nói chuyện trực tiếp?',
-  required: 'Anh chị vui lòng nhập họ tên và số điện thoại.',
+  required: 'Anh chị vui lòng nhập họ tên, và số điện thoại hoặc email.',
   okSent: 'Cảm ơn anh chị! Bên mình đã nhận yêu cầu và sẽ gọi lại sớm.',
   okSms: 'Ứng dụng tin nhắn sẽ mở sẵn thông tin của anh chị, chỉ cần bấm gửi. Nếu không mở được, anh chị gọi',
   errSend: 'Xin lỗi, gửi chưa được. Anh chị vui lòng gọi',
@@ -215,7 +215,7 @@ function page(T, lang) {
   const reviews = C.reviews.map((r) => `<blockquote class="quote"><p>${esc((lang === 'vi' && r.vi) || r.en)}</p><span class="mono by">${esc(r.by)}</span></blockquote>`).join('\n');
 
   const venueOpts = `<option value="" selected>${T.selectPh}</option>` + [T.vTakeaway, T.vCafe, T.vRestaurant, T.vHotel, T.vSchool, T.vTruck, T.vLarge].map((v) => `<option value="${v}">${v}</option>`).join('');
-  const msgs = { required: T.required, okSent: T.okSent, okSms: T.okSms, errSend: T.errSend, sending: T.sending, smsHead: T.smsHead, phone: C.phoneDisplay, tel, sms, key: C.web3formsKey, company: C.company, pause: T.motionPause, play: T.motionPlay, labels: { name: T.fName, phone: T.fPhone, email: T.fEmail, suburb: T.fSuburb, kitchen_type: T.fVenue, request: T.fWant, system: T.fService, call_time: T.fTime, details: T.fDetails } };
+  const msgs = { badEmail: T.badEmail, required: T.required, okSent: T.okSent, okSms: T.okSms, errSend: T.errSend, sending: T.sending, smsHead: T.smsHead, phone: C.phoneDisplay, tel, sms, key: C.web3formsKey, company: C.company, pause: T.motionPause, play: T.motionPlay, labels: { name: T.fName, phone: T.fPhone, email: T.fEmail, suburb: T.fSuburb, kitchen_type: T.fVenue, request: T.fWant, system: T.fService, call_time: T.fTime, details: T.fDetails } };
 
   const ldjson = {
     '@context': 'https://schema.org', '@type': 'HVACBusiness', name: C.company, telephone: C.phoneIntl,
@@ -290,7 +290,7 @@ function page(T, lang) {
         <form class="qbar js-enquiry" novalidate>
           <input type="hidden" name="source" value="Hero form (${lang.toUpperCase()})">
           <label class="qf"><span class="ql">${T.fName}</span><input type="text" name="name" autocomplete="name" placeholder="${T.phName}" required></label>
-          <label class="qf"><span class="ql">${T.fPhone}</span><input type="tel" name="phone" autocomplete="tel" placeholder="${T.phPhone}" required></label>
+          <label class="qf"><span class="ql">${T.fContact}</span><input type="text" name="contact" autocomplete="tel" placeholder="${T.phContact}"></label>
           <label class="qf"><span class="ql">${T.fVenue}</span><span class="sel"><select name="kitchen_type">${venueOpts}</select></span></label>
           <label class="qf"><span class="ql">${T.fSuburb}</span><input type="text" name="suburb" autocomplete="address-level2" placeholder="${T.phSuburb}"></label>
           <button class="btn btn-primary" type="submit">${T.send} ${ARROW}</button>
@@ -463,29 +463,20 @@ function page(T, lang) {
             <input type="hidden" name="request" value="${T.wCall}">
             <div class="row2">
               <div class="field"><label for="c-name">${T.fName} <span class="req" aria-hidden="true">*</span></label><input id="c-name" type="text" name="name" autocomplete="name" placeholder="${T.phName}" required></div>
-              <div class="field"><label for="c-phone">${T.fPhone} <span class="req" aria-hidden="true">*</span></label><input id="c-phone" type="tel" name="phone" autocomplete="tel" placeholder="${T.phPhone}" required></div>
-            </div>
-            <div class="row2">
-              <div class="field"><label for="c-email">${T.fEmail}</label><input id="c-email" type="email" name="email" autocomplete="email" placeholder="${T.phEmail}"></div>
               <div class="field"><label for="c-suburb">${T.fSuburb}</label><input id="c-suburb" type="text" name="suburb" autocomplete="address-level2" placeholder="${T.phSuburb}"></div>
             </div>
-            <fieldset class="fs">
-              <legend class="legend">${T.fService}</legend>
-              <div class="chips c3">
-                <label class="chip"><input type="radio" name="system" value="${T.svExhaust}"><span>${T.svExhaust}</span></label>
-                <label class="chip"><input type="radio" name="system" value="${T.svFresh}"><span>${T.svFresh}</span></label>
-                <label class="chip"><input type="radio" name="system" value="${T.svBoth}"><span>${T.svBoth}</span></label>
+            <div class="contactpair">
+              <div class="row2">
+                <div class="field"><label for="c-phone">${T.fPhone}</label><input id="c-phone" type="tel" name="phone" autocomplete="tel" placeholder="${T.phPhone}" aria-describedby="c-hint"></div>
+                <div class="field"><label for="c-email">${T.fEmail}</label><input id="c-email" type="email" name="email" autocomplete="email" placeholder="${T.phEmail}" aria-describedby="c-hint"></div>
               </div>
-            </fieldset>
+              <p class="hint" id="c-hint"><span class="req" aria-hidden="true">*</span> ${T.contactHint}</p>
+            </div>
             <div class="row2">
               <div class="field"><label for="c-venue">${T.fVenue}</label><span class="sel"><select id="c-venue" name="kitchen_type">${venueOpts}</select></span></div>
               <div class="field"><label for="c-time">${T.fTime}</label><span class="sel"><select id="c-time" name="call_time"><option value="${T.tAny}">${T.tAny}</option><option value="${T.tMorning}">${T.tMorning}</option><option value="${T.tAfternoon}">${T.tAfternoon}</option><option value="${T.tEvening}">${T.tEvening}</option></select></span></div>
             </div>
             <div class="field"><label for="c-details">${T.fDetails}</label><textarea id="c-details" name="details" rows="3" placeholder="${T.fDetailsPh}"></textarea></div>
-            <a class="filebtn" href="${sms}">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="ico-s" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.5 12.5 21a5 5 0 0 1-7-7L14 5.5a3.2 3.2 0 0 1 4.5 4.5L10 18.5a1.4 1.4 0 0 1-2-2L15.5 9"/></svg>
-              <span><strong>${T.plansT}</strong><small>${T.plansS} ${esc(C.phoneDisplay)}</small></span>
-            </a>
             <button class="btn btn-primary btn-block" type="submit">${T.send} ${ARROW}</button>
           </form>
           <p class="notice" role="status" hidden></p>
