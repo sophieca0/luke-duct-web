@@ -641,3 +641,26 @@ body{margin:0;background:#1C1B1A}
   .lname{display:flex;flex-direction:column;white-space:normal;overflow:visible;text-overflow:clip;line-height:1.05}
   .lname2{font-size:.78em;font-weight:700;color:var(--band-muted)}
 }
+
+/* ===== hero chips: six highlights, Victoria emphasised ===== */
+.tchips{grid-template-columns:repeat(3,minmax(0,1fr));max-width:1000px}
+.tchips .chip-area{border-color:color-mix(in srgb,var(--acc) 75%,transparent);background:color-mix(in srgb,var(--acc) 12%,transparent);box-shadow:0 0 0 1px color-mix(in srgb,var(--acc) 35%,transparent),0 10px 34px -10px var(--glow)}
+.tchips .chip-area .tic{position:relative;background:var(--grad);color:var(--acc-ink)}
+.tchips .chip-area .tic::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--acc);animation:areaPulse 2.8s ease-out infinite;pointer-events:none}
+.tchips .chip-area .v{color:#fff}
+@keyframes areaPulse{0%{transform:scale(1);opacity:.75}75%,100%{transform:scale(1.65);opacity:0}}
+.pg.motion-off .tchips .chip-area .tic::after{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.tchips .chip-area .tic::after{animation:none;opacity:0}}
+@media (max-width:1040px){.tchips{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){
+  .tchips{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .tchips li{padding:.75rem .85rem;gap:.65rem}
+  .tchips .tic{width:36px;height:36px}
+  .tchips .tic svg{width:18px;height:18px}
+  .tchips .v{font-size:.875rem}
+}
+@media (max-width:560px){
+  .tchips{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tchips .chip-sys{display:none}
+  .tchips .chip-area{grid-column:1/-1}
+}

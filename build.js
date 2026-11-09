@@ -167,7 +167,7 @@ const EN = {
   hl1: "Exhaust & Fresh Air Systems",
   hl2: "Custom Fabrication",
   hl3: "Made In-House",
-  hl4: "Servicing All of Victoria",
+  hl4: "Servicing All of Victoria", hl5: "Fully licensed", hl6: "5 years of experience",
   hlLabel: "What we do",
   expSub: "A good result takes the right technical knowledge, practical thinking and care in every detail.",
   expSub2: "Here's what you can expect when working with Luke Commercial Kitchen.",
@@ -287,7 +287,7 @@ const VI = {
   hl1: "Hệ thống hút khói và cấp gió tươi",
   hl2: "Gia công theo yêu cầu",
   hl3: "Sản xuất trực tiếp tại xưởng",
-  hl4: "Phục vụ trên toàn bang Victoria",
+  hl4: "Phục vụ trên toàn bang Victoria", hl5: "Có đầy đủ giấy phép", hl6: "5 năm kinh nghiệm",
   hlLabel: "Điểm nổi bật",
   expSub: "Một công trình hoàn thiện tốt cần có kiến thức kỹ thuật, tư duy thực tế và sự cẩn thận trong từng chi tiết.",
   expSub2: "Đây là những gì anh chị có thể trông đợi khi làm việc với Luke Commercial Kitchen.",
@@ -354,7 +354,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
   const sms = 'sms:' + C.phoneIntl;
   const pageUrl = C.siteUrl + (lang === 'vi' ? 'vi/' : '') + (isG ? 'gallery/' : '');
 
-  const chip = (icon, k, v) => `<li><span class="tic"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg></span><span>${k ? `<span class="mono k">${k}</span>` : ''}<span class="v">${v}</span></span></li>`;
+  const chip = (icon, k, v, cls = '') => `<li${cls ? ` class="${cls}"` : ''}><span class="tic"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg></span><span>${k ? `<span class="mono k">${k}</span>` : ''}<span class="v">${v}</span></span></li>`;
   const IC = {
     flow: '<path d="M3 8h12a3 3 0 1 0-3-3M3 16h15a3 3 0 1 1-3 3M3 12h18"/>',
     tool: '<path d="M14.5 6.5a4 4 0 0 0 5 5L11 20a2.1 2.1 0 0 1-3-3z"/>',
@@ -365,16 +365,17 @@ function page(T, lang, kind = 'home', mode = 'site') {
     shield: '<path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/>',
     clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
   };
+  // Hero highlights: 3 columns on desktop, 2 on phones. The Victoria chip is
+  // emphasised so nobody reads the service area as Australia-wide. On phones the
+  // first chip (it repeats the headline) is hidden and the Victoria chip spans both columns.
   const chips = [
-    chip(IC.flow, '', esc(T.hl1)),
+    chip(IC.flow, '', esc(T.hl1), 'chip-sys'),
     chip(IC.tool, '', esc(T.hl2)),
     chip(IC.shop, '', esc(T.hl3)),
-    chip(IC.pin, '', esc(T.hl4)),
+    chip(IC.badge, '', esc(T.hl5)),
+    chip(IC.clock, '', esc(T.hl6)),
+    chip(IC.pin, '', esc(T.hl4), 'chip-area'),
   ];
-  if (C.licence) chips.push(chip(IC.badge, T.trustLicence, esc(C.licence)));
-  if (C.insurance) chips.push(chip(IC.shield, T.trustInsured, esc(C.insurance)));
-  if (C.years) chips.push(chip(IC.clock, T.trustExp, esc(/^\d+\+?$/.test(C.years) ? C.years + ' ' + T.yearsUnit : C.years)));
-  if (chips.length % 4 !== 0) chips.push(chip(IC.phone, T.trustCall, `<a class="v" href="${tel}">${esc(C.phoneDisplay)}</a>`));
 
   const tile = (p, i) => {
     const alt = (typeof p[lang] === 'string' ? p[lang] : p.en) || T.photoAlt + ' ' + (i + 1);
