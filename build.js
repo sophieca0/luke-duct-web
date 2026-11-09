@@ -5,6 +5,7 @@
  * It writes index.html (English) and vi/index.html (Tiếng Việt).
  */
 const fs = require('fs');
+const PRIVACY = require('./privacy-text.js');
 const path = require('path');
 
 /* ====================== BUSINESS DETAILS ====================== */
@@ -201,7 +202,11 @@ const EN = {
   galCtaS: "Tell us about your kitchen and we'll get in touch to talk it through.",
   galBack: "Back to home",
   contactDetails: "Contact Details",
-  footArea: "Victoria-wide"
+  footArea: "Victoria-wide",
+  privacyLink: "Privacy Policy",
+  privTitle: "Privacy Policy · Luke Commercial Kitchen",
+  privMeta: "How Luke Commercial Kitchen collects, uses and protects the personal information you share through lukecomkitchen.com.",
+  privEyebrow: "Privacy"
 };
 
 const VI = {
@@ -320,7 +325,11 @@ const VI = {
   galCtaS: "Hãy chia sẻ một vài thông tin về khu bếp của bạn, Luke sẽ liên hệ để cùng trao đổi.",
   galBack: "Về trang chủ",
   contactDetails: "Thông tin liên hệ",
-  footArea: "Phục vụ trên toàn bang Victoria"
+  footArea: "Phục vụ trên toàn bang Victoria",
+  privacyLink: "Chính sách quyền riêng tư",
+  privTitle: "Chính sách quyền riêng tư · Luke Commercial Kitchen",
+  privMeta: "Cách Luke Commercial Kitchen thu thập, sử dụng và bảo vệ thông tin cá nhân bạn chia sẻ qua lukecomkitchen.com.",
+  privEyebrow: "Quyền riêng tư"
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -343,16 +352,20 @@ const SMOKE = (n) => '<div class="smoke" aria-hidden="true">' + '<i></i>'.repeat
 function page(T, lang, kind = 'home', mode = 'site') {
   const C = CONFIG;
   const isG = kind === 'gallery';
-  const view = (l, k) => (k === 'gallery' ? (l === 'vi' ? 'vi-gallery' : 'gallery') : l);
-  const pfx = (l, k) => ({ 'en-home': '', 'vi-home': 'vi-', 'en-gallery': 'g-', 'vi-gallery': 'vig-' })[l + '-' + k];
-  const up = (lang === 'vi' ? '../' : '') + (isG ? '../' : '');
+  const isP = kind === 'privacy';
+  const sub = kind !== 'home';
+  const slug = sub ? kind + '/' : '';
+  const view = (l, k) => (k === 'home' ? l : (l === 'vi' ? 'vi-' : '') + k);
+  const pfx = (l, k) => ({ 'en-home': '', 'vi-home': 'vi-', 'en-gallery': 'g-', 'vi-gallery': 'vig-', 'en-privacy': 'p-', 'vi-privacy': 'vip-' })[l + '-' + k];
+  const up = (lang === 'vi' ? '../' : '') + (sub ? '../' : '');
   const R = mode === 'preview' ? '' : up;           // path back to site root (for assets)
-  const HL = (a) => (!isG ? '#' + a : mode === 'preview' ? '#!' + pfx(lang, 'home') + a : '../#' + a);   // link to a home-page section
+  const HL = (a) => (!sub ? '#' + a : mode === 'preview' ? '#!' + pfx(lang, 'home') + a : '../#' + a);   // link to a home-page section
   const GL = mode === 'preview' ? '#!' + view(lang, 'gallery') : 'gallery/';                                // home -> gallery
-  const LL = (to) => (mode === 'preview' ? '#!' + view(to, kind) : (up + (to === 'vi' ? 'vi/' : '') + (isG ? 'gallery/' : '')) || './');
+  const LL = (to) => (mode === 'preview' ? '#!' + view(to, kind) : (up + (to === 'vi' ? 'vi/' : '') + slug) || './');
+  const PL = mode === 'preview' ? '#!' + view(lang, 'privacy') : up + (lang === 'vi' ? 'vi/' : '') + 'privacy/';
   const tel = 'tel:' + C.phoneIntl;
   const sms = 'sms:' + C.phoneIntl;
-  const pageUrl = C.siteUrl + (lang === 'vi' ? 'vi/' : '') + (isG ? 'gallery/' : '');
+  const pageUrl = C.siteUrl + (lang === 'vi' ? 'vi/' : '') + slug;
 
   const chip = (icon, k, v, cls = '') => `<li${cls ? ` class="${cls}"` : ''}><span class="tic"><svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg></span><span>${k ? `<span class="mono k">${k}</span>` : ''}<span class="v">${v}</span></span></li>`;
   const IC = {
@@ -387,6 +400,30 @@ function page(T, lang, kind = 'home', mode = 'site') {
   const allTiles = C.photos.map(tile).join('\n');
   const DIALOG = `<dialog class="lb" aria-label="${T.workEyebrow}"><img class="lbimg" src="" alt=""><button class="lbbtn lbclose" type="button" aria-label="${T.lbClose}">&times;</button><button class="lbbtn lbprev" type="button" aria-label="${T.lbPrev}">&#8249;</button><button class="lbbtn lbnext" type="button" aria-label="${T.lbNext}">&#8250;</button></dialog>`;
   const cats = [['all', T.catAll], ['canopies', T.catCanopies], ['ductwork', T.catDuct], ['roof', T.catRoof], ['fitout', T.catFitout]].filter(([c]) => c === 'all' || C.photos.some((p) => p.cat === c));
+  const PV = PRIVACY[lang];
+  const linkify = (t) => esc(t)
+    .replace(/lukecomkitchen@gmail\.com/g, '<a href="mailto:lukecomkitchen@gmail.com">lukecomkitchen@gmail.com</a>')
+    .replace(/0466 404 868/g, `<a href="${tel}">0466 404 868</a>`)
+    .replace(/\b(web3forms\.com|adssettings\.google\.com|oaic\.gov\.au)\b/g, '<a href="https://$1" rel="noopener" target="_blank">$1</a>');
+  const privacyMain = `
+  <main>
+  <section class="hero dark gal-top priv-top">
+    ${SMOKE(5)}
+    <div class="in">
+      <p class="tag">${T.privEyebrow}</p>
+      <h1 class="h1 gal-h1">${esc(PV.title)}</h1>
+      <p class="lede">${esc(PV.updated)}</p>
+    </div>
+  </section>
+  <section class="sec sheet light priv">
+    <div class="in">
+      <article class="prose">
+        <p class="priv-intro">${linkify(PV.intro)}</p>
+        ${PV.sections.map(([h, p]) => `<h2>${esc(h)}</h2>\n        <p>${linkify(p)}</p>`).join('\n        ')}
+      </article>
+    </div>
+  </section>
+  </main>`;
   const galleryMain = `
   <main>
   <section class="hero dark gal-top">
@@ -419,7 +456,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
   const msgs = { badEmail: T.badEmail, required: T.required, okSent: T.okSent, okSms: T.okSms, errSend: T.errSend, sending: T.sending, smsHead: T.smsHead, phone: C.phoneDisplay, tel, sms, key: C.web3formsKey, company: C.company, pause: T.motionPause, play: T.motionPlay, labels: { name: T.fName, phone: T.fPhone, email: T.fEmail, suburb: T.fSuburb, kitchen_type: T.fVenue, request: T.fWant, system: T.fService, call_time: T.fTime, details: T.fDetails } };
 
   const ldjson = {
-    '@context': 'https://schema.org', '@type': 'HVACBusiness', name: C.company, telephone: C.phoneIntl,
+    '@context': 'https://schema.org', '@type': 'LocalBusiness', name: C.company, telephone: C.phoneIntl,
     url: pageUrl, areaServed: { '@type': 'State', name: 'Victoria, Australia' },
     description: EN.metaDesc,
   };
@@ -430,15 +467,15 @@ function page(T, lang, kind = 'home', mode = 'site') {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(isG ? T.galTitle : T.title)}</title>
-<meta name="description" content="${esc(isG ? T.galMeta : T.metaDesc)}">
+<title>${esc(isG ? T.galTitle : isP ? T.privTitle : T.title)}</title>
+<meta name="description" content="${esc(isG ? T.galMeta : isP ? T.privMeta : T.metaDesc)}">
 <link rel="canonical" href="${pageUrl}">
-<link rel="alternate" hreflang="en-AU" href="${C.siteUrl}${isG ? 'gallery/' : ''}">
-<link rel="alternate" hreflang="vi" href="${C.siteUrl}vi/${isG ? 'gallery/' : ''}">
-<link rel="alternate" hreflang="x-default" href="${C.siteUrl}${isG ? 'gallery/' : ''}">
+<link rel="alternate" hreflang="en-AU" href="${C.siteUrl}${slug}">
+<link rel="alternate" hreflang="vi" href="${C.siteUrl}vi/${slug}">
+<link rel="alternate" hreflang="x-default" href="${C.siteUrl}${slug}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="${esc(isG ? T.galTitle : T.title)}">
-<meta property="og:description" content="${esc(isG ? T.galMeta : T.metaDesc)}">
+<meta property="og:title" content="${esc(isG ? T.galTitle : isP ? T.privTitle : T.title)}">
+<meta property="og:description" content="${esc(isG ? T.galMeta : isP ? T.privMeta : T.metaDesc)}">
 <meta property="og:url" content="${pageUrl}">
 <meta property="og:locale" content="${T.ogLocale}">
 <meta name="theme-color" content="#1C1B1A">
@@ -480,7 +517,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
     </div>
   </header>
 
-  ${isG ? galleryMain : `
+  ${isG ? galleryMain : isP ? privacyMain : `
   <section class="hero dark">
     ${SMOKE(7)}
     <div class="in in-w">
@@ -703,7 +740,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
   <footer class="foot dark">
     <div class="in">
       <div class="foot-l"><strong class="foot-name">${esc(C.company)}</strong><span>${T.footTag}</span></div>
-      <div class="foot-r"><span>${T.footArea} · <a href="${tel}">${esc(C.phoneDisplay)}</a></span><span>© ${new Date().getFullYear()} ${esc(C.company)}${C.abn ? ' · ABN ' + esc(C.abn) : ''}. ${T.rights}</span></div>
+      <div class="foot-r"><span>${T.footArea} · <a href="${tel}">${esc(C.phoneDisplay)}</a></span><span>© ${new Date().getFullYear()} ${esc(C.company)}${C.abn ? ' · ABN ' + esc(C.abn) : ''}. ${T.rights} · <a href="${PL}"${isP ? ' aria-current="page"' : ''}>${T.privacyLink}</a></span></div>
     </div>
   </footer>
 
@@ -725,14 +762,16 @@ out('index.html', page(EN, 'en'));
 out('vi/index.html', page(VI, 'vi'));
 out('gallery/index.html', page(EN, 'en', 'gallery'));
 out('vi/gallery/index.html', page(VI, 'vi', 'gallery'));
-console.log('Built index.html, vi/index.html, gallery/index.html, vi/gallery/index.html');
+out('privacy/index.html', page(EN, 'en', 'privacy'));
+out('vi/privacy/index.html', page(VI, 'vi', 'privacy'));
+console.log('Built home, gallery and privacy pages (EN + VI)');
 
 /* ---- sitemap.xml + robots.txt (for Google) ----
    Plain sitemap: language alternates are already declared in each page's <head>. */
 {
   const today = new Date().toISOString().slice(0, 10);
   const U = CONFIG.siteUrl;
-  const locs = ['', 'vi/', 'gallery/', 'vi/gallery/'];
+  const locs = ['', 'vi/', 'gallery/', 'vi/gallery/', 'privacy/', 'vi/privacy/'];
   const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     locs.map((l) => `  <url>\n    <loc>${U}${l}</loc>\n    <lastmod>${today}</lastmod>\n  </url>\n`).join('') + '</urlset>\n';
   out('sitemap.xml', xml);
@@ -765,10 +804,12 @@ ${forPreview(page(EN, 'en', 'home', 'preview'), '', false)}
 ${forPreview(page(VI, 'vi', 'home', 'preview'), 'vi-', true)}
 ${forPreview(page(EN, 'en', 'gallery', 'preview'), 'g-', true)}
 ${forPreview(page(VI, 'vi', 'gallery', 'preview'), 'vig-', true)}
+${forPreview(page(EN, 'en', 'privacy', 'preview'), 'p-', true)}
+${forPreview(page(VI, 'vi', 'privacy', 'preview'), 'vip-', true)}
 <script>
 ${js}
 (function () {
-  var views = { en: 1, vi: 1, gallery: 1, 'vi-gallery': 1 };
+  var views = { en: 1, vi: 1, gallery: 1, 'vi-gallery': 1, privacy: 1, 'vi-privacy': 1 };
   function show() {
     var h = location.hash.slice(1), pg = null, target = null;
     if (views[h]) pg = document.querySelector('.pg[data-view="' + h + '"]');

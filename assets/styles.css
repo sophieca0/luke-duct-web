@@ -664,3 +664,12 @@ body{margin:0;background:#1C1B1A}
   .tchips .chip-sys{display:none}
   .tchips .chip-area{grid-column:1/-1}
 }
+
+/* ===== privacy page ===== */
+.priv{padding-top:clamp(48px,6vw,80px)}
+.prose{max-width:44rem;margin-inline:auto;color:var(--ink)}
+.prose .priv-intro{font-size:1.125rem;line-height:1.7;color:var(--ink)}
+.prose h2{margin-top:2.2rem;font-size:clamp(1.2rem,2vw,1.45rem);font-weight:800;font-stretch:112%;line-height:1.25}
+.prose p{margin-top:.6rem;color:var(--muted);line-height:1.75}
+.prose a{color:var(--accent);font-weight:600;text-underline-offset:3px;overflow-wrap:anywhere}
+.foot a[aria-current="page"]{text-decoration:none;opacity:.7}
