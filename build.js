@@ -87,13 +87,13 @@ const CONFIG = {
 /* ====================== TEXT ====================== */
 const EN = {
   htmlLang: 'en', ogLocale: 'en_AU',
-  title: "Luke Commercial Kitchen · Commercial Kitchen Exhaust & Fresh Air Systems in Victoria",
-  metaDesc: "Luke Commercial Kitchen fabricates and installs commercial kitchen exhaust and fresh air systems across Victoria, with practical advice and neat, careful workmanship. Call 0466 404 868.",
+  title: "Luke Commercial Kitchen · Commercial Kitchen Exhaust & Fresh Air, Melbourne & Victoria",
+  metaDesc: "Commercial kitchen exhaust and fresh air systems, fabricated and installed across Melbourne and Victoria. Practical advice, neat workmanship. Call 0466 404 868.",
   navSystem: "The System", navProcess: "Process", navContact: "Contact", navWork: "Our Work",
   call: 'Call', quote: "Request a Call Back", quoteShort: "Request a Call Back",
-  eyebrow: "Commercial kitchen exhaust & fresh air · Victoria",
+  eyebrow: "Melbourne & all of Victoria",
   h1a: "Commercial Kitchen Exhaust & Fresh Air,", h1b: "Done Right.",
-  lede: "We fabricate and install exhaust and fresh air systems for cafés, takeaways, restaurants and large commercial kitchens across Victoria.",
+  lede: "Exhaust and fresh air systems for cafés, restaurants and commercial kitchens across Melbourne and Victoria. Made in-house, installed neatly.",
   motionPause: 'Pause animation', motionPlay: 'Play animation',
   formTitle: 'Request a call back',
   formSub: "Leave your details and we'll call you back to talk through the job.",
@@ -164,7 +164,7 @@ const EN = {
   navWhy: "Why Us",
   lede2: "Luke brings strong technical experience, practical advice and neat, careful workmanship to every job, from straightforward installations to more challenging projects.",
   heroFormT: "Let's Talk About Your Project",
-  heroFormS: "Tell us a little about your kitchen and what you're planning. We'll get in touch to discuss your needs and how we can help.",
+  heroFormS: "Leave your details and we'll call you back.",
   hl1: "Exhaust & Fresh Air Systems",
   hl2: "Custom Fabrication",
   hl3: "Made In-House",
@@ -211,13 +211,13 @@ const EN = {
 
 const VI = {
   htmlLang: 'vi', ogLocale: 'vi_VN',
-  title: "Luke Commercial Kitchen · Hệ thống hút khói và cấp gió tươi cho bếp thương mại tại Victoria",
-  metaDesc: "Luke Commercial Kitchen gia công và lắp đặt hệ thống hút khói, cấp gió tươi cho bếp thương mại trên toàn bang Victoria. Gọi 0466 404 868.",
+  title: "Luke Commercial Kitchen · Hút khói & cấp gió tươi cho bếp thương mại, Melbourne & Victoria",
+  metaDesc: "Hệ thống hút khói và cấp gió tươi cho bếp thương mại, gia công và lắp đặt tại Melbourne và khắp bang Victoria. Gọi 0466 404 868.",
   navSystem: "Hệ thống", navProcess: "Quy trình", navContact: "Liên hệ", navWork: "Công trình đã thực hiện",
   call: "Gọi", quote: "Yêu cầu gọi lại", quoteShort: "Yêu cầu gọi lại",
-  eyebrow: "Hệ thống hút khói và cấp gió tươi cho bếp thương mại tại Victoria",
-  h1a: "Hệ thống hút khói và cấp gió tươi cho bếp thương mại,", h1b: "làm đúng ngay từ đầu.",
-  lede: "Luke Commercial Kitchen chuyên gia công và lắp đặt hệ thống hút khói, cấp gió tươi cho các quán ăn, quán cà phê, nhà hàng và bếp thương mại quy mô lớn trên toàn bang Victoria.",
+  eyebrow: "Melbourne và toàn bang Victoria",
+  h1a: "Hút khói & cấp gió tươi cho bếp thương mại,", h1b: "làm đúng ngay từ đầu.",
+  lede: "Hệ thống hút khói và cấp gió tươi cho quán ăn, nhà hàng và bếp thương mại tại Melbourne và khắp bang Victoria. Tự gia công tại xưởng, thi công gọn gàng.",
   motionPause: 'Tạm dừng hiệu ứng', motionPlay: 'Phát hiệu ứng',
   formTitle: 'Yêu cầu gọi lại',
   formSub: "Để lại thông tin, Luke sẽ gọi lại để trao đổi về dự án của bạn.",
@@ -288,7 +288,7 @@ const VI = {
   navWhy: "Tại sao chọn chúng tôi",
   lede2: "Với nền tảng kỹ thuật vững chắc, tư vấn thực tế và sự chỉn chu trong từng công đoạn, Luke luôn hướng đến giải pháp phù hợp và chất lượng hoàn thiện tốt nhất cho mỗi dự án, từ những công trình đơn giản đến các hạng mục phức tạp.",
   heroFormT: "Trao đổi về dự án của bạn",
-  heroFormS: "Hãy chia sẻ một vài thông tin về khu bếp và kế hoạch của bạn. Luke sẽ liên hệ để tìm hiểu nhu cầu và trao đổi về phương án phù hợp.",
+  heroFormS: "Để lại thông tin, Luke sẽ gọi lại cho bạn.",
   hl1: "Hệ thống hút khói và cấp gió tươi",
   hl2: "Gia công theo yêu cầu",
   hl3: "Sản xuất trực tiếp tại xưởng",
@@ -524,7 +524,6 @@ function page(T, lang, kind = 'home', mode = 'site') {
       <p class="tag">${T.eyebrow}</p>
       <h1 class="h1"><span class="l1">${T.h1a}</span> <span class="l2">${T.h1b}</span></h1>
       <p class="lede">${T.lede}</p>
-      <p class="lede lede2">${T.lede2}</p>
 
       <div class="qwrap" id="quote">
         <h2 class="qtitle">${T.heroFormT}</h2>
