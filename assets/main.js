@@ -1,3 +1,37 @@
+/* ---- Google Ads tracking ----
+   Conversion IDs from Google Ads (Goals > Conversions).
+   Set id to "" to switch all tracking off: nothing is loaded or sent. */
+var ADS = {
+  id: 'AW-18563134906',
+  formLabel: 'fWxMCKjOiLUdELrry5NF',   /* "Submit lead form (2)" conversion */
+  callLabel: 'StDzCKvOiLUdELrry5NF'    /* "Click to call" conversion */
+};
+
+function adsConvert(label) {
+  try {
+    if (ADS.id && label && window.gtag) {
+      window.gtag('event', 'conversion', { send_to: ADS.id + '/' + label });
+    }
+  } catch (err) {}
+}
+
+(function () {
+  if (!ADS.id) return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ADS.id);
+  document.head.appendChild(s);
+  window.gtag('js', new Date());
+  window.gtag('config', ADS.id);
+  /* every tel: link, including ones added later */
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+    if (a) adsConvert(ADS.callLabel);
+  });
+})();
+
 (function () {
   var saved = null;
   try { saved = localStorage.getItem('ld-motion'); } catch (e) {}
@@ -93,6 +127,7 @@
             if (!j.success) throw new Error(j.message || 'failed');
             form.reset();
             notice(form, 'ok', S.okSent, false);
+            adsConvert(ADS.formLabel);
           })
           .catch(function () { notice(form, '', S.errSend, true); })
           .then(function () { submit.disabled = false; submit.innerHTML = oldHtml; });
