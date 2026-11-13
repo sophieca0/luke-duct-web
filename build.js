@@ -589,8 +589,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
         <div class="shead">
           <p class="tag">${T.scopeEyebrow}</p>
           <h2 class="h2">${T.scopeH2}</h2>
-          <p class="sub">${T.scopeSub}</p>
-          <p class="sub sub2">${T.scopeSub2}</p>
+          <div class="sys-intro"><p>${T.scopeSub}</p><p>${T.scopeSub2}</p></div>
         </div>
         <div class="sgrid">
           <figure class="panel">
