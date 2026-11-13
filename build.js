@@ -208,13 +208,17 @@ const EN = {
   privMeta: "How Luke Commercial Kitchen collects, uses and protects the personal information you share through lukecomkitchen.com.",
   privEyebrow: "Privacy",
   hookSysT: "Years of Hard Work Shouldn't Go Up in Smoke.",
-  hookSysS: "Get the exhaust and fresh air right from the start. Talk to Luke about your kitchen.",
+  hookSysS: "Get the exhaust and fresh air right from the start. Talk to Luke before you build.",
   contactHook: "You've put everything into your venue. Don't let poor ventilation undo it.",
   scopeLead: "Setting up a new restaurant or upgrading your kitchen? Let's get the ventilation right.",
   scopeP1: "A busy commercial kitchen needs more than just an exhaust fan. Smoke, heat and grease need to be effectively removed, while fresh air needs to flow back in to keep the space comfortable.",
   scopeP2: "Both systems play an important role and need to work together.",
   scopeP3: "Luke can help you get the right setup for your kitchen, from assessing the space and recommending a suitable solution to fabrication and installation of the complete exhaust and fresh air systems.",
-  scopeP4: "Every kitchen is different. Let's find the right solution for yours."
+  scopeP4: "Every kitchen is different. Let's find the right solution for yours.",
+  orEmail: "or email",
+  orCall: "or call",
+  utilArea: "Servicing all of Victoria",
+  utilLabel: "Contact details"
 };
 
 const VI = {
@@ -339,13 +343,17 @@ const VI = {
   privMeta: "Cách Luke Commercial Kitchen thu thập, sử dụng và bảo vệ thông tin cá nhân bạn chia sẻ qua lukecomkitchen.com.",
   privEyebrow: "Quyền riêng tư",
   hookSysT: "Đừng để bao công sức của quán tan theo khói bếp.",
-  hookSysS: "Làm đúng phần hút khói và gió tươi ngay từ đầu. Trao đổi với Luke về căn bếp của bạn.",
+  hookSysS: "Làm đúng phần hút khói và gió tươi ngay từ đầu. Hãy trao đổi với Luke trước khi thi công.",
   contactHook: "Bạn đã dồn hết tâm huyết cho quán. Đừng để hệ thống thông gió kém làm uổng công.",
   scopeLead: "Bạn đang chuẩn bị mở nhà hàng hay muốn nâng cấp khu bếp hiện tại? Hãy cùng Luke tính toán hệ thống thông gió cho thật phù hợp.",
   scopeP1: "Một căn bếp thương mại không chỉ cần hệ thống hút khói tốt. Khói, hơi nóng và dầu mỡ cần được hút ra ngoài hiệu quả, đồng thời phải có đủ gió tươi đưa vào để không gian luôn thông thoáng và dễ chịu.",
   scopeP2: "Hệ thống hút khói và cấp gió tươi luôn cần được tính toán đồng bộ để hoạt động hiệu quả.",
   scopeP3: "Luke có thể đồng hành cùng bạn từ khâu khảo sát mặt bằng, tư vấn phương án đến gia công và lắp đặt trọn bộ hệ thống hút khói, cấp gió tươi.",
-  scopeP4: "Mỗi căn bếp có một đặc điểm riêng. Luke sẽ giúp bạn tìm ra phương án phù hợp với nhu cầu và điều kiện thực tế của công trình."
+  scopeP4: "Mỗi căn bếp có một đặc điểm riêng. Luke sẽ giúp bạn tìm ra phương án phù hợp với nhu cầu và điều kiện thực tế của công trình.",
+  orEmail: "hoặc email",
+  orCall: "hoặc gọi",
+  utilArea: "Phục vụ toàn bang Victoria",
+  utilLabel: "Thông tin liên hệ"
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -508,6 +516,14 @@ function page(T, lang, kind = 'home', mode = 'site') {
 <body>
 <div class="pg lang-${lang}" id="top" data-lang="${lang}" data-view="${view(lang, kind)}" data-site="${esc(JSON.stringify(msgs))}">
 
+  <div class="util" aria-label="${T.utilLabel}">
+    <div class="in util-in">
+      <a href="${tel}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>${esc(C.phoneDisplay)}</span></a>
+      ${C.email ? `<a href="mailto:${esc(C.email)}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="util-full">${esc(C.email)}</span><span class="util-short" aria-hidden="true">${T.kEmail}</span></a>` : ''}
+      <span class="util-area"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>${T.utilArea}</span></span>
+    </div>
+  </div>
+
   <header class="top">
     <div class="in top-in">
       <a class="logo" href="${HL('top')}" aria-label="${esc(T.home)}">
@@ -559,7 +575,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
         <p class="notice" role="status" hidden></p>
       </div>
 
-      <p class="after">${T.preferC} <a href="${tel}">${T.call} ${esc(C.phoneDisplay)}</a>.</p>
+      <p class="after">${T.preferC} <a href="${tel}">${T.call} ${esc(C.phoneDisplay)}</a>${C.email ? ` ${T.orEmail} <a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : ''}.</p>
 
       <ul class="tchips" aria-label="${T.hlLabel}">
         ${chips.join('\n        ')}
@@ -687,7 +703,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
         </div>
         <div class="hook">
           <div class="hook-text"><h3>${T.hookSysT}</h3><p>${T.hookSysS}</p></div>
-          <a class="btn btn-primary" href="${HL('contact')}">${T.quote} ${ARROW}</a>
+          <div class="hook-cta"><a class="btn btn-primary" href="${HL('contact')}">${T.quote} ${ARROW}</a><span class="hook-call">${T.orCall} <a href="${tel}">${esc(C.phoneDisplay)}</a></span></div>
         </div>
       </div>
     </section>
@@ -762,7 +778,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
   <footer class="foot dark">
     <div class="in">
       <div class="foot-l"><strong class="foot-name">${esc(C.company)}</strong><span>${T.footTag}</span></div>
-      <div class="foot-r"><span>${T.footArea} · <a href="${tel}">${esc(C.phoneDisplay)}</a></span><span>© ${new Date().getFullYear()} ${esc(C.company)}${C.abn ? ' · ABN ' + esc(C.abn) : ''}. ${T.rights} · <a href="${PL}"${isP ? ' aria-current="page"' : ''}>${T.privacyLink}</a></span></div>
+      <div class="foot-r"><span>${T.footArea} · <a href="${tel}">${esc(C.phoneDisplay)}</a>${C.email ? ` · <a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : ''}</span><span>© ${new Date().getFullYear()} ${esc(C.company)}${C.abn ? ' · ABN ' + esc(C.abn) : ''}. ${T.rights} · <a href="${PL}"${isP ? ' aria-current="page"' : ''}>${T.privacyLink}</a></span></div>
     </div>
   </footer>
 

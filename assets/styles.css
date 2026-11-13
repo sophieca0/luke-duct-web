@@ -874,3 +874,32 @@ html.js-reveal .rv.in-view{opacity:1;transform:none}
 @media (max-width:760px){.pg #system .shead .sys-intro{grid-template-columns:minmax(0,1fr);gap:14px}}
 .pg #system .sys-lead{margin-top:1rem;max-width:52rem;font:600 clamp(1.125rem,1.7vw,1.375rem)/1.45 var(--f-body);color:var(--ink);text-wrap:balance}
 .pg #system .sys-intro>div{display:flex;flex-direction:column;gap:.85rem}
+
+/* ===== utility bar: phone, email and service area above the menu ===== */
+.util{background:#232120;color:#E8E2DA;font-size:.875rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.util-in{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:.35rem 1.5rem;min-height:38px;padding-block:.35rem}
+.util a,.util-area{display:inline-flex;align-items:center;gap:.45rem;color:#F6F3EF;text-decoration:none;min-height:30px;white-space:nowrap}
+.util a:hover span{text-decoration:underline;text-underline-offset:3px}
+.util svg{flex:none;color:var(--acc)}
+.util-area{color:#D3CDC5;margin-right:auto}
+@media (max-width:760px){
+  .util-in{justify-content:center;gap:.25rem 1.1rem;font-size:.8125rem}
+  .util-area{display:none}
+}
+@media (max-width:360px){.util a[href^="mailto:"] span{max-width:13.5em;overflow:hidden;text-overflow:ellipsis}}
+/* hero contact line: allow wrapping now that it carries the email too */
+.pg .after{max-width:60rem;line-height:1.7}
+.pg .after a{white-space:nowrap}
+/* band: button + "or call" */
+.hook-cta{display:flex;flex-direction:column;align-items:center;gap:.5rem;flex:none}
+.hook-call{color:#DDD7CF;font-size:.9375rem}
+.hook-call a{color:#fff;font-weight:600;text-underline-offset:3px;white-space:nowrap}
+@media (max-width:560px){.hook-cta{width:100%}.hook-cta .btn{width:100%}}
+.foot a{white-space:nowrap}
+.util-short{display:none}
+@media (max-width:400px){
+  .util .util-full{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .util .util-short{display:inline}
+}
+.util .util-in{max-width:1320px}
+.util-area{order:-1}
