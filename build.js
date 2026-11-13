@@ -518,7 +518,8 @@ function page(T, lang, kind = 'home', mode = 'site') {
   </header>
 
   ${isG ? galleryMain : isP ? privacyMain : `
-  <section class="hero dark">
+  <section class="hero dark hero-photo">
+    <div class="hero-bg" aria-hidden="true"><img src="${R}assets/photos/p51.jpg" alt="" width="1600" height="1200" fetchpriority="high" decoding="async"></div>
     ${SMOKE(7)}
     <div class="in in-w">
       <p class="tag">${T.eyebrow}</p>
