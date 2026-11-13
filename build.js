@@ -398,7 +398,8 @@ function page(T, lang, kind = 'home', mode = 'site') {
   const tile = (p, i) => {
     const alt = (typeof p[lang] === 'string' ? p[lang] : p.en) || T.photoAlt + ' ' + (i + 1);
     const sz = jpegSize(p.src);
-    return `<li class="tile" data-cat="${p.cat || ''}"><button class="ph tilebtn" type="button" data-full="${R}${esc(p.src)}" data-alt="${esc(alt)}" aria-label="${esc(T.enlarge)}: ${esc(alt)}"><img class="pimg" src="${R}${esc(p.src)}" alt="${esc(alt)}" width="${sz.w}" height="${sz.h}" loading="lazy" decoding="async"></button></li>`;
+    const src = p.src + '?v=' + VER(p.src);
+    return `<li class="tile" data-cat="${p.cat || ''}"><button class="ph tilebtn" type="button" data-full="${R}${esc(src)}" data-alt="${esc(alt)}" aria-label="${esc(T.enlarge)}: ${esc(alt)}"><img class="pimg" src="${R}${esc(src)}" alt="${esc(alt)}" width="${sz.w}" height="${sz.h}" loading="lazy" decoding="async"></button></li>`;
   };
   const homeList = (C.photos.some((p) => p.home) ? C.photos.filter((p) => p.home) : C.photos).slice(0, 8);
   const photos = homeList.map(tile).join('\n');
@@ -484,7 +485,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
 <link rel="icon" href="${R}assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400..700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="${R}assets/styles.css?v=${CSS_V}">
 <script type="application/ld+json">${JSON.stringify(ldjson)}</script>
 </head>
@@ -522,7 +523,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
 
   ${isG ? galleryMain : isP ? privacyMain : `
   <section class="hero dark hero-photo">
-    <div class="hero-bg" aria-hidden="true"><img src="${R}assets/photos/p51.jpg" alt="" width="1600" height="1200" fetchpriority="high" decoding="async"></div>
+    <div class="hero-bg" aria-hidden="true"><img src="${R}assets/photos/p51.jpg?v=${VER('assets/photos/p51.jpg')}" alt="" width="1600" height="1200" fetchpriority="high" decoding="async"></div>
     <div class="in in-w">
       <p class="tag">${T.eyebrow}</p>
       <h1 class="h1"><span class="l1">${T.h1a}</span> <span class="l2">${T.h1b}</span></h1>
@@ -795,7 +796,7 @@ function forPreview(html, prefix, hidden) {
 const css = fs.readFileSync(path.join(root, 'assets', 'styles.css'), 'utf8');
 const js = fs.readFileSync(path.join(root, 'assets', 'main.js'), 'utf8');
 const preview = `<title>Luke Commercial Kitchen Website</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400..700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap">
 <style>
 :root{color-scheme:dark}
 ${css}

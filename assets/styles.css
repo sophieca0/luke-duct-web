@@ -834,3 +834,27 @@ html.js-reveal .rv.in-view{opacity:1;transform:none}
   .lang-short{display:inline}
 }
 .lang a{white-space:nowrap}
+
+/* =====================================================================
+   FONT: Be Vietnam Pro everywhere (headings, body, small labels).
+   To go back to Archivo + Inter + IBM Plex Mono, delete this block and
+   restore the old Google Fonts link in build.js.
+   ===================================================================== */
+.pg{--f-display:"Be Vietnam Pro","Helvetica Neue",Arial,sans-serif;--f-body:"Be Vietnam Pro","Helvetica Neue",Arial,sans-serif;--f-mono:"Be Vietnam Pro","Helvetica Neue",Arial,sans-serif}
+.pg .h1,.pg .h2{font-weight:700;letter-spacing:-.02em}
+.pg .h1 .l2{font-weight:700}
+.pg .logo,.pg .foot-name{font-weight:700;letter-spacing:-.01em}
+.pg .mono,.pg .tag,.pg .ql,.pg .legend,.pg .field label{font-weight:600;letter-spacing:.06em}
+.pg .sv-lbl,.pg .sv-ttl,.pg .sv-lgd{font-weight:600;letter-spacing:.06em}
+.pg .tn{font-weight:700;font-variant-numeric:tabular-nums}
+/* Be Vietnam Pro is a little wider: keep the header within the screen */
+.pg .lang a{padding:0 .65rem;font-size:.8125rem}
+.pg .top-r{gap:.5rem;min-width:0}
+.pg .hdr-cta.btn-primary{padding:0 1rem}
+.pg .top-r{min-width:auto}
+.pg .top-r>*{flex:none}
+.pg .nav a{padding:0 .6rem;font-size:.875rem}
+.pg .logo .lname{font-size:1rem}
+@media (max-width:1499px){.lang-vi .nav{display:none}}
+@media (max-width:1319px){.nav{display:none}}
+@media (max-width:1859px){.top .hdr-cta.btn-ghost{display:none}}
