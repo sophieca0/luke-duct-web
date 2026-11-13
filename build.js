@@ -333,6 +333,11 @@ const VI = {
 };
 
 /* ====================== TEMPLATE ====================== */
+// Cache-busting: each build stamps CSS/JS links with a short hash of the file,
+// so browsers fetch the new file as soon as it changes.
+const VER = (f) => require('crypto').createHash('sha1').update(fs.readFileSync(path.join(__dirname, f))).digest('hex').slice(0, 10);
+const CSS_V = VER('assets/styles.css');
+const JS_V = VER('assets/main.js');
 function jpegSize(file) {
   const buf = fs.readFileSync(path.join(__dirname, file));
   let i = 2;
@@ -480,7 +485,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400..700&amp;display=swap">
-<link rel="stylesheet" href="${R}assets/styles.css">
+<link rel="stylesheet" href="${R}assets/styles.css?v=${CSS_V}">
 <script type="application/ld+json">${JSON.stringify(ldjson)}</script>
 </head>
 <body>
@@ -745,7 +750,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
   </div>
 
 </div>
-<script src="${R}assets/main.js" defer></script>
+<script src="${R}assets/main.js?v=${JS_V}" defer></script>
 </body>
 </html>
 `;
