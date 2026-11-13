@@ -408,7 +408,6 @@ function page(T, lang, kind = 'home', mode = 'site') {
   const privacyMain = `
   <main>
   <section class="hero dark gal-top priv-top">
-    ${SMOKE(5)}
     <div class="in">
       <p class="tag">${T.privEyebrow}</p>
       <h1 class="h1 gal-h1">${esc(PV.title)}</h1>
@@ -427,7 +426,6 @@ function page(T, lang, kind = 'home', mode = 'site') {
   const galleryMain = `
   <main>
   <section class="hero dark gal-top">
-    ${SMOKE(5)}
     <div class="in">
       <p class="tag">${T.galEyebrow}</p>
       <h1 class="h1 gal-h1">${T.galH1}</h1>
@@ -442,7 +440,6 @@ function page(T, lang, kind = 'home', mode = 'site') {
     </div>
   </section>
   <section class="sec sheet dark gal-cta" id="contact">
-    ${SMOKE(5)}
     <div class="in">
       <div class="shead"><h2 class="h2">${T.galCtaT}</h2><p class="sub">${T.galCtaS}</p></div>
       <div class="center gal-ctabtns"><a class="btn btn-primary" href="${HL('contact')}">${T.quote} ${ARROW}</a><a class="btn btn-ghost" href="${tel}">${PHONE_IC} ${T.call} ${esc(C.phoneDisplay)}</a></div>
@@ -520,7 +517,6 @@ function page(T, lang, kind = 'home', mode = 'site') {
   ${isG ? galleryMain : isP ? privacyMain : `
   <section class="hero dark hero-photo">
     <div class="hero-bg" aria-hidden="true"><img src="${R}assets/photos/p51.jpg" alt="" width="1600" height="1200" fetchpriority="high" decoding="async"></div>
-    ${SMOKE(7)}
     <div class="in in-w">
       <p class="tag">${T.eyebrow}</p>
       <h1 class="h1"><span class="l1">${T.h1a}</span> <span class="l2">${T.h1b}</span></h1>
@@ -576,7 +572,6 @@ function page(T, lang, kind = 'home', mode = 'site') {
     </section>
 
     <section class="sec sheet dark" id="system">
-      ${SMOKE(5)}
       <div class="in">
         <div class="shead">
           <p class="tag">${T.scopeEyebrow}</p>
@@ -687,7 +682,6 @@ function page(T, lang, kind = 'home', mode = 'site') {
   </main>
 
   <section class="sec sheet dark contact" id="contact">
-    ${SMOKE(5)}
     <div class="in in-w contact-in">
       <div class="contact-l">
         <p class="tag">${T.contactEyebrow}</p>
