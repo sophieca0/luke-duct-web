@@ -185,7 +185,7 @@ const EN = {
   lbClose: "Close",
   lbPrev: "Previous photo",
   lbNext: "Next photo",
-  viewAll: "View the Full Gallery",
+  viewAll: "View all {n} photos",
   galTitle: "Project Gallery · Luke Commercial Kitchen · Commercial Kitchen Exhaust, Victoria",
   galMeta: "Photos of commercial kitchen canopies, ductwork, roof discharge and fit-outs fabricated and installed by Luke Commercial Kitchen across Victoria.",
   galEyebrow: "Project gallery",
@@ -233,7 +233,10 @@ const EN = {
   chatMsg: "Your message",
   chatMsgPh: "What can Luke help you with?",
   chatSend: "Send message",
-  ogAlt: "Luke Commercial Kitchen: commercial kitchen exhaust and fresh air systems in Melbourne and Victoria"
+  ogAlt: "Luke Commercial Kitchen: commercial kitchen exhaust and fresh air systems in Melbourne and Victoria",
+  moreTile: "more photos",
+  moreTileSub: "See the full gallery",
+  navGallery: "Gallery"
 };
 
 const VI = {
@@ -335,7 +338,7 @@ const VI = {
   lbClose: "Đóng",
   lbPrev: "Ảnh trước",
   lbNext: "Ảnh tiếp theo",
-  viewAll: "Xem toàn bộ thư viện ảnh",
+  viewAll: "Xem tất cả {n} ảnh",
   galTitle: "Thư viện ảnh công trình · Luke Commercial Kitchen · Hút khói bếp thương mại, Victoria",
   galMeta: "Hình ảnh chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện do Luke Commercial Kitchen gia công và lắp đặt trên toàn bang Victoria.",
   galEyebrow: "Thư viện ảnh",
@@ -383,7 +386,10 @@ const VI = {
   chatMsg: "Tin nhắn",
   chatMsgPh: "Bạn cần Luke hỗ trợ gì?",
   chatSend: "Gửi tin nhắn",
-  ogAlt: "Luke Commercial Kitchen: hệ thống hút khói và cấp gió tươi cho bếp thương mại tại Melbourne và Victoria"
+  ogAlt: "Luke Commercial Kitchen: hệ thống hút khói và cấp gió tươi cho bếp thương mại tại Melbourne và Victoria",
+  moreTile: "ảnh nữa",
+  moreTileSub: "Xem toàn bộ thư viện ảnh",
+  navGallery: "Thư viện ảnh"
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -419,7 +425,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
   const up = (lang === 'vi' ? '../' : '') + (sub ? '../' : '');
   const R = mode === 'preview' ? '' : up;           // path back to site root (for assets)
   const HL = (a) => (!sub ? '#' + a : mode === 'preview' ? '#!' + pfx(lang, 'home') + a : '../#' + a);   // link to a home-page section
-  const GL = mode === 'preview' ? '#!' + view(lang, 'gallery') : 'gallery/';                                // home -> gallery
+  const GL = mode === 'preview' ? '#!' + view(lang, 'gallery') : up + (lang === 'vi' ? 'vi/' : '') + 'gallery/';                                // home -> gallery
   const LL = (to) => (mode === 'preview' ? '#!' + view(to, kind) : (up + (to === 'vi' ? 'vi/' : '') + slug) || './');
   const PL = mode === 'preview' ? '#!' + view(lang, 'privacy') : up + (lang === 'vi' ? 'vi/' : '') + 'privacy/';
   const tel = 'tel:' + C.phoneIntl;
@@ -567,7 +573,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
         <span class="lname">${esc(C.company).replace(/^(\S+) /, '$1 <span class="lname2">').replace(/$/, C.company.includes(' ') ? '</span>' : '')}</span>
       </a>
       <nav class="nav" aria-label="${T.navLabel}">
-        ${C.photos.length ? `<a href="${HL('work')}">${T.navWork}</a>` : ''}
+        ${C.photos.length ? `<a href="${isG ? '#top' : GL}"${isG ? ' aria-current="page"' : (kind === 'home' ? ' data-spy="work"' : '')}>${T.navGallery}</a>` : ''}
         <a href="${HL('why')}">${T.navWhy}</a>
         <a href="${HL('system')}">${T.navSystem}</a>
         <a href="${HL('process')}">${T.navProcess}</a>
@@ -623,9 +629,9 @@ function page(T, lang, kind = 'home', mode = 'site') {
     ${C.photos.length ? `<section class="sec sheet light alt" id="work">
       <div class="in">
         <div class="shead"><p class="tag">${T.workEyebrow}</p><h2 class="h2">${T.workH2}</h2><p class="sub">${T.workSub}</p></div>
-        <ul class="tiles masonry">${photos}</ul>
+        <ul class="tiles masonry">${photos}${C.photos.length > homeList.length ? `<li class="tile tile-more"><a class="more-link" href="${GL}"><img class="pimg" src="${R}${esc(C.photos[homeList.length].src)}?v=${VER(C.photos[homeList.length].src)}" alt="" width="${jpegSize(C.photos[homeList.length].src).w}" height="${jpegSize(C.photos[homeList.length].src).h}" loading="lazy" decoding="async"><span class="more-over"><b>+${C.photos.length - homeList.length}</b><span>${T.moreTile}</span><em>${T.moreTileSub} →</em></span></a></li>` : ''}</ul>
         ${DIALOG}
-        <div class="center"><a class="btn btn-dark" href="${GL}">${T.viewAll} (${C.photos.length}) ${ARROW}</a></div>
+        <div class="center"><a class="btn btn-primary btn-lg" href="${GL}">${T.viewAll.replace('{n}', C.photos.length)} ${ARROW}</a></div>
       </div>
     </section>` : ''}
 
@@ -813,7 +819,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
 `}
   <footer class="foot dark">
     <div class="in">
-      <div class="foot-l"><strong class="foot-name">${esc(C.company)}</strong><span>${T.footTag}</span></div>
+      <div class="foot-l"><strong class="foot-name">${esc(C.company)}</strong><span>${T.footTag}</span><span><a href="${isG ? '#top' : GL}">${T.navGallery}</a></span></div>
       <div class="foot-r"><span>${T.footArea} · <a href="${tel}">${esc(C.phoneDisplay)}</a>${C.email ? ` · <a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : ''}</span><span>© ${new Date().getFullYear()} ${esc(C.company)}${C.abn ? ' · ABN ' + esc(C.abn) : ''}. ${T.rights} · <a href="${PL}"${isP ? ' aria-current="page"' : ''}>${T.privacyLink}</a></span></div>
     </div>
   </footer>

@@ -214,3 +214,36 @@ function adsConvert(label) {
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { set(false); btn.focus(); } });
   });
 })();
+
+/* ---- menu: highlight the section currently on screen ---- */
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  document.querySelectorAll('.pg').forEach(function (pg) {
+    var links = [].slice.call(pg.querySelectorAll('.nav a[href^="#"], .nav a[data-spy]'));
+    var map = {};
+    links.forEach(function (a) {
+      var id = a.getAttribute('data-spy') || a.getAttribute('href').slice(1);
+      var sec = id && pg.querySelector('#' + id);
+      if (sec) map[id] = { a: a, sec: sec };
+    });
+    var ids = Object.keys(map);
+    if (!ids.length) return;
+    var visible = {};
+    function update() {
+      var best = null, bestTop = -Infinity;
+      ids.forEach(function (id) {
+        var top = map[id].sec.getBoundingClientRect().top;
+        if (top <= window.innerHeight * 0.35 && top > bestTop) { bestTop = top; best = id; }
+      });
+      ids.forEach(function (id) {
+        var on = id === best;
+        map[id].a.classList.toggle('is-active', on);
+        if (on) map[id].a.setAttribute('aria-current', 'true'); else map[id].a.removeAttribute('aria-current');
+      });
+    }
+    var io = new IntersectionObserver(function () { update(); }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+    ids.forEach(function (id) { io.observe(map[id].sec); });
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+})();
