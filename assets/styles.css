@@ -810,3 +810,14 @@ html.js-reveal .rv.in-view{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   html.js-reveal .rv{opacity:1;transform:none;transition:none}
 }
+
+/* ===== wider layout: less empty space at the sides on large screens ===== */
+.in{max-width:1440px;padding-inline:clamp(16px,4vw,56px)}
+.in-w{max-width:1520px}
+.pg .lede{max-width:56rem}
+.pg .shead .sub{max-width:52rem}
+.pg .h2{max-width:none}
+.qwrap{max-width:1320px}
+.tchips{max-width:1320px}
+.prose{max-width:52rem}
+.contact-l .lede{max-width:none}
