@@ -981,3 +981,6 @@ html.js-reveal .rv.in-view{opacity:1;transform:none}
 .nav a.is-active{color:var(--band-ink);background:rgba(255,255,255,.1)}
 .nav a.is-active::after{content:"";position:absolute;left:.75rem;right:.75rem;bottom:6px;height:2px;border-radius:2px;background:var(--acc)}
 .nav a[aria-current="page"]{color:var(--band-ink)}
+/* menu highlight: soft pill, no underline */
+.nav a.is-active::after{display:none}
+.nav a.is-active{color:#fff;background:rgba(255,255,255,.14);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
