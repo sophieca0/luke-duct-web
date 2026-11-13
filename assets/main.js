@@ -4,7 +4,7 @@
 var ADS = {
   id: 'AW-18563134906',
   formLabel: 'fWxMCKjOiLUdELrry5NF',   /* "Submit lead form (2)" conversion */
-  callLabel: 'StDzCKvOiLUdELrry5NF'    /* "Click to call" conversion */
+  callLabel: 'l4fMCPbvwrcdELrry5NF'    /* "Website phone click" conversion */
 };
 
 function adsConvert(label) {
