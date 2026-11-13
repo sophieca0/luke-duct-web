@@ -175,3 +175,30 @@ function adsConvert(label) {
     dlg.addEventListener('close', function () { if (list[cur]) list[cur].focus(); });
   });
 })();
+
+/* ---- reveal on scroll: sections and cards rise in as they come into view ---- */
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var sel = '.sec .shead, .tiles .tile, .expect .fc, #system .panel, .dlegend, .tl li, .sec .center, .contact-l, .fcard, .prose';
+  var els = [].slice.call(document.querySelectorAll(sel));
+  if (!els.length) return;
+  document.documentElement.classList.add('js-reveal');
+  var groups = new Map();
+  els.forEach(function (el) {
+    el.classList.add('rv');
+    var parent = el.parentElement, i = groups.get(parent) || 0;
+    groups.set(parent, i + 1);
+    el.style.setProperty('--rd', Math.min(i, 6) * 0.08 + 's');
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  els.forEach(function (el) { io.observe(el); });
+  /* safety: never leave anything hidden */
+  setTimeout(function () {
+    els.forEach(function (el) { if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view'); });
+  }, 2500);
+})();
