@@ -147,10 +147,10 @@ const EN = {
   contactEyebrow: "Contact", contactH2: "Let's Talk About Your Kitchen.",
   sendH: "Helpful Information to Have",
   l1: "Site address",
-  l2: "Floor plans and mechanical drawings",
-  l3: "Cooking equipment list or hood layout",
-  l4: "Proposed exhaust discharge location (roof, wall or shaft)",
-  l5: "Target installation date",
+  l2: "Floor plans or mechanical drawings (if available)",
+  l3: "Cooking equipment list or canopy layout",
+  l4: "Exhaust discharge location: roof, wall or shaft (if known)",
+  l5: "A few photos of the current space",
   kPhone: "Phone", kEmail: 'Email', kArea: "Service Area",
   langLabel: 'Language', home: 'Luke Commercial Kitchen home',
   rights: "All rights reserved.",
@@ -218,7 +218,8 @@ const EN = {
   orEmail: "or email",
   orCall: "or call",
   utilArea: "Servicing all of Victoria",
-  utilLabel: "Contact details"
+  utilLabel: "Contact details",
+  l6: "Target installation date"
 };
 
 const VI = {
@@ -283,10 +284,10 @@ const VI = {
   contactEyebrow: "Liên hệ", contactH2: "Cùng trao đổi về khu bếp của bạn.",
   sendH: "Những thông tin nên chuẩn bị:",
   l1: "Địa chỉ công trình",
-  l2: "Mặt bằng và bản vẽ cơ điện (nếu có)",
+  l2: "Mặt bằng hoặc bản vẽ cơ điện (nếu có)",
   l3: "Danh sách thiết bị bếp hoặc bố trí chụp hút",
-  l4: "Vị trí dự kiến xả khí (mái nhà, tường hoặc trục kỹ thuật)",
-  l5: "Thời gian dự kiến lắp đặt",
+  l4: "Vị trí xả khí: mái, tường hoặc trục kỹ thuật (nếu đã biết)",
+  l5: "Vài tấm ảnh chụp khu bếp hiện tại",
   kPhone: "Điện thoại", kEmail: 'Email', kArea: "Khu vực phục vụ",
   langLabel: 'Ngôn ngữ', home: "Trang chủ Luke Commercial Kitchen",
   rights: "Bảo lưu mọi quyền.",
@@ -353,7 +354,8 @@ const VI = {
   orEmail: "hoặc email",
   orCall: "hoặc gọi",
   utilArea: "Phục vụ toàn bang Victoria",
-  utilLabel: "Thông tin liên hệ"
+  utilLabel: "Thông tin liên hệ",
+  l6: "Thời gian dự kiến lắp đặt"
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -733,7 +735,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
         <p class="lede cintro">${T.contactIntro}</p>
         <p class="lede cintro cintro2">${T.contactIntro2}</p>
         <h3 class="sendh">${T.sendH}</h3>
-        <ul class="sendlist"><li>${T.l1}</li><li>${T.l2}</li><li>${T.l3}</li><li>${T.l4}</li><li>${T.l5}</li></ul>
+        <ul class="sendlist"><li>${T.l1}</li><li>${T.l2}</li><li>${T.l3}</li><li>${T.l4}</li><li>${T.l5}</li><li>${T.l6}</li></ul>
         <div class="reach">
           <h3 class="mono reach-h">${T.contactDetails}</h3>
           <div class="r"><span class="mono k">${T.kPhone}</span><a class="big" href="${tel}">${esc(C.phoneDisplay)}</a></div>
