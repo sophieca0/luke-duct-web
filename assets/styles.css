@@ -681,3 +681,13 @@ body{margin:0;background:#1C1B1A}
 .hero-photo .smoke{opacity:.55}
 .hero-photo .lede{color:#E4DFD8}
 @media (max-width:760px){.hero-bg img{object-position:30% 30%}}
+
+/* ===== brighter look: lighter charcoal bands, lighter hero overlay ===== */
+.pg{--band:#2B2825;--band-2:#36322E;--band-3:#423D38;--band-muted:#D3CDC5;--pill:#2B2825;--sticky:43,40,37}
+body{background:#2B2825}
+.hero-bg::after{background:linear-gradient(180deg,rgba(32,29,27,.50) 0%,rgba(32,29,27,.60) 40%,rgba(32,29,27,.80) 75%,var(--band) 100%)}
+.hero-photo .h1,.hero-photo .lede,.hero-photo .qtitle,.hero-photo .qcap,.hero-photo .after{text-shadow:0 1px 2px rgba(0,0,0,.45),0 2px 18px rgba(0,0,0,.35)}
+.hero-photo .lede{color:#F1ECE6}
+.hero-photo .qbar{background:linear-gradient(180deg,rgba(43,40,37,.72),rgba(43,40,37,.58))}
+/* gradient-clipped text shows text-shadow through it: use a drop-shadow filter instead */
+.hero-photo .h1 .l2{text-shadow:none;filter:drop-shadow(0 2px 10px rgba(0,0,0,.45))}
