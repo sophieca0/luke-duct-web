@@ -691,3 +691,9 @@ body{background:#2B2825}
 .hero-photo .qbar{background:linear-gradient(180deg,rgba(43,40,37,.72),rgba(43,40,37,.58))}
 /* gradient-clipped text shows text-shadow through it: use a drop-shadow filter instead */
 .hero-photo .h1 .l2{text-shadow:none;filter:drop-shadow(0 2px 10px rgba(0,0,0,.45))}
+
+/* ===== one step brighter ===== */
+.pg{--band:#3A3632;--band-2:#45403B;--band-3:#514B45;--band-muted:#DDD7CF;--pill:#3A3632;--sticky:58,54,50}
+body{background:#3A3632}
+.hero-bg::after{background:linear-gradient(180deg,rgba(40,37,34,.38) 0%,rgba(40,37,34,.50) 40%,rgba(48,44,40,.74) 75%,var(--band) 100%)}
+.hero-photo .qbar{background:linear-gradient(180deg,rgba(40,37,34,.70),rgba(40,37,34,.58))}
