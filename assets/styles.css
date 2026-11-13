@@ -903,3 +903,30 @@ html.js-reveal .rv.in-view{opacity:1;transform:none}
 }
 .util .util-in{max-width:1320px}
 .util-area{order:-1}
+
+/* ===== floating chat button: WhatsApp / SMS ===== */
+.chatfab{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.chat-btn{display:inline-flex;align-items:center;gap:.5rem;min-height:52px;padding:0 1.2rem 0 1rem;border:0;border-radius:999px;background:#1C1B1A;color:#fff;font:600 1rem/1 var(--f-body);cursor:pointer;box-shadow:0 12px 30px -10px rgba(0,0,0,.45);transition:transform .2s,background .2s}
+.chat-btn svg{color:var(--acc)}
+.chat-btn:hover{transform:translateY(-2px);background:#2D2A27}
+.chatfab.open .chat-btn{background:#2D2A27}
+.chat-menu{width:min(280px,calc(100vw - 40px));padding:14px;border-radius:20px;background:#fff;color:#1C1B1A;box-shadow:0 24px 60px -20px rgba(0,0,0,.45);border:1px solid rgba(28,27,26,.1)}
+.chat-title{font:700 1rem/1.3 var(--f-display);margin:2px 4px 10px}
+.chat-opt{display:flex;align-items:center;gap:.7rem;min-height:48px;padding:0 .9rem;border-radius:14px;text-decoration:none;font-weight:600;color:#1C1B1A;transition:background .15s}
+.chat-opt+.chat-opt{margin-top:6px}
+.chat-wa{background:#E7F8EE}.chat-wa svg{color:#1FA855}
+.chat-sms{background:#FFF0E9}.chat-sms svg{color:#C2410C}
+.chat-opt:hover{filter:brightness(.97)}
+.chat-opt:focus-visible,.chat-btn:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.chat-note{margin:10px 4px 2px;font-size:.8125rem;color:#5C5650}
+@media (max-width:760px){
+  .chatfab{bottom:calc(84px + env(safe-area-inset-bottom,0px));right:calc(14px + env(safe-area-inset-right,0px))}
+  .chat-btn{min-height:48px;padding:0 1rem 0 .85rem;font-size:.9375rem}
+}
+@media print{.chatfab{display:none}}
+/* SMS only works on phones: on desktops show the number to text instead */
+.chat-desk{display:none;margin:10px 4px 0;font-size:.9375rem;line-height:1.45;color:#1C1B1A}
+@media (hover:hover) and (pointer:fine){
+  .chat-sms{display:none}
+  .chat-desk{display:block}
+}

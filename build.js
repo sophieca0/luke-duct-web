@@ -218,7 +218,15 @@ const EN = {
   orCall: "or call",
   utilArea: "Servicing all of Victoria",
   utilLabel: "Contact details",
-  l6: "Target installation date"
+  l6: "Target installation date",
+  chatBtn: "Chat",
+  chatOpen: "Open chat options",
+  chatTitle: "Message Luke",
+  chatWa: "WhatsApp",
+  chatSms: "Text message (SMS)",
+  chatNote: "Usually replies the same day.",
+  waText: "Hi Luke, I'd like to ask about a kitchen exhaust / fresh air system.",
+  chatSmsDesk: "Or text"
 };
 
 const VI = {
@@ -353,7 +361,15 @@ const VI = {
   orCall: "hoặc gọi",
   utilArea: "Phục vụ toàn bang Victoria",
   utilLabel: "Thông tin liên hệ",
-  l6: "Thời gian dự kiến lắp đặt"
+  l6: "Thời gian dự kiến lắp đặt",
+  chatBtn: "Nhắn tin",
+  chatOpen: "Mở lựa chọn nhắn tin",
+  chatTitle: "Nhắn tin cho Luke",
+  chatWa: "WhatsApp",
+  chatSms: "Tin nhắn SMS",
+  chatNote: "Luke sẽ trả lời bạn sớm.",
+  waText: "Chào Luke, mình muốn hỏi về hệ thống hút khói / cấp gió tươi cho bếp.",
+  chatSmsDesk: "Hoặc nhắn tin SMS tới"
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -781,6 +797,17 @@ function page(T, lang, kind = 'home', mode = 'site') {
       <div class="foot-r"><span>${T.footArea} · <a href="${tel}">${esc(C.phoneDisplay)}</a>${C.email ? ` · <a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : ''}</span><span>© ${new Date().getFullYear()} ${esc(C.company)}${C.abn ? ' · ABN ' + esc(C.abn) : ''}. ${T.rights} · <a href="${PL}"${isP ? ' aria-current="page"' : ''}>${T.privacyLink}</a></span></div>
     </div>
   </footer>
+
+  <div class="chatfab">
+    <div class="chat-menu" role="group" aria-label="${T.chatTitle}" hidden>
+      <p class="chat-title">${T.chatTitle}</p>
+      <a class="chat-opt chat-wa" href="https://wa.me/${C.phoneIntl.replace('+', '')}?text=${encodeURIComponent(T.waText)}" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg><span>${T.chatWa}</span></a>
+      <a class="chat-opt chat-sms" href="${sms}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H10l-4 4v-4H4z"/><path d="M8 10h8M8 13h5"/></svg><span>${T.chatSms}</span></a>
+      <p class="chat-desk">${T.chatSmsDesk} <strong>${esc(C.phoneDisplay)}</strong>${lang === 'en' ? ' from your phone' : ' từ điện thoại'}.</p>
+      <p class="chat-note">${T.chatNote}</p>
+    </div>
+    <button class="chat-btn" type="button" aria-expanded="false" aria-label="${T.chatOpen}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.7 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span>${T.chatBtn}</span></button>
+  </div>
 
   <div class="stickybar">
     <a class="btn btn-ghost btn-sm" href="${tel}" aria-label="${T.call} ${esc(C.phoneDisplay)}">${PHONE_IC} <span class="lbl">${T.call}</span></a>

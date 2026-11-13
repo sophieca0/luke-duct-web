@@ -202,3 +202,15 @@ function adsConvert(label) {
     els.forEach(function (el) { if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in-view'); });
   }, 2500);
 })();
+
+/* ---- chat button: WhatsApp / SMS options ---- */
+(function () {
+  document.querySelectorAll('.chatfab').forEach(function (fab) {
+    var btn = fab.querySelector('.chat-btn'), menu = fab.querySelector('.chat-menu');
+    if (!btn || !menu) return;
+    function set(open) { menu.hidden = !open; btn.setAttribute('aria-expanded', String(open)); fab.classList.toggle('open', open); }
+    btn.addEventListener('click', function (e) { e.stopPropagation(); set(menu.hidden); if (!menu.hidden) { var f = menu.querySelector('a'); if (f) f.focus(); } });
+    document.addEventListener('click', function (e) { if (!fab.contains(e.target)) set(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { set(false); btn.focus(); } });
+  });
+})();
