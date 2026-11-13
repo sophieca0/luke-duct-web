@@ -92,7 +92,7 @@ const EN = {
   navSystem: "The System", navProcess: "Process", navContact: "Contact", navWork: "Our Work",
   call: 'Call', quote: "Request a Call Back", quoteShort: "Request a Call Back",
   eyebrow: "Melbourne & all of Victoria",
-  h1a: "Commercial Kitchen Exhaust & Fresh Air,", h1b: "Done Right.",
+  h1a: "Don't Let Smoke and Smells", h1b: "Drive Your Customers Away.",
   lede: "Exhaust and fresh air systems for cafés, takeaways, restaurants and commercial kitchens across Melbourne and Victoria. Canopies, ductwork and fittings, all custom-made in-house and installed neatly.",
   motionPause: 'Pause animation', motionPlay: 'Play animation',
   formTitle: 'Request a call back',
@@ -198,7 +198,7 @@ const EN = {
   catDuct: "Ductwork",
   catRoof: "Roof & Discharge",
   catFitout: "Kitchen Fit-outs",
-  galCtaT: "Like What You See?",
+  galCtaT: "Great Food Deserves a Kitchen That Breathes.",
   galCtaS: "Tell us about your kitchen and we'll get in touch to talk it through.",
   galBack: "Back to home",
   contactDetails: "Contact Details",
@@ -206,7 +206,10 @@ const EN = {
   privacyLink: "Privacy Policy",
   privTitle: "Privacy Policy · Luke Commercial Kitchen",
   privMeta: "How Luke Commercial Kitchen collects, uses and protects the personal information you share through lukecomkitchen.com.",
-  privEyebrow: "Privacy"
+  privEyebrow: "Privacy",
+  hookSysT: "Years of Hard Work Shouldn't Go Up in Smoke.",
+  hookSysS: "Get the exhaust and fresh air right from the start. Talk to Luke about your kitchen.",
+  contactHook: "You've put everything into your venue. Don't let poor ventilation undo it."
 };
 
 const VI = {
@@ -216,7 +219,7 @@ const VI = {
   navSystem: "Hệ thống", navProcess: "Quy trình", navContact: "Liên hệ", navWork: "Công trình đã thực hiện",
   call: "Gọi", quote: "Yêu cầu gọi lại", quoteShort: "Yêu cầu gọi lại",
   eyebrow: "Melbourne và toàn bang Victoria",
-  h1a: "Hút khói & cấp gió tươi cho bếp thương mại,", h1b: "làm đúng ngay từ đầu.",
+  h1a: "Đừng để khói và mùi bếp", h1b: "làm khách bỏ đi.",
   lede: "Hệ thống hút khói và cấp gió tươi cho quán cà phê, tiệm takeaway, nhà hàng và bếp thương mại khắp Melbourne và Victoria. Canopy, ống gió và toàn bộ phụ kiện đều tự sản xuất theo yêu cầu và lắp đặt gọn gàng.",
   motionPause: 'Tạm dừng hiệu ứng', motionPlay: 'Phát hiệu ứng',
   formTitle: 'Yêu cầu gọi lại',
@@ -321,7 +324,7 @@ const VI = {
   catDuct: "Đường ống",
   catRoof: "Mái & điểm xả",
   catFitout: "Bếp hoàn thiện",
-  galCtaT: "Bạn có dự án cần trao đổi?",
+  galCtaT: "Món ngon xứng đáng với một căn bếp thông thoáng.",
   galCtaS: "Hãy chia sẻ một vài thông tin về khu bếp của bạn, Luke sẽ liên hệ để cùng trao đổi.",
   galBack: "Về trang chủ",
   contactDetails: "Thông tin liên hệ",
@@ -329,7 +332,10 @@ const VI = {
   privacyLink: "Chính sách quyền riêng tư",
   privTitle: "Chính sách quyền riêng tư · Luke Commercial Kitchen",
   privMeta: "Cách Luke Commercial Kitchen thu thập, sử dụng và bảo vệ thông tin cá nhân bạn chia sẻ qua lukecomkitchen.com.",
-  privEyebrow: "Quyền riêng tư"
+  privEyebrow: "Quyền riêng tư",
+  hookSysT: "Đừng để bao công sức của quán tan theo khói bếp.",
+  hookSysS: "Làm đúng phần hút khói và gió tươi ngay từ đầu. Trao đổi với Luke về căn bếp của bạn.",
+  contactHook: "Bạn đã dồn hết tâm huyết cho quán. Đừng để hệ thống thông gió kém làm uổng công."
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -669,6 +675,10 @@ function page(T, lang, kind = 'home', mode = 'site') {
             <li class="fa"><b aria-hidden="true">7</b>${T.s7t.replace(/\s*\(.*\)$/, '')}</li>
           </ol>
         </div>
+        <div class="hook">
+          <div class="hook-text"><h3>${T.hookSysT}</h3><p>${T.hookSysS}</p></div>
+          <a class="btn btn-primary" href="${HL('contact')}">${T.quote} ${ARROW}</a>
+        </div>
       </div>
     </section>
 
@@ -693,6 +703,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
       <div class="contact-l">
         <p class="tag">${T.contactEyebrow}</p>
         <h2 class="h2">${T.contactH2}</h2>
+        <p class="chook">${T.contactHook}</p>
         <p class="lede cintro">${T.contactIntro}</p>
         <p class="lede cintro cintro2">${T.contactIntro2}</p>
         <h3 class="sendh">${T.sendH}</h3>
