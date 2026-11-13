@@ -697,3 +697,57 @@ body{background:#2B2825}
 body{background:#3A3632}
 .hero-bg::after{background:linear-gradient(180deg,rgba(40,37,34,.38) 0%,rgba(40,37,34,.50) 40%,rgba(48,44,40,.74) 75%,var(--band) 100%)}
 .hero-photo .qbar{background:linear-gradient(180deg,rgba(40,37,34,.70),rgba(40,37,34,.58))}
+
+/* =====================================================================
+   LIGHT THEME + FEWER EFFECTS + PLAINER HEADINGS
+   Everything below is one block: delete it to go back to the previous look.
+   ===================================================================== */
+
+/* 1) Light sections. The photo hero and the footer stay dark; every other
+      dark band (System, Contact, gallery call-to-action) becomes light. */
+.pg .sec.dark{
+  --band:#F4F2EF;--band-2:#FFFFFF;--band-3:#ECE7E1;--band-ink:#1C1B1A;--band-muted:#5C5650;
+  --band-line:rgba(28,27,26,.12);--glass:rgba(28,27,26,.035);--glass-line:rgba(28,27,26,.14);
+  --pill:#FFFFFF;--sm:#E9E4DE;
+  background:var(--surface);color:var(--ink);border-top:0}
+.pg #system.sec.dark{background:var(--bg)}
+.pg .sec.dark .tag{background:var(--tint);border-color:var(--tint-line);color:var(--accent);-webkit-backdrop-filter:none;backdrop-filter:none}
+.pg .sec.dark .tag::before{background:var(--accent)}
+.pg .sec.dark .shead .sub{color:var(--muted)}
+.pg .sec.dark :focus-visible{outline-color:var(--accent)}
+.pg .sec.dark .btn-ghost{border-color:var(--line-strong);color:var(--ink);background:transparent}
+.pg .sec.dark .btn-ghost:hover{border-color:var(--ink);background:rgba(28,27,26,.05)}
+/* diagram on a light card */
+.pg #system .panel{background:radial-gradient(rgba(28,27,26,.09) 1px,transparent 1.5px) 0 0/26px 26px,#FFFFFF;border-color:var(--line);box-shadow:0 18px 44px -30px rgba(28,27,26,.35)}
+.pg #system .sv-flow2{stroke:var(--acc-2)}
+.pg #system .sv-glow{opacity:.25}
+.pg #system .pi{box-shadow:0 6px 18px -8px rgba(28,27,26,.35);-webkit-backdrop-filter:none;backdrop-filter:none}
+.pg #system .dlegend li{color:var(--ink)}
+.pg #system .sv-lgd[fill="#7CC0FF"]{fill:#2F7BC4}
+.pg #system .sv-lgd[fill="#FF6B3D"]{fill:#C2410C}
+/* contact on light */
+.pg .contact .sendlist li,.pg .contact .reach a.v,.pg .contact .reach .big{color:var(--ink)}
+.pg .contact .reach .k{color:var(--muted)}
+.pg .contact .fcard{box-shadow:0 24px 60px -30px rgba(28,27,26,.35);border:1px solid var(--line)}
+.pg .contact .fcard::before{display:none}
+/* the sheet edge between two light sections */
+.pg .sec.dark.sheet{box-shadow:0 -1px 0 var(--line)}
+
+/* 2) No decorative effects: no shimmering headline, no button sweep,
+      no blinking dots, no bobbing or auto-highlighting labels.
+      Kept on purpose: airflow in the diagram, the fan, the Victoria chip ring. */
+.pg .h1 .l2{animation:none;background:none;-webkit-text-fill-color:var(--acc);color:var(--acc)}
+.hero-photo .h1 .l2{filter:drop-shadow(0 2px 10px rgba(0,0,0,.45))}
+.pg .btn-primary::after{display:none}
+.pg .btn-primary{background:var(--acc);box-shadow:0 8px 22px -12px var(--glow)}
+.pg .btn-primary:hover{filter:brightness(1.05)}
+.pg .tag::before{animation:none}
+.pg .pw,.pg .pi,.pg .pc{animation:none}
+
+/* 3) Plainer headings: normal width, a little smaller, less heavy */
+.pg .h1,.pg .h2,.pg h1,.pg h2,.pg h3,.pg .logo,.pg .qtitle,.pg .tchips .v,.pg .foot-name,.pg .reach .big,.pg .fcard h2{font-stretch:100%}
+.pg .h1{font-size:clamp(2rem,4.4vw,3.6rem);font-weight:750;letter-spacing:-.02em;line-height:1.08}
+.lang-vi .h1{font-size:clamp(1.8rem,3.8vw,3.1rem);font-stretch:100%}
+.pg .h2{font-size:clamp(1.6rem,3.2vw,2.5rem);font-weight:750;letter-spacing:-.015em}
+.lang-vi .h2{font-stretch:100%}
+.pg .gal-h1{font-size:clamp(1.9rem,4vw,3.1rem)}
