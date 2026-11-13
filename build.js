@@ -226,7 +226,13 @@ const EN = {
   chatSms: "Text message (SMS)",
   chatNote: "Usually replies the same day.",
   waText: "Hi Luke, I'd like to ask about a kitchen exhaust / fresh air system.",
-  chatSmsDesk: "Or text"
+  chatSmsDesk: "Or text",
+  chatQuick: "Or send a quick message here",
+  chatName: "Your name",
+  chatContact: "Phone or email",
+  chatMsg: "Your message",
+  chatMsgPh: "What can Luke help you with?",
+  chatSend: "Send message"
 };
 
 const VI = {
@@ -369,7 +375,13 @@ const VI = {
   chatSms: "Tin nhắn SMS",
   chatNote: "Luke sẽ trả lời bạn sớm.",
   waText: "Chào Luke, mình muốn hỏi về hệ thống hút khói / cấp gió tươi cho bếp.",
-  chatSmsDesk: "Hoặc nhắn tin SMS tới"
+  chatSmsDesk: "Hoặc nhắn tin SMS tới",
+  chatQuick: "Hoặc gửi tin nhắn nhanh tại đây",
+  chatName: "Họ tên",
+  chatContact: "Số điện thoại hoặc email",
+  chatMsg: "Tin nhắn",
+  chatMsgPh: "Bạn cần Luke hỗ trợ gì?",
+  chatSend: "Gửi tin nhắn"
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -804,6 +816,18 @@ function page(T, lang, kind = 'home', mode = 'site') {
       <a class="chat-opt chat-wa" href="https://wa.me/${C.phoneIntl.replace('+', '')}?text=${encodeURIComponent(T.waText)}" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg><span>${T.chatWa}</span></a>
       <a class="chat-opt chat-sms" href="${sms}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H10l-4 4v-4H4z"/><path d="M8 10h8M8 13h5"/></svg><span>${T.chatSms}</span></a>
       <p class="chat-desk">${T.chatSmsDesk} <strong>${esc(C.phoneDisplay)}</strong>${lang === 'en' ? ' from your phone' : ' từ điện thoại'}.</p>
+      <p class="chat-quick">${T.chatQuick}</p>
+      <form class="chat-form js-enquiry" novalidate>
+        <input type="hidden" name="source" value="Chat quick message (${lang.toUpperCase()})">
+        <label class="sr-only" for="chat-name">${T.chatName}</label>
+        <input id="chat-name" type="text" name="name" autocomplete="name" placeholder="${T.chatName}">
+        <label class="sr-only" for="chat-contact">${T.chatContact}</label>
+        <input id="chat-contact" type="text" name="contact" autocomplete="tel" placeholder="${T.chatContact}">
+        <label class="sr-only" for="chat-msg">${T.chatMsg}</label>
+        <textarea id="chat-msg" name="details" rows="3" placeholder="${T.chatMsgPh}"></textarea>
+        <button class="btn btn-primary btn-sm" type="submit">${T.chatSend}</button>
+      </form>
+      <p class="notice" role="status" hidden></p>
       <p class="chat-note">${T.chatNote}</p>
     </div>
     <button class="chat-btn" type="button" aria-expanded="false" aria-label="${T.chatOpen}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.7 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span>${T.chatBtn}</span></button>

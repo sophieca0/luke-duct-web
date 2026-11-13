@@ -930,3 +930,12 @@ html.js-reveal .rv.in-view{opacity:1;transform:none}
   .chat-sms{display:none}
   .chat-desk{display:block}
 }
+/* quick message form inside the chat panel (no login needed) */
+.chat-quick{margin:12px 4px 6px;padding-top:12px;border-top:1px solid rgba(28,27,26,.1);font-weight:600;font-size:.9375rem}
+.chat-form{display:flex;flex-direction:column;gap:6px}
+.chat-form input,.chat-form textarea{width:100%;min-height:42px;padding:.55rem .75rem;border:1.5px solid #E5E1DB;border-radius:12px;background:#F7F5F2;font:400 .9375rem/1.4 var(--f-body);color:#1C1B1A;resize:vertical}
+.chat-form input:focus,.chat-form textarea:focus{outline:0;border-color:#C9C3BA;background:#fff}
+.chat-form .btn{width:100%;margin-top:2px}
+.chat-menu .notice{margin:8px 0 0;font-size:.875rem}
+.chat-menu{max-height:calc(100vh - 140px);overflow:auto}
+@media (max-width:760px){.chat-menu{max-height:calc(100vh - 200px)}}
