@@ -939,3 +939,19 @@ html.js-reveal .rv.in-view{opacity:1;transform:none}
 .chat-menu .notice{margin:8px 0 0;font-size:.875rem}
 .chat-menu{max-height:calc(100vh - 140px);overflow:auto}
 @media (max-width:760px){.chat-menu{max-height:calc(100vh - 200px)}}
+
+/* ===== 404 page ===== */
+.nf{min-height:100vh;display:flex;flex-direction:column;background:var(--band)}
+.nf .top-in{justify-content:space-between}
+.nf-main{flex:1;display:grid;place-items:center;padding-block:clamp(48px,8vw,96px);background:var(--surface);color:var(--ink)}
+.nf-in{text-align:center;max-width:44rem}
+.nf-code{font:800 clamp(4rem,12vw,7rem)/1 var(--f-display);color:var(--acc);letter-spacing:-.03em}
+.nf .h2{margin:1rem auto 0;color:var(--ink)}
+.nf-vi{margin-top:.4rem;font-size:1.125rem;color:var(--muted)}
+.nf-sub{margin-top:1.4rem;font-size:1.0625rem;color:var(--muted)}
+.nf-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:1.4rem}
+.nf .nf-links .btn-ghost{border-color:var(--line-strong);color:var(--ink);background:transparent}
+.nf .nf-links .btn-ghost:hover{border-color:var(--ink)}
+.nf-call{margin-top:1.8rem;color:var(--muted)}
+.nf-call a{color:var(--ink);font-weight:600;white-space:nowrap}
+@media (max-width:560px){.nf-links .btn{width:100%}}

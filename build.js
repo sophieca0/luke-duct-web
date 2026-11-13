@@ -232,7 +232,8 @@ const EN = {
   chatContact: "Phone or email",
   chatMsg: "Your message",
   chatMsgPh: "What can Luke help you with?",
-  chatSend: "Send message"
+  chatSend: "Send message",
+  ogAlt: "Luke Commercial Kitchen: commercial kitchen exhaust and fresh air systems in Melbourne and Victoria"
 };
 
 const VI = {
@@ -381,7 +382,8 @@ const VI = {
   chatContact: "Số điện thoại hoặc email",
   chatMsg: "Tin nhắn",
   chatMsgPh: "Bạn cần Luke hỗ trợ gì?",
-  chatSend: "Gửi tin nhắn"
+  chatSend: "Gửi tin nhắn",
+  ogAlt: "Luke Commercial Kitchen: hệ thống hút khói và cấp gió tươi cho bếp thương mại tại Melbourne và Victoria"
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -533,6 +535,12 @@ function page(T, lang, kind = 'home', mode = 'site') {
 <meta property="og:description" content="${esc(isG ? T.galMeta : isP ? T.privMeta : T.metaDesc)}">
 <meta property="og:url" content="${pageUrl}">
 <meta property="og:locale" content="${T.ogLocale}">
+<meta property="og:site_name" content="${esc(C.company)}">
+<meta property="og:image" content="${C.siteUrl}assets/og-${lang}.jpg?v=${VER('assets/og-' + lang + '.jpg')}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${esc(T.ogAlt)}">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1C1B1A">
 <link rel="icon" href="${R}assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -853,6 +861,51 @@ out('gallery/index.html', page(EN, 'en', 'gallery'));
 out('vi/gallery/index.html', page(VI, 'vi', 'gallery'));
 out('privacy/index.html', page(EN, 'en', 'privacy'));
 out('vi/privacy/index.html', page(VI, 'vi', 'privacy'));
+
+/* ---- 404 page (GitHub Pages serves /404.html for any missing address) ---- */
+{
+  const C = CONFIG, U = '/';
+  const tel = 'tel:' + C.phoneIntl;
+  out('404.html', `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found · ${esc(C.company)}</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="${U}assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="${U}assets/styles.css?v=${CSS_V}">
+</head>
+<body>
+<div class="pg lang-en nf">
+  <header class="top">
+    <div class="in top-in">
+      <a class="logo" href="${U}"><span class="lg-mark"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-linecap="round" aria-hidden="true"><path d="M5 2.5h4.8v12.2a2 2 0 0 0 2 2H20v4.8h-8.2A6.8 6.8 0 0 1 5 14.7z" fill="currentColor"/><path d="M5 8.4h4.8M15.4 16.7v4.8" stroke="#FF8A55" stroke-width="1.1"/></svg></span><span class="lname">${esc(C.company)}</span></a>
+      <a class="btn btn-primary btn-sm" href="${tel}">${PHONE_IC} ${esc(C.phoneDisplay)}</a>
+    </div>
+  </header>
+  <main class="nf-main">
+    <div class="in nf-in">
+      <p class="nf-code">404</p>
+      <h1 class="h2">Sorry, we couldn't find that page.</h1>
+      <p class="nf-vi" lang="vi">Xin lỗi, không tìm thấy trang này.</p>
+      <p class="nf-sub">The link may be out of date or mistyped. Try one of these instead:</p>
+      <div class="nf-links">
+        <a class="btn btn-primary" href="${U}">Go to the home page ${ARROW}</a>
+        <a class="btn btn-ghost" href="${U}vi/" lang="vi">Về trang chủ (Tiếng Việt)</a>
+        <a class="btn btn-ghost" href="${U}gallery/">View our work</a>
+      </div>
+      <p class="nf-call">Need help now? Call <a href="${tel}">${esc(C.phoneDisplay)}</a>${C.email ? ` or email <a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : ''}.</p>
+    </div>
+  </main>
+  <footer class="foot dark"><div class="in"><div class="foot-l"><strong class="foot-name">${esc(C.company)}</strong><span>${EN.footTag}</span></div><div class="foot-r"><span>© ${new Date().getFullYear()} ${esc(C.company)}. ${EN.rights}</span></div></div></footer>
+</div>
+<script src="${U}assets/main.js?v=${JS_V}" defer></script>
+</body>
+</html>
+`);
+}
 console.log('Built home, gallery and privacy pages (EN + VI)');
 
 /* ---- sitemap.xml + robots.txt (for Google) ----
