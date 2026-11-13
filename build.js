@@ -209,7 +209,12 @@ const EN = {
   privEyebrow: "Privacy",
   hookSysT: "Years of Hard Work Shouldn't Go Up in Smoke.",
   hookSysS: "Get the exhaust and fresh air right from the start. Talk to Luke about your kitchen.",
-  contactHook: "You've put everything into your venue. Don't let poor ventilation undo it."
+  contactHook: "You've put everything into your venue. Don't let poor ventilation undo it.",
+  scopeLead: "Setting up a new restaurant or upgrading your kitchen? Let's get the ventilation right.",
+  scopeP1: "A busy commercial kitchen needs more than just an exhaust fan. Smoke, heat and grease need to be effectively removed, while fresh air needs to flow back in to keep the space comfortable.",
+  scopeP2: "Both systems play an important role and need to work together.",
+  scopeP3: "Luke can help you get the right setup for your kitchen, from assessing the space and recommending a suitable solution to fabrication and installation of the complete exhaust and fresh air systems.",
+  scopeP4: "Every kitchen is different. Let's find the right solution for yours."
 };
 
 const VI = {
@@ -335,7 +340,12 @@ const VI = {
   privEyebrow: "Quyền riêng tư",
   hookSysT: "Đừng để bao công sức của quán tan theo khói bếp.",
   hookSysS: "Làm đúng phần hút khói và gió tươi ngay từ đầu. Trao đổi với Luke về căn bếp của bạn.",
-  contactHook: "Bạn đã dồn hết tâm huyết cho quán. Đừng để hệ thống thông gió kém làm uổng công."
+  contactHook: "Bạn đã dồn hết tâm huyết cho quán. Đừng để hệ thống thông gió kém làm uổng công.",
+  scopeLead: "Bạn đang chuẩn bị mở nhà hàng hay muốn nâng cấp khu bếp hiện tại? Hãy cùng Luke tính toán hệ thống thông gió cho thật phù hợp.",
+  scopeP1: "Một căn bếp thương mại không chỉ cần hệ thống hút khói tốt. Khói, hơi nóng và dầu mỡ cần được hút ra ngoài hiệu quả, đồng thời phải có đủ gió tươi đưa vào để không gian luôn thông thoáng và dễ chịu.",
+  scopeP2: "Hệ thống hút khói và cấp gió tươi luôn cần được tính toán đồng bộ để hoạt động hiệu quả.",
+  scopeP3: "Luke có thể đồng hành cùng bạn từ khâu khảo sát mặt bằng, tư vấn phương án đến gia công và lắp đặt trọn bộ hệ thống hút khói, cấp gió tươi.",
+  scopeP4: "Mỗi căn bếp có một đặc điểm riêng. Luke sẽ giúp bạn tìm ra phương án phù hợp với nhu cầu và điều kiện thực tế của công trình."
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -589,7 +599,8 @@ function page(T, lang, kind = 'home', mode = 'site') {
         <div class="shead">
           <p class="tag">${T.scopeEyebrow}</p>
           <h2 class="h2">${T.scopeH2}</h2>
-          <div class="sys-intro"><p>${T.scopeSub}</p><p>${T.scopeSub2}</p></div>
+          <p class="sys-lead">${T.scopeLead}</p>
+          <div class="sys-intro"><div><p>${T.scopeP1}</p><p>${T.scopeP2}</p></div><div><p>${T.scopeP3}</p><p>${T.scopeP4}</p></div></div>
         </div>
         <div class="sgrid">
           <figure class="panel">
