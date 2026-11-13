@@ -821,3 +821,16 @@ html.js-reveal .rv.in-view{opacity:1;transform:none}
 .tchips{max-width:1320px}
 .prose{max-width:52rem}
 .contact-l .lede{max-width:none}
+
+/* ===== language switch: globe + full language names ===== */
+.lang{align-items:center;gap:2px;padding:3px 3px 3px 10px}
+.lang-ic{flex:none;color:var(--band-muted);margin-right:4px}
+.lang a{font:600 .875rem/1 var(--f-body);letter-spacing:0;padding:0 .8rem;min-width:0}
+.lang-short{display:none}
+@media (max-width:760px){
+  .lang{padding-left:8px}
+  .lang a{padding:0 .6rem;font-size:.8125rem}
+  .lang-full{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  .lang-short{display:inline}
+}
+.lang a{white-space:nowrap}
