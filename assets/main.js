@@ -7,6 +7,17 @@ var ADS = {
   callLabel: 'l4fMCPbvwrcdELrry5NF'    /* "Website phone click" conversion: calls, SMS and WhatsApp */
 };
 
+/* Google Analytics 4: custom events for what visitors click (sent to GA4 only, never to Ads). */
+var GA4 = 'G-7BVN9K5DFZ';
+function track(name, params) {
+  try {
+    if (GA4 && typeof window.gtag === 'function') {
+      var p = params || {}; p.send_to = GA4;
+      window.gtag('event', name, p);
+    }
+  } catch (err) {}
+}
+
 function adsConvert(label) {
   try {
     if (ADS.id && label && typeof window.gtag === 'function') {
@@ -122,6 +133,7 @@ function adsConvert(label) {
             form.reset();
             notice(form, 'ok', S.okSent, false);
             adsConvert(ADS.formLabel);
+            track('generate_lead', { form: (form.querySelector('[name=source]') || {}).value || '' });
           })
           .catch(function () { notice(form, '', S.errSend, true); })
           .then(function () { submit.disabled = false; submit.innerHTML = oldHtml; });
@@ -240,4 +252,33 @@ function adsConvert(label) {
     window.addEventListener('scroll', update, { passive: true });
     update();
   });
+})();
+
+/* ---- GA4: which buttons, links and photos get used ---- */
+(function () {
+  if (!GA4) return;
+  function where(el) {
+    var zones = [['.util', 'contact_bar'], ['.top', 'menu'], ['.hero', 'hero'], ['#work', 'gallery_section'], ['#why', 'why_us'],
+      ['#system', 'system'], ['#process', 'process'], ['#contact', 'contact'], ['.foot', 'footer'], ['.chatfab', 'chat'],
+      ['.stickybar', 'mobile_bar'], ['.nf-main', 'page_404']];
+    for (var i = 0; i < zones.length; i++) if (el.closest(zones[i][0])) return zones[i][1];
+    return 'other';
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target && e.target.closest ? e.target : null;
+    if (!t) return;
+    var el;
+    if ((el = t.closest('a[href^="tel:"]'))) return track('contact_click', { method: 'phone', link_location: where(el) });
+    if ((el = t.closest('a[href^="sms:"]'))) return track('contact_click', { method: 'sms', link_location: where(el) });
+    if ((el = t.closest('a[href*="wa.me/"]'))) return track('contact_click', { method: 'whatsapp', link_location: where(el) });
+    if ((el = t.closest('a[href^="mailto:"]'))) return track('contact_click', { method: 'email', link_location: where(el) });
+    if ((el = t.closest('.more-link'))) return track('gallery_open', { link_location: 'more_photos_tile' });
+    if ((el = t.closest('a[href$="gallery/"], a[href*="gallery/#"]'))) return track('gallery_open', { link_location: where(el) });
+    if ((el = t.closest('.tilebtn'))) return track('photo_zoom', { photo: el.getAttribute('data-alt') || '', link_location: where(el) });
+    if ((el = t.closest('.lbnext, .lbprev'))) return track('photo_browse', { direction: el.classList.contains('lbnext') ? 'next' : 'previous' });
+    if ((el = t.closest('.gf'))) return track('gallery_filter', { filter: el.getAttribute('data-f') || '' });
+    if ((el = t.closest('.chat-btn'))) { if (el.getAttribute('aria-expanded') !== 'true') track('chat_open', {}); return; }
+    if ((el = t.closest('.lang a'))) return track('language_switch', { to: el.getAttribute('hreflang') || '' });
+    if ((el = t.closest('a[href*="#contact"], a.btn-primary'))) return track('call_back_button', { link_location: where(el) });
+  }, true);
 })();
