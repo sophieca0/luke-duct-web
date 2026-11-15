@@ -22,6 +22,8 @@ const CONFIG = {
   // that should receive enquiries), then paste the key here. While empty, the forms
   // open the visitor's SMS app with their details addressed to the phone above.
   web3formsKey: '335a515e-727e-4c8e-8eaf-f16c578c7db8',
+  // Google Ads (gtag.js) ID, loaded in the <head> of every page. Set to '' to switch tracking off.
+  adsId: 'AW-18563134906',
   siteUrl: 'https://lukecomkitchen.com/',
   // Project photos: put files in assets/photos/ and list them here.
   // Project photos (files in assets/photos/). The gallery page shows every photo;
@@ -398,6 +400,16 @@ const VI = {
 const VER = (f) => require('crypto').createHash('sha1').update(fs.readFileSync(path.join(__dirname, f))).digest('hex').slice(0, 10);
 const CSS_V = VER('assets/styles.css');
 const JS_V = VER('assets/main.js');
+// Google tag (gtag.js) for the <head> of every page
+const GTAG = () => CONFIG.adsId ? `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=${CONFIG.adsId}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${CONFIG.adsId}');
+</script>
+` : '';
 function jpegSize(file) {
   const buf = fs.readFileSync(path.join(__dirname, file));
   let i = 2;
@@ -530,7 +542,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(isG ? T.galTitle : isP ? T.privTitle : T.title)}</title>
+${GTAG()}<title>${esc(isG ? T.galTitle : isP ? T.privTitle : T.title)}</title>
 <meta name="description" content="${esc(isG ? T.galMeta : isP ? T.privMeta : T.metaDesc)}">
 <link rel="canonical" href="${pageUrl}">
 <link rel="alternate" hreflang="en-AU" href="${C.siteUrl}${slug}">
@@ -877,7 +889,7 @@ out('vi/privacy/index.html', page(VI, 'vi', 'privacy'));
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page not found · ${esc(C.company)}</title>
+${GTAG()}<title>Page not found · ${esc(C.company)}</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="${U}assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap">

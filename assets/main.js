@@ -1,33 +1,27 @@
-/* ---- Google Ads tracking ----
-   Conversion IDs from Google Ads (Goals > Conversions).
-   Set id to "" to switch all tracking off: nothing is loaded or sent. */
+/* ---- Google Ads conversions ----
+   The Google tag (gtag.js) itself is loaded in each page's <head> (see build.js, CONFIG.adsId).
+   Labels come from Google Ads (Goals > Conversions). Set id to "" to stop sending conversions. */
 var ADS = {
   id: 'AW-18563134906',
   formLabel: 'fWxMCKjOiLUdELrry5NF',   /* "Submit lead form (2)" conversion */
-  callLabel: 'l4fMCPbvwrcdELrry5NF'    /* "Website phone click" conversion */
+  callLabel: 'l4fMCPbvwrcdELrry5NF'    /* "Website phone click" conversion: calls, SMS and WhatsApp */
 };
 
 function adsConvert(label) {
   try {
-    if (ADS.id && label && window.gtag) {
+    if (ADS.id && label && typeof window.gtag === 'function') {
       window.gtag('event', 'conversion', { send_to: ADS.id + '/' + label });
     }
   } catch (err) {}
 }
 
+/* Every call, SMS or WhatsApp link, including ones added later. The click is only
+   recorded: the browser still opens the phone, messages or WhatsApp as normal. */
 (function () {
   if (!ADS.id) return;
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function () { window.dataLayer.push(arguments); };
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ADS.id);
-  document.head.appendChild(s);
-  window.gtag('js', new Date());
-  window.gtag('config', ADS.id);
-  /* every tel: link, including ones added later */
+  var CONTACT_LINKS = 'a[href^="tel:"], a[href^="sms:"], a[href*="wa.me/"], a[href*="api.whatsapp.com/"], a[href^="whatsapp:"]';
   document.addEventListener('click', function (e) {
-    var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+    var a = e.target && e.target.closest ? e.target.closest(CONTACT_LINKS) : null;
     if (a) adsConvert(ADS.callLabel);
   });
 })();
