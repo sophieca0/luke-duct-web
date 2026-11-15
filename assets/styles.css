@@ -984,3 +984,25 @@ html.js-reveal .rv.in-view{opacity:1;transform:none}
 /* menu highlight: soft pill, no underline */
 .nav a.is-active::after{display:none}
 .nav a.is-active{color:#fff;background:rgba(255,255,255,.14);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+
+/* ---- lightbox controls: matching round buttons, photo counter; tidy "more photos" tile on phones ---- */
+.lbbtn{font-size:0;padding:0}
+.lbbtn svg{display:block}
+.lbcount{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);color:rgba(255,255,255,.85);font:600 .9375rem/1 var(--f-body);letter-spacing:.04em;padding:.55rem .9rem;border-radius:999px;background:rgba(28,27,26,.7);border:1px solid rgba(255,255,255,.18);font-variant-numeric:tabular-nums}
+.lbcount:empty{display:none}
+@media (max-width:640px){
+  .lbimg{max-width:calc(100vw - 24px);max-height:calc(100vh - 190px);border-radius:12px}
+  .lbbtn{width:48px;height:48px}
+  .lbclose{top:calc(14px + env(safe-area-inset-top,0px));right:14px}
+  .lbprev,.lbnext{top:auto;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:none}
+  .lbprev{left:14px}.lbnext{right:14px}
+  .lbcount{bottom:calc(31px + env(safe-area-inset-bottom,0px));font-size:.875rem;padding:.5rem .85rem}
+  .tile-more .more-link{aspect-ratio:3/4}
+  .tile-more .pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .more-over{padding:.75rem .5rem;gap:.15rem}
+  .more-over b{font-size:2.25rem}
+  .more-over>span{font-size:.9375rem}
+  .more-over em{margin-top:.55rem;font-size:.8125rem;line-height:1.2;padding:.5rem .8rem}
+}
+.more-over .mt-short{display:none}
+@media (max-width:640px){.more-over .mt-long{display:none}.more-over .mt-short{display:inline}.more-over em{white-space:nowrap;font-size:.875rem;padding:.55rem 1rem}}

@@ -40,6 +40,10 @@ const CONFIG = {
     { src: 'assets/photos/p31.jpg', cat: 'canopies', home: true, en: "Canopy fabricated in our workshop, ready for delivery", vi: "Chụp hút được gia công tại xưởng, sẵn sàng bàn giao" },
     { src: 'assets/photos/p38.jpg', cat: 'roof', home: true, en: "Exhaust fan and ductwork on a roof beside solar panels", vi: "Quạt hút và hệ thống đường ống trên mái, cạnh các tấm pin năng lượng mặt trời" },
     { src: 'assets/photos/p49.jpg', cat: 'ductwork', home: true, en: "Large ductwork rising to a high warehouse ceiling", vi: "Hệ thống đường ống kích thước lớn dẫn lên trần nhà xưởng cao" },
+    { src: 'assets/photos/p64.jpg', cat: 'canopies', en: "Long canopy over steam kettles in a production kitchen", vi: "Chụp hút dài phía trên nồi nấu công nghiệp trong bếp sản xuất" },
+    { src: 'assets/photos/p62.jpg', cat: 'roof', en: "Two new exhaust fans on a metal roof", vi: "Hai quạt hút mới lắp trên mái tôn" },
+    { src: 'assets/photos/p61.jpg', cat: 'canopies', en: "Canopy with twin spigots, protective film still on", vi: "Chụp hút với hai cổ ống, còn màng bảo vệ" },
+    { src: 'assets/photos/p63.jpg', cat: 'roof', en: "Exhaust fans and ductwork on a metal roof", vi: "Quạt hút và đường ống trên mái tôn" },
     { src: 'assets/photos/p02.jpg', cat: 'canopies', en: "Stainless steel canopy and wall sheet", vi: "Chụp hút inox và tấm ốp tường" },
     { src: 'assets/photos/p44.jpg', cat: 'roof', en: "Two exhaust cowls on a grey metal roof", vi: "Hai chụp xả khí trên mái tôn xám" },
     { src: 'assets/photos/p40.jpg', cat: 'ductwork', en: "Canopy and twin risers in a warehouse kitchen", vi: "Chụp hút và hai ống đứng trong bếp nhà xưởng" },
@@ -240,6 +244,7 @@ const EN = {
   ogAlt: "Luke Commercial Kitchen: commercial kitchen exhaust and fresh air systems in Melbourne and Victoria",
   moreTile: "more photos",
   moreTileSub: "See the full gallery",
+  moreTileShort: "View all",
   navGallery: "Gallery"
 };
 
@@ -393,6 +398,7 @@ const VI = {
   ogAlt: "Luke Commercial Kitchen: hệ thống hút khói và cấp gió tươi cho bếp thương mại tại Melbourne và Victoria",
   moreTile: "ảnh nữa",
   moreTileSub: "Xem toàn bộ thư viện ảnh",
+  moreTileShort: "Xem tất cả",
   navGallery: "Thư viện ảnh"
 };
 
@@ -490,7 +496,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
   const homeList = (C.photos.some((p) => p.home) ? C.photos.filter((p) => p.home) : C.photos).slice(0, 8);
   const photos = homeList.map(tile).join('\n');
   const allTiles = C.photos.map(tile).join('\n');
-  const DIALOG = `<dialog class="lb" aria-label="${T.workEyebrow}"><img class="lbimg" src="" alt=""><button class="lbbtn lbclose" type="button" aria-label="${T.lbClose}">&times;</button><button class="lbbtn lbprev" type="button" aria-label="${T.lbPrev}">&#8249;</button><button class="lbbtn lbnext" type="button" aria-label="${T.lbNext}">&#8250;</button></dialog>`;
+  const DIALOG = `<dialog class="lb" aria-label="${T.workEyebrow}"><img class="lbimg" src="" alt=""><button class="lbbtn lbclose" type="button" aria-label="${T.lbClose}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button><button class="lbbtn lbprev" type="button" aria-label="${T.lbPrev}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><span class="lbcount" aria-live="polite"></span><button class="lbbtn lbnext" type="button" aria-label="${T.lbNext}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></dialog>`;
   const cats = [['all', T.catAll], ['canopies', T.catCanopies], ['ductwork', T.catDuct], ['roof', T.catRoof], ['fitout', T.catFitout]].filter(([c]) => c === 'all' || C.photos.some((p) => p.cat === c));
   const PV = PRIVACY[lang];
   const linkify = (t) => esc(t)
@@ -655,7 +661,7 @@ ${GTAG()}<title>${esc(isG ? T.galTitle : isP ? T.privTitle : T.title)}</title>
     ${C.photos.length ? `<section class="sec sheet light alt" id="work">
       <div class="in">
         <div class="shead"><p class="tag">${T.workEyebrow}</p><h2 class="h2">${T.workH2}</h2><p class="sub">${T.workSub}</p></div>
-        <ul class="tiles masonry">${C.photos.length > homeList.length ? `<li class="tile tile-more more-first"><a class="more-link" href="${GL}"><img class="pimg" src="${R}${esc(C.photos[homeList.length + 1].src)}?v=${VER(C.photos[homeList.length + 1].src)}" alt="" width="${jpegSize(C.photos[homeList.length + 1].src).w}" height="${jpegSize(C.photos[homeList.length + 1].src).h}" loading="lazy" decoding="async"><span class="more-over"><b>+${C.photos.length - homeList.length}</b><span>${T.moreTile}</span><em>${T.moreTileSub} →</em></span></a></li>` : ''}${photos}</ul>
+        <ul class="tiles masonry">${C.photos.length > homeList.length ? `<li class="tile tile-more more-first"><a class="more-link" href="${GL}"><img class="pimg" src="${R}${esc(C.photos[homeList.length + 1].src)}?v=${VER(C.photos[homeList.length + 1].src)}" alt="" width="${jpegSize(C.photos[homeList.length + 1].src).w}" height="${jpegSize(C.photos[homeList.length + 1].src).h}" loading="lazy" decoding="async"><span class="more-over"><b>+${C.photos.length - homeList.length}</b><span>${T.moreTile}</span><em><span class="mt-long">${T.moreTileSub}</span><span class="mt-short">${T.moreTileShort}</span> →</em></span></a></li>` : ''}${photos}</ul>
         ${DIALOG}
         <div class="center"><a class="btn btn-primary btn-lg" href="${GL}">${T.viewAll.replace('{n}', C.photos.length)} ${ARROW}</a></div>
       </div>
