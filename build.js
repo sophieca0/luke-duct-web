@@ -404,7 +404,7 @@ const CSS_V = VER('assets/styles.css');
 const JS_V = VER('assets/main.js');
 // Google tag (gtag.js) for the <head> of every page
 const GTAG = () => (CONFIG.adsId || CONFIG.ga4Id) ? `<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=${CONFIG.adsId || CONFIG.ga4Id}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=${CONFIG.ga4Id || CONFIG.adsId}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
