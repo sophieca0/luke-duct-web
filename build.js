@@ -402,14 +402,27 @@ const VI = {
 const VER = (f) => require('crypto').createHash('sha1').update(fs.readFileSync(path.join(__dirname, f))).digest('hex').slice(0, 10);
 const CSS_V = VER('assets/styles.css');
 const JS_V = VER('assets/main.js');
-// Google tag (gtag.js) for the <head> of every page
+// Google tag (gtag.js) for the <head> of every page.
+// Opt-out: open any page with ?notrack once and that browser is never counted (?track undoes it).
 const GTAG = () => (CONFIG.adsId || CONFIG.ga4Id) ? `<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=${CONFIG.ga4Id || CONFIG.adsId}"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-${CONFIG.adsId ? `  gtag('config', '${CONFIG.adsId}');\n` : ''}${CONFIG.ga4Id ? `  gtag('config', '${CONFIG.ga4Id}');\n` : ''}</script>
+  (function () {
+    var off = false;
+    try {
+      if (/[?&]notrack(=|&|$)/.test(location.search)) localStorage.setItem('lck_notrack', '1');
+      if (/[?&]track(=|&|$)/.test(location.search)) localStorage.removeItem('lck_notrack');
+      off = localStorage.getItem('lck_notrack') === '1';
+    } catch (e) {}
+    if (off) return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=${CONFIG.ga4Id || CONFIG.adsId}';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+${CONFIG.adsId ? `    gtag('config', '${CONFIG.adsId}');\n` : ''}${CONFIG.ga4Id ? `    gtag('config', '${CONFIG.ga4Id}');\n` : ''}  })();
+</script>
 ` : '';
 function jpegSize(file) {
   const buf = fs.readFileSync(path.join(__dirname, file));

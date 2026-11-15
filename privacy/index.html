@@ -4,13 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7BVN9K5DFZ"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18563134906');
-  gtag('config', 'G-7BVN9K5DFZ');
+  (function () {
+    var off = false;
+    try {
+      if (/[?&]notrack(=|&|$)/.test(location.search)) localStorage.setItem('lck_notrack', '1');
+      if (/[?&]track(=|&|$)/.test(location.search)) localStorage.removeItem('lck_notrack');
+      off = localStorage.getItem('lck_notrack') === '1';
+    } catch (e) {}
+    if (off) return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7BVN9K5DFZ';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', 'AW-18563134906');
+    gtag('config', 'G-7BVN9K5DFZ');
+  })();
 </script>
 <title>Privacy Policy · Luke Commercial Kitchen</title>
 <meta name="description" content="How Luke Commercial Kitchen collects, uses and protects the personal information you share through lukecomkitchen.com.">
