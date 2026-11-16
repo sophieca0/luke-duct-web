@@ -23,7 +23,7 @@ const CONFIG = {
   // open the visitor's SMS app with their details addressed to the phone above.
   web3formsKey: '335a515e-727e-4c8e-8eaf-f16c578c7db8',
   // Google Ads (gtag.js) ID, loaded in the <head> of every page. Set to '' to switch tracking off.
-  adsId: 'AW-18563134906',
+  adsId: '',
   // Google Analytics 4 measurement ID (shares the same Google tag). Set to '' to switch it off.
   ga4Id: 'G-7BVN9K5DFZ',
   siteUrl: 'https://lukecomkitchen.com/',
@@ -37,7 +37,7 @@ const CONFIG = {
     { src: 'assets/photos/p42.jpg', cat: 'canopies', home: true, en: "Long canopy in a finished commercial kitchen", vi: "Hệ thống chụp hút dài trong khu bếp thương mại đã hoàn thiện" },
     { src: 'assets/photos/p39.jpg', cat: 'ductwork', home: true, en: "Galvanised exhaust riser on an external wall", vi: "Đường ống hút khói mạ kẽm lắp đặt bên ngoài công trình" },
     { src: 'assets/photos/p58.jpg', cat: 'canopies', home: true, en: "Canopy with fresh air supply grilles and wall sheeting", vi: "Chụp hút khói tích hợp các cửa cấp gió tươi và tấm ốp tường" },
-    { src: 'assets/photos/p31.jpg', cat: 'canopies', home: true, en: "Canopy fabricated in our workshop, ready for delivery", vi: "Chụp hút được gia công tại xưởng, sẵn sàng bàn giao" },
+    { src: 'assets/photos/p31.jpg', cat: 'canopies', home: true, en: "Canopy fabricated in the workshop, ready for delivery", vi: "Chụp hút được gia công tại xưởng, sẵn sàng bàn giao" },
     { src: 'assets/photos/p38.jpg', cat: 'roof', home: true, en: "Exhaust fan and ductwork on a roof beside solar panels", vi: "Quạt hút và hệ thống đường ống trên mái, cạnh các tấm pin năng lượng mặt trời" },
     { src: 'assets/photos/p49.jpg', cat: 'ductwork', home: true, en: "Large ductwork rising to a high warehouse ceiling", vi: "Hệ thống đường ống kích thước lớn dẫn lên trần nhà xưởng cao" },
     { src: 'assets/photos/p64.jpg', cat: 'canopies', en: "Long canopy over steam kettles in a production kitchen", vi: "Chụp hút dài phía trên nồi nấu công nghiệp trong bếp sản xuất" },
@@ -95,13 +95,13 @@ const CONFIG = {
 /* ====================== TEXT ====================== */
 const EN = {
   htmlLang: 'en', ogLocale: 'en_AU',
-  title: "Luke Commercial Kitchen · Commercial Kitchen Exhaust & Fresh Air, Melbourne & Victoria",
-  metaDesc: "Commercial kitchen exhaust and fresh air systems, fabricated and installed across Melbourne and Victoria. Practical advice, neat workmanship. Call 0466 404 868.",
-  navSystem: "The System", navProcess: "Process", navContact: "Contact", navWork: "Our Work",
+  title: "Luke Commercial Kitchen · Commercial Kitchen Exhaust & Fresh Air Projects, Victoria",
+  metaDesc: "Project portfolio of Luke: commercial kitchen exhaust and fresh air systems, from site measure and drawings to fabrication and hands-on installation, across Melbourne and Victoria.",
+  navSystem: "The System", navProcess: "Approach", navContact: "Contact", navWork: "Our Work",
   call: 'Call', quote: "Request a Call Back", quoteShort: "Request a Call Back",
-  eyebrow: "Melbourne & all of Victoria",
-  h1a: "Don't Let Smoke and Grease", h1b: "Drive Your Customers Away.",
-  lede: "A well-designed exhaust and fresh air system keeps your kitchen clear and your customers comfortable. We custom-make and install canopies, ductwork and fittings for cafés, takeaways, restaurants and commercial kitchens across Melbourne and Victoria.",
+  eyebrow: "Project portfolio · Melbourne & Victoria",
+  h1a: "Exhaust and Fresh Air Systems,", h1b: "From Workshop to Rooftop.",
+  lede: "Luke leads commercial kitchen exhaust and fresh air projects across Melbourne and Victoria, and installs them himself. He is on site for every project shown here, from the first measure-up to handover.",
   motionPause: 'Pause animation', motionPlay: 'Play animation',
   formTitle: 'Request a call back',
   formSub: "Leave your details and we'll call you back to talk through the job.",
@@ -122,10 +122,10 @@ const EN = {
   smsHead: "Call back request from the website",
   trustDo: 'What we do', trustDoV: 'Exhaust + fresh air',
   trustMade: 'Made by us', trustMadeV: 'Custom fabrication',
-  trustArea: 'Service area', areaVal: "Victoria-wide",
+  trustArea: 'Service area', areaVal: "Melbourne & Victoria",
   trustCall: 'Talk to us',
   trustLicence: 'Licence', trustInsured: 'Insured', trustExp: 'Experience', yearsUnit: 'years',
-  scopeEyebrow: "The system",
+  scopeEyebrow: "How it works",
   scopeH2: "Air Out, Fresh Air In.",
   scopeSub: "A commercial kitchen needs a properly planned ventilation system. The exhaust removes smoke, heat and grease-laden air, while the fresh air system brings clean outside air back into the kitchen.",
   fact1: 'Exhaust systems', fact2: 'Fresh air systems', fact3: 'Fabricated in-house', fact4: 'Victoria-wide',
@@ -137,28 +137,28 @@ const EN = {
   s6t: "Discharge Point", s6d: "Where the exhaust leaves the building – roof, wall or shaft – planned from the start.",
   dgLabel: "Illustration of a typical commercial kitchen system, not to scale. Numbered 1 to 7: the fire-rated wall sheet behind the cooking line under the canopy, the canopy over the cooking equipment, an access panel on the vertical riser, the ductwork above the ceiling, the exhaust fan, the discharge point, and the fresh air supply coming down into the kitchen.",
   dgTitle: 'TYPICAL KITCHEN SYSTEM', dgScale: 'NOT TO SCALE', dgCeiling: 'CEILING', dgExhaust: 'EXHAUST', dgFresh: 'FRESH AIR',
-  workEyebrow: "Our work", workH2: "Look Closely at the Finish.", workSub: "Real photos from our own jobs across Victoria. Tap any photo to see it larger.",
+  workEyebrow: "Selected work", workH2: "Look Closely at the Finish.", workSub: "Real photos from projects Luke has led across Victoria: canopies, ductwork, rooftop fans and fit-outs. Tap any photo to see it larger.",
   ctaT: "Planning a New Kitchen or Upgrading an Existing One?", ctaS: "Whether you're fitting out a new commercial kitchen or upgrading an existing system, getting the exhaust and fresh air right from the start makes a difference.",
-  procEyebrow: "Process", procH2: "From First Visit to Final Handover.", procLink: 'Start with step 01',
-  st1t: "Site Measure", st1d: "We visit, measure and check the duct routes, fresh air intake and discharge point.",
-  st2t: "Quote", st2d: "A clear quote that sets out the full scope of work.",
-  st3t: "Drawings", st3d: "Drawings to review, so any changes are sorted before anything is made.",
-  st4t: "Fabrication", st4d: "Everything is made in-house to the approved drawings: canopy, ductwork and fittings.",
+  procEyebrow: "Approach", procH2: "From Site Measure to Handover.", procLink: 'Start with step 01',
+  st1t: "Site Measure", st1d: "Measure up and check the duct routes, fresh air intake and discharge point.",
+  st2t: "Scope", st2d: "A clear scope of work, agreed before anything is made.",
+  st3t: "Drawings", st3d: "Drawings prepared and reviewed, with any changes sorted before fabrication.",
+  st4t: "Fabrication", st4d: "Canopy, ductwork and fittings made to the approved drawings.",
   st5t: "Installation", st5d: "Installed neatly and carefully, with updates as the job progresses.",
-  st6t: "Handover", st6d: "We walk you through the finished work and make sure you're happy.",
+  st6t: "Handover", st6d: "A walk-through of the finished system, with the documents and as-built records.",
   expEyebrow: "Why Us", expH2: "More Than Just Installation.",
   e1t: "Quality Workmanship, Down to the Details", e1d: "Neatly routed ductwork, clean joins and careful finishing. We want the finished work to look as good as it performs.",
   e2t: "Practical Advice That Works for You", e2d: "We take the time to understand your project, talk through your options and find the right solution, not just the easiest one.",
   e3t: "Technical Experience for Challenging Jobs", e3d: "Luke and the team bring hands-on technical experience, helping us plan carefully, work through site challenges and find practical solutions when things aren't straightforward.",
   e4t: "Your Satisfaction Matters", e4d: "From the first conversation to final handover, we keep communication clear and focus on delivering a result we're both proud of.",
   proofH: 'In their words',
-  contactEyebrow: "Contact", contactH2: "Let's Talk About Your Kitchen.",
+  contactEyebrow: "Contact", contactH2: "Get in Touch.",
   sendH: "Helpful Information to Have",
   l1: "Site address",
   l2: "Floor plans or mechanical drawings (if available)",
   l3: "Cooking equipment list or canopy layout",
   l4: "Exhaust discharge location: roof, wall or shaft (if known)",
-  kPhone: "Phone", kEmail: 'Email', kArea: "Service Area",
+  kPhone: "Phone", kEmail: 'Email', kArea: "Based in",
   langLabel: 'Language', home: 'Luke Commercial Kitchen home',
   rights: "All rights reserved.",
   contactIntro: "Planning a new commercial kitchen or looking to upgrade your existing exhaust and fresh air system?",
@@ -174,42 +174,42 @@ const EN = {
   heroFormS: "Leave your details and we'll call you back.",
   hl1: "Exhaust & Fresh Air Systems",
   hl2: "Custom Fabrication",
-  hl3: "Made In-House",
-  hl4: "Servicing All of Victoria", hl5: "Fully licensed", hl6: "5 years of experience",
-  hlLabel: "What we do",
+  hl3: "Hands-On Installation",
+  hl4: "Melbourne & Victoria", hl5: "Civil Engineering Background", hl6: "5 Years in HVAC & Kitchen Ventilation",
+  hlLabel: "Capabilities at a glance",
   expSub: "A good result takes the right technical knowledge, practical thinking and care in every detail.",
   expSub2: "Here's what you can expect when working with Luke Commercial Kitchen.",
   ctaS2: "Let's talk through your plans and work out a practical solution for your space.",
   scopeSub2: "Both systems need to work together. We fabricate and install the complete exhaust and fresh air setup, planned to suit your kitchen and project requirements. Together, extraction and fresh air make up a commercial kitchen ventilation system.",
-  procSub: "We keep the process straightforward and make sure the important details are worked through before the installation begins.",
+  procSub: "A straightforward process, with the important details worked through before installation begins.",
   contactIntro2: "Tell us a little about your project. We'll take the time to understand what you need and discuss the best way to approach the job.",
-  footTag: "Commercial Kitchen Exhaust & Fresh Air Systems",
+  footTag: "Commercial Kitchen Exhaust & Fresh Air Projects",
   navLabel: 'Main menu',
   s7t: "Fresh Air Supply",
   s7d: "A supply fan and ductwork bring clean outside air back into the kitchen to replace what is exhausted.",
   dgWall: "WALL SHEET",
-  photoAlt: "Luke Commercial Kitchen installation photo",
+  photoAlt: "Luke Commercial Kitchen project photo",
   enlarge: "View larger photo",
   lbClose: "Close",
   lbPrev: "Previous photo",
   lbNext: "Next photo",
   viewAll: "View all {n} photos",
   galTitle: "Project Gallery · Luke Commercial Kitchen · Commercial Kitchen Exhaust, Victoria",
-  galMeta: "Photos of commercial kitchen canopies, ductwork, roof discharge and fit-outs fabricated and installed by Luke Commercial Kitchen across Victoria.",
+  galMeta: "Photos of commercial kitchen canopies, ductwork, rooftop discharge and fit-outs from projects led by Luke across Victoria.",
   galEyebrow: "Project gallery",
   galH1: "Our Work, Up Close.",
-  galSub: "Canopies, ductwork, roof discharge and kitchen fit-outs from jobs across Victoria. Tap any photo to see it larger.",
+  galSub: "Canopies, ductwork, rooftop discharge and fit-outs from projects Luke has led across Victoria. Tap any photo to see it larger.",
   galFilter: "Filter photos",
   catAll: "All",
   catCanopies: "Canopies",
   catDuct: "Ductwork",
-  catRoof: "Roof & Discharge",
-  catFitout: "Kitchen Fit-outs",
-  galCtaT: "Great Food Deserves a Kitchen That Breathes.",
-  galCtaS: "Tell us about your kitchen and we'll get in touch to talk it through.",
+  catRoof: "Rooftop & Discharge",
+  catFitout: "Fit-outs & Wall Sheeting",
+  galCtaT: "Interested in the Work?",
+  galCtaS: "For project enquiries, Luke can be reached by email or phone.",
   galBack: "Back to home",
   contactDetails: "Contact Details",
-  footArea: "Victoria-wide",
+  footArea: "Melbourne & Victoria",
   privacyLink: "Privacy Policy",
   privTitle: "Privacy Policy · Luke Commercial Kitchen",
   privMeta: "How Luke Commercial Kitchen collects, uses and protects the personal information you share through lukecomkitchen.com.",
@@ -217,11 +217,11 @@ const EN = {
   hookSysT: "Years of Hard Work Shouldn't Go Up in Smoke.",
   hookSysS: "Get the exhaust and fresh air right from the start. Talk to Luke before you build.",
   contactHook: "You've put everything into your venue. Don't let poor ventilation undo it.",
-  scopeLead: "Setting up a new restaurant or upgrading your kitchen? Let's get the ventilation right.",
+  scopeLead: "Every commercial kitchen needs its exhaust and fresh air working together.",
   scopeP1: "A busy commercial kitchen needs more than just an exhaust fan. Smoke, heat and grease need to be effectively removed, while fresh air needs to flow back in to keep the space comfortable.",
   scopeP2: "Both systems play an important role and need to work together.",
-  scopeP3: "Luke and the team can help you get the right setup for your kitchen, from assessing the space and recommending a suitable solution to fabrication and installation of the complete exhaust and fresh air systems.",
-  scopeP4: "Every kitchen is different. Let's find the right solution for yours.",
+  scopeP3: "Luke's projects cover the complete setup shown in the diagram, from the wall sheet and canopy through to the exhaust fan, discharge point and fresh air supply.",
+  scopeP4: "Every kitchen is different, so each system is planned around the space, the cooking line and where the air can discharge.",
   orEmail: "or email",
   orCall: "or call",
   utilArea: "Servicing all of Victoria",
@@ -241,22 +241,63 @@ const EN = {
   chatMsg: "Your message",
   chatMsgPh: "What can Luke help you with?",
   chatSend: "Send message",
-  ogAlt: "Luke Commercial Kitchen: commercial kitchen exhaust and fresh air systems in Melbourne and Victoria",
+  ogAlt: "Luke Commercial Kitchen: commercial kitchen exhaust and fresh air projects in Melbourne and Victoria",
   moreTile: "more photos",
   moreTileSub: "See the full gallery",
   moreTileShort: "View all",
-  navGallery: "Gallery"
+  navGallery: "Work",
+  navCap: "Capabilities",
+  navAbout: "About",
+  heroWork: "View the work",
+  heroAbout: "About Luke",
+  capEyebrow: "Capabilities",
+  capH2: "Hands-On, From Start to Finish.",
+  capSub: "Luke works across the whole project, not just the install: the measuring, the drawings, the making, the fitting and the paperwork that closes it out.",
+  c1t: "Custom Fabrication",
+  c1d: "Canopies, ductwork, fittings and stainless wall sheeting made to the approved drawings, with clean joins and careful finishing.",
+  c2t: "Exhaust Systems",
+  c2d: "Canopies, ductwork, access panels, exhaust fans and discharge points, planned as one system from the cooking line to the roof.",
+  c3t: "Fresh Air Systems",
+  c3d: "Supply fans and ductwork that bring clean outside air back into the kitchen to replace what is exhausted.",
+  c4t: "Hands-On Installation",
+  c4d: "Luke installs the work himself, setting out and fitting each system neatly, and checking the details as the job progresses.",
+  c5t: "Site Measure & Drawings",
+  c5d: "Measuring up on site, gathering the inputs and drawing up the system, so routes, sizes and discharge points are settled before anything is made.",
+  c6t: "Documentation & Close-out",
+  c6d: "Progress updates, document review, certification paperwork and as-built records, so the project is properly closed out at handover.",
+  behEyebrow: "Behind the work",
+  behH2: "From the Workshop to Handover.",
+  behSub: "The finish you see starts well before installation day.",
+  b1t: "Workshop",
+  b1d: "Canopy fabricated in the workshop, ready for delivery.",
+  b2t: "On site",
+  b2d: "Canopy and wall sheeting going in during construction.",
+  b3t: "Finished",
+  b3d: "Finished stainless canopy with wall sheeting.",
+  aboutEyebrow: "About Luke",
+  aboutH2: "An Engineering Background, a Hands-On Approach.",
+  ap1: "Luke started his career with five years in civil engineering before moving into HVAC. For the past five years he has worked in mechanical ventilation, focusing on commercial kitchen exhaust and fresh air systems.",
+  ap2: "He is on site for every project shown here and leads the work alongside the team: measuring up, drawing, installing with his own hands, keeping everyone updated, and finishing with the documents, certification and as-built records.",
+  ap3: "The engineering background shows in the planning. The hands-on experience shows in the finish.",
+  as1n: "5 yrs",
+  as1l: "Civil engineering",
+  as2n: "5 yrs",
+  as2l: "HVAC & kitchen ventilation",
+  as3n: "On site",
+  as3l: "For every project shown",
+  contactText: "For project enquiries or questions about the work shown here, Luke can be reached by email or phone.",
+  emailBtn: "Email Luke"
 };
 
 const VI = {
   htmlLang: 'vi', ogLocale: 'vi_VN',
-  title: "Luke Commercial Kitchen · Hút khói & cấp gió tươi cho bếp thương mại, Melbourne & Victoria",
-  metaDesc: "Hệ thống hút khói và cấp gió tươi cho bếp thương mại, gia công và lắp đặt tại Melbourne và khắp bang Victoria. Gọi 0466 404 868.",
-  navSystem: "Hệ thống", navProcess: "Quy trình", navContact: "Liên hệ", navWork: "Công trình đã thực hiện",
+  title: "Luke Commercial Kitchen · Công trình hút khói & cấp gió tươi cho bếp thương mại, Victoria",
+  metaDesc: "Hồ sơ công trình của Luke: hệ thống hút khói và cấp gió tươi cho bếp thương mại, từ đo đạc, bản vẽ đến gia công và trực tiếp lắp đặt, khắp Melbourne và Victoria.",
+  navSystem: "Hệ thống", navProcess: "Cách làm", navContact: "Liên hệ", navWork: "Công trình đã thực hiện",
   call: "Gọi", quote: "Yêu cầu gọi lại", quoteShort: "Yêu cầu gọi lại",
-  eyebrow: "Melbourne và toàn bang Victoria",
-  h1a: "Đừng để khói và hơi dầu mỡ", h1b: "làm khách bỏ đi.",
-  lede: "Một hệ thống hút khói và cấp gió tươi được thiết kế đúng sẽ giữ cho căn bếp thông thoáng và khách luôn thấy dễ chịu. Chúng tôi tự sản xuất và lắp đặt chụp hút, ống gió và phụ kiện cho quán cà phê, tiệm takeaway, nhà hàng và bếp thương mại khắp Melbourne và Victoria.",
+  eyebrow: "Hồ sơ công trình · Melbourne & Victoria",
+  h1a: "Hệ thống hút khói và gió tươi,", h1b: "từ xưởng đến mái nhà.",
+  lede: "Luke phụ trách các công trình hút khói và cấp gió tươi cho bếp thương mại khắp Melbourne và Victoria, và tự tay lắp đặt. Luke có mặt ở mọi công trình trên trang này, từ lần đo đạc đầu tiên đến khi bàn giao.",
   motionPause: 'Tạm dừng hiệu ứng', motionPlay: 'Phát hiệu ứng',
   formTitle: 'Yêu cầu gọi lại',
   formSub: "Để lại thông tin, Luke sẽ gọi lại để trao đổi về dự án của bạn.",
@@ -277,10 +318,10 @@ const VI = {
   smsHead: "Yêu cầu gọi lại từ website",
   trustDo: "Dịch vụ", trustDoV: 'Hút khói + gió tươi',
   trustMade: 'Tự sản xuất', trustMadeV: 'Gia công theo bản vẽ',
-  trustArea: 'Khu vực phục vụ', areaVal: "Toàn bang Victoria",
+  trustArea: 'Khu vực phục vụ', areaVal: "Melbourne & Victoria",
   trustCall: "Gọi Luke Commercial Kitchen",
   trustLicence: 'Giấy phép', trustInsured: 'Bảo hiểm', trustExp: 'Kinh nghiệm', yearsUnit: 'năm',
-  scopeEyebrow: "Hệ thống",
+  scopeEyebrow: "Cách hệ thống hoạt động",
   scopeH2: "Hút khí ra ngoài, cấp gió tươi vào trong.",
   scopeSub: "Một khu bếp thương mại cần có hệ thống thông gió được tính toán và bố trí hợp lý. Hệ thống hút khói giúp loại bỏ khói, nhiệt và không khí chứa dầu mỡ, trong khi hệ thống cấp gió tươi đưa không khí sạch từ bên ngoài vào khu bếp.",
   fact1: 'Hệ thống hút khói', fact2: 'Hệ thống gió tươi', fact3: 'Tự gia công', fact4: 'Toàn bang Victoria',
@@ -292,28 +333,28 @@ const VI = {
   s6t: "Điểm xả khí", s6d: "Nơi khí thải ra khỏi công trình – mái, tường hoặc hộp gen – được tính từ đầu.",
   dgLabel: "Sơ đồ minh họa hệ thống bếp thương mại điển hình, không theo tỷ lệ. Đánh số 1 đến 7: tấm ốp tường chống cháy, chụp hút khói, cửa thăm kỹ thuật, đường ống dẫn khí, quạt hút, điểm xả khí và cửa cấp gió tươi.",
   dgTitle: "HỆ THỐNG BẾP ĐIỂN HÌNH", dgScale: "SƠ ĐỒ MINH HỌA, KHÔNG THEO TỶ LỆ", dgCeiling: "TRẦN NHÀ", dgExhaust: "HÚT KHÓI", dgFresh: "CẤP GIÓ TƯƠI",
-  workEyebrow: "Công trình đã thực hiện", workH2: "Chỉn chu trong từng chi tiết.", workSub: "Hình ảnh thực tế từ các công trình Luke đã thực hiện tại Victoria. Nhấn vào từng ảnh để xem kích thước lớn hơn.",
+  workEyebrow: "Công trình tiêu biểu", workH2: "Chỉn chu trong từng chi tiết.", workSub: "Hình ảnh thực tế từ các công trình Luke đã chỉ đạo thi công tại Victoria: chụp hút, đường ống, quạt trên mái và hoàn thiện bếp. Nhấn vào ảnh để xem lớn hơn.",
   ctaT: "Đang làm bếp mới hay nâng cấp bếp hiện có?", ctaS: "Dù anh chị đang làm bếp thương mại mới hay nâng cấp hệ thống hiện có, làm đúng phần hút khói và gió tươi ngay từ đầu sẽ tạo ra khác biệt.",
-  procEyebrow: "Quy trình", procH2: "Từ khảo sát ban đầu đến khi hoàn thiện công trình.", procLink: 'Bắt đầu từ bước 01',
-  st1t: "Khảo sát và đo đạc", st1d: "Luke và đội ngũ đến công trình để khảo sát, đo đạc và kiểm tra hướng đi đường ống, vị trí lấy gió tươi cũng như điểm xả khí.",
-  st2t: "Báo giá", st2d: "Báo giá rõ ràng, thể hiện phạm vi công việc và các hạng mục cần thực hiện.",
-  st3t: "Bản vẽ kỹ thuật", st3d: "Bản vẽ được gửi để khách hàng xem xét. Các điều chỉnh cần thiết sẽ được thống nhất trước khi tiến hành gia công.",
-  st4t: "Gia công", st4d: "Toàn bộ canopy, ống gió và phụ kiện được tự sản xuất theo bản vẽ đã duyệt.",
-  st5t: "Lắp đặt", st5d: "Thi công gọn gàng, cẩn thận và cập nhật tiến độ trong quá trình thực hiện.",
-  st6t: "Bàn giao", st6d: "Kiểm tra công trình hoàn thiện, cùng khách hàng xem xét kết quả và đảm bảo các hạng mục đã thực hiện đúng như thống nhất.",
+  procEyebrow: "Cách làm", procH2: "Từ khảo sát đến bàn giao.", procLink: 'Bắt đầu từ bước 01',
+  st1t: "Khảo sát và đo đạc", st1d: "Đo đạc và kiểm tra hướng đi đường ống, vị trí lấy gió tươi và điểm xả khí.",
+  st2t: "Phạm vi công việc", st2d: "Thống nhất rõ phạm vi công việc trước khi gia công.",
+  st3t: "Bản vẽ kỹ thuật", st3d: "Lên bản vẽ và xem lại, điều chỉnh xong xuôi trước khi gia công.",
+  st4t: "Gia công", st4d: "Chụp hút, đường ống và phụ kiện được gia công theo bản vẽ đã duyệt.",
+  st5t: "Lắp đặt", st5d: "Lắp đặt gọn gàng, cẩn thận, cập nhật tiến độ trong suốt quá trình thi công.",
+  st6t: "Bàn giao", st6d: "Cùng xem lại hệ thống đã hoàn thiện, kèm hồ sơ và bản vẽ hoàn công.",
   expEyebrow: "Tại sao chọn chúng tôi?", expH2: "Không Chỉ Đơn Thuần Là Lắp Đặt.",
   e1t: "Thi Công Chất Lượng, Chỉn Chu Từng Chi Tiết", e1d: "Đường ống được bố trí gọn gàng, các mối nối sạch đẹp và hoàn thiện cẩn thận. Chúng tôi muốn hệ thống không chỉ hoạt động tốt mà còn có tính thẩm mỹ cao.",
   e2t: "Tư Vấn Thực Tế, Phù Hợp Với Bạn", e2d: "Chúng tôi dành thời gian tìm hiểu dự án, trao đổi các phương án và cùng bạn tìm ra giải pháp phù hợp, thay vì chỉ chọn cách làm đơn giản nhất.",
   e3t: "Kinh Nghiệm Kỹ Thuật Với Những Công Trình Khó", e3d: "Kinh nghiệm thực tế giúp Luke và đội ngũ lên phương án cẩn thận, xử lý những thách thức tại công trình và tìm ra giải pháp phù hợp ngay cả khi điều kiện thi công không thuận lợi.",
   e4t: "Sự Hài Lòng Của Bạn Là Điều Quan Trọng", e4d: "Từ buổi trao đổi đầu tiên đến khi bàn giao công trình, chúng tôi luôn chú trọng giao tiếp rõ ràng và hướng đến kết quả mà cả hai bên đều hài lòng.",
   proofH: 'Khách hàng nói gì',
-  contactEyebrow: "Liên hệ", contactH2: "Cùng trao đổi về khu bếp của bạn.",
+  contactEyebrow: "Liên hệ", contactH2: "Liên hệ với Luke.",
   sendH: "Những thông tin nên chuẩn bị:",
   l1: "Địa chỉ công trình",
   l2: "Mặt bằng hoặc bản vẽ cơ điện (nếu có)",
   l3: "Danh sách thiết bị bếp hoặc bố trí chụp hút",
   l4: "Vị trí xả khí: mái, tường hoặc trục kỹ thuật (nếu đã biết)",
-  kPhone: "Điện thoại", kEmail: 'Email', kArea: "Khu vực phục vụ",
+  kPhone: "Điện thoại", kEmail: 'Email', kArea: "Khu vực",
   langLabel: 'Ngôn ngữ', home: "Trang chủ Luke Commercial Kitchen",
   rights: "Bảo lưu mọi quyền.",
   contactIntro: "Bạn đang chuẩn bị xây dựng bếp thương mại mới hay muốn nâng cấp hệ thống hút khói và cấp gió tươi hiện tại?",
@@ -327,43 +368,43 @@ const VI = {
   lede2: "Với nền tảng kỹ thuật vững chắc, tư vấn thực tế và sự chỉn chu trong từng công đoạn, Luke luôn hướng đến giải pháp phù hợp và chất lượng hoàn thiện tốt nhất cho mỗi dự án, từ những công trình đơn giản đến các hạng mục phức tạp.",
   heroFormT: "Trao đổi về dự án của bạn",
   heroFormS: "Để lại thông tin, Luke sẽ gọi lại cho bạn.",
-  hl1: "Hệ thống hút khói và cấp gió tươi",
+  hl1: "Hệ thống hút khói & gió tươi",
   hl2: "Gia công theo yêu cầu",
-  hl3: "Sản xuất trực tiếp tại xưởng",
-  hl4: "Phục vụ trên toàn bang Victoria", hl5: "Có đầy đủ giấy phép", hl6: "5 năm kinh nghiệm",
-  hlLabel: "Điểm nổi bật",
+  hl3: "Trực tiếp lắp đặt",
+  hl4: "Melbourne & Victoria", hl5: "Nền tảng kỹ sư xây dựng", hl6: "5 năm trong ngành HVAC & thông gió bếp",
+  hlLabel: "Năng lực chính",
   expSub: "Một công trình hoàn thiện tốt cần có chuyên môn kỹ thuật, tư duy thực tế và sự chỉn chu trong từng chi tiết.",
   expSub2: "Đây là những gì anh chị có thể trông đợi khi làm việc với Luke Commercial Kitchen.",
   ctaS2: "Hãy cùng Luke trao đổi về kế hoạch và tìm giải pháp thực tế cho không gian của anh chị.",
   scopeSub2: "Hai hệ thống cần được thiết kế và vận hành đồng bộ. Luke nhận gia công và lắp đặt trọn bộ hệ thống hút khói và cấp gió tươi, với phương án được cân nhắc dựa trên đặc điểm khu bếp và yêu cầu của từng dự án. Hút khói (extraction) và cấp gió tươi cùng tạo thành hệ thống thông gió cho bếp thương mại.",
-  procSub: "Quy trình được triển khai rõ ràng, các chi tiết quan trọng đều được xem xét trước khi bắt đầu thi công.",
+  procSub: "Quy trình rõ ràng, các chi tiết quan trọng được thống nhất trước khi lắp đặt.",
   contactIntro2: "Hãy chia sẻ một vài thông tin về dự án. Luke và đội ngũ sẽ dành thời gian tìm hiểu nhu cầu và trao đổi về hướng triển khai phù hợp.",
-  footTag: "Hệ thống hút khói và cấp gió tươi cho bếp thương mại",
+  footTag: "Công trình hút khói và cấp gió tươi cho bếp thương mại",
   navLabel: "Menu chính",
   s7t: "Cửa cấp gió tươi",
   s7d: "Quạt cấp và đường ống đưa không khí sạch từ bên ngoài vào bếp, bù lại lượng khí đã hút ra.",
-  photoAlt: "Ảnh công trình của Luke Commercial Kitchen",
+  photoAlt: "Ảnh công trình Luke Commercial Kitchen",
   enlarge: "Xem ảnh lớn",
   lbClose: "Đóng",
   lbPrev: "Ảnh trước",
   lbNext: "Ảnh tiếp theo",
   viewAll: "Xem tất cả {n} ảnh",
   galTitle: "Thư viện ảnh công trình · Luke Commercial Kitchen · Hút khói bếp thương mại, Victoria",
-  galMeta: "Hình ảnh chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện do Luke Commercial Kitchen gia công và lắp đặt trên toàn bang Victoria.",
+  galMeta: "Hình ảnh chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện từ các công trình Luke đã chỉ đạo thi công trên toàn bang Victoria.",
   galEyebrow: "Thư viện ảnh",
   galH1: "Chỉn chu trong từng chi tiết.",
-  galSub: "Chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện từ các công trình trên toàn bang Victoria. Nhấn vào từng ảnh để xem kích thước lớn hơn.",
+  galSub: "Chụp hút, đường ống, điểm xả trên mái và bếp hoàn thiện từ các công trình Luke đã chỉ đạo thi công tại Victoria. Nhấn vào ảnh để xem lớn hơn.",
   galFilter: "Lọc ảnh",
   catAll: "Tất cả",
   catCanopies: "Chụp hút khói",
   catDuct: "Đường ống",
   catRoof: "Mái & điểm xả",
-  catFitout: "Bếp hoàn thiện",
-  galCtaT: "Món ngon xứng đáng với một căn bếp thông thoáng.",
-  galCtaS: "Hãy chia sẻ một vài thông tin về khu bếp của bạn, Luke sẽ liên hệ để cùng trao đổi.",
+  catFitout: "Hoàn thiện & tấm ốp",
+  galCtaT: "Quan tâm đến các công trình?",
+  galCtaS: "Để trao đổi về dự án, bạn có thể liên hệ Luke qua email hoặc điện thoại.",
   galBack: "Về trang chủ",
   contactDetails: "Thông tin liên hệ",
-  footArea: "Phục vụ trên toàn bang Victoria",
+  footArea: "Melbourne & Victoria",
   privacyLink: "Chính sách quyền riêng tư",
   privTitle: "Chính sách quyền riêng tư · Luke Commercial Kitchen",
   privMeta: "Cách Luke Commercial Kitchen thu thập, sử dụng và bảo vệ thông tin cá nhân bạn chia sẻ qua lukecomkitchen.com.",
@@ -371,11 +412,11 @@ const VI = {
   hookSysT: "Đừng để bao công sức của quán tan theo khói bếp.",
   hookSysS: "Làm đúng phần hút khói và gió tươi ngay từ đầu. Hãy trao đổi với Luke trước khi thi công.",
   contactHook: "Bạn đã dồn hết tâm huyết cho quán. Đừng để hệ thống thông gió kém làm uổng công.",
-  scopeLead: "Bạn đang chuẩn bị mở nhà hàng hay muốn nâng cấp khu bếp hiện tại? Hãy cùng Luke tính toán hệ thống thông gió cho thật phù hợp.",
+  scopeLead: "Bếp thương mại nào cũng cần hút khói và cấp gió tươi hoạt động cùng nhau.",
   scopeP1: "Một căn bếp thương mại không chỉ cần hệ thống hút khói tốt. Khói, hơi nóng và dầu mỡ cần được hút ra ngoài hiệu quả, đồng thời phải có đủ gió tươi đưa vào để không gian luôn thông thoáng và dễ chịu.",
   scopeP2: "Hệ thống hút khói và cấp gió tươi luôn cần được tính toán đồng bộ để hoạt động hiệu quả.",
-  scopeP3: "Luke và đội ngũ có thể đồng hành cùng bạn từ khâu khảo sát mặt bằng, tư vấn phương án đến gia công và lắp đặt trọn bộ hệ thống hút khói, cấp gió tươi.",
-  scopeP4: "Mỗi căn bếp có một đặc điểm riêng. Đội ngũ của Luke sẽ giúp bạn tìm ra phương án phù hợp với nhu cầu và điều kiện thực tế của công trình.",
+  scopeP3: "Các công trình của Luke bao gồm toàn bộ hệ thống như sơ đồ bên dưới, từ tấm ốp tường và chụp hút đến quạt hút, điểm xả và hệ thống cấp gió tươi.",
+  scopeP4: "Mỗi bếp một khác, nên hệ thống được tính theo mặt bằng, khu nấu và vị trí có thể xả khí.",
   orEmail: "hoặc email",
   orCall: "hoặc gọi",
   utilArea: "Phục vụ toàn bang Victoria",
@@ -395,11 +436,52 @@ const VI = {
   chatMsg: "Tin nhắn",
   chatMsgPh: "Bạn cần Luke hỗ trợ gì?",
   chatSend: "Gửi tin nhắn",
-  ogAlt: "Luke Commercial Kitchen: hệ thống hút khói và cấp gió tươi cho bếp thương mại tại Melbourne và Victoria",
+  ogAlt: "Luke Commercial Kitchen: công trình hút khói và cấp gió tươi cho bếp thương mại tại Melbourne và Victoria",
   moreTile: "ảnh nữa",
   moreTileSub: "Xem toàn bộ thư viện ảnh",
   moreTileShort: "Xem tất cả",
-  navGallery: "Thư viện ảnh"
+  navGallery: "Công trình",
+  navCap: "Năng lực",
+  navAbout: "Về Luke",
+  heroWork: "Xem công trình",
+  heroAbout: "Về Luke",
+  capEyebrow: "Năng lực",
+  capH2: "Trực tiếp làm, từ đầu đến cuối.",
+  capSub: "Luke không chỉ lắp đặt mà làm trọn cả dự án: đo đạc, bản vẽ, gia công, lắp đặt và giấy tờ để khép lại công trình.",
+  c1t: "Gia công theo yêu cầu",
+  c1d: "Chụp hút, đường ống, phụ kiện và tấm ốp inox được gia công theo bản vẽ đã duyệt, mối nối gọn và hoàn thiện cẩn thận.",
+  c2t: "Hệ thống hút khói",
+  c2d: "Chụp hút, đường ống, cửa thăm, quạt hút và điểm xả, được tính thành một hệ thống từ khu nấu lên đến mái.",
+  c3t: "Hệ thống cấp gió tươi",
+  c3d: "Quạt cấp và đường ống đưa không khí sạch từ bên ngoài vào bếp, bù lại lượng khí đã hút ra.",
+  c4t: "Trực tiếp lắp đặt",
+  c4d: "Luke tự tay lắp đặt, định vị và lắp từng hệ thống gọn gàng, kiểm tra từng chi tiết trong suốt quá trình thi công.",
+  c5t: "Đo đạc & bản vẽ",
+  c5d: "Đo đạc tại công trình, tổng hợp thông tin đầu vào và vẽ hệ thống, để hướng ống, kích thước và điểm xả được chốt trước khi gia công.",
+  c6t: "Hồ sơ & hoàn công",
+  c6d: "Cập nhật tiến độ, review hồ sơ, giấy tờ chứng nhận và bản vẽ hoàn công, để công trình được khép lại đầy đủ khi bàn giao.",
+  behEyebrow: "Phía sau công trình",
+  behH2: "Từ xưởng đến khi bàn giao.",
+  behSub: "Phần hoàn thiện bạn thấy bắt đầu từ rất lâu trước ngày lắp đặt.",
+  b1t: "Tại xưởng",
+  b1d: "Chụp hút được gia công tại xưởng, sẵn sàng bàn giao.",
+  b2t: "Tại công trình",
+  b2d: "Lắp chụp hút và tấm ốp tường trong lúc thi công.",
+  b3t: "Hoàn thiện",
+  b3d: "Chụp hút inox hoàn thiện cùng tấm ốp tường.",
+  aboutEyebrow: "Về Luke",
+  aboutH2: "Nền tảng kỹ sư, cách làm thực tế.",
+  ap1: "Luke bắt đầu sự nghiệp với 5 năm làm kỹ sư xây dựng, sau đó chuyển sang ngành HVAC. 5 năm gần đây, Luke làm trong lĩnh vực thông gió cơ khí, tập trung vào hệ thống hút khói và cấp gió tươi cho bếp thương mại.",
+  ap2: "Luke có mặt ở mọi công trình trên trang này và chỉ đạo thi công cùng đội ngũ: đo đạc, vẽ, tự tay lắp đặt, cập nhật tiến độ cho các bên, và hoàn tất hồ sơ, chứng nhận, hoàn công.",
+  ap3: "Nền tảng kỹ sư thể hiện ở khâu tính toán. Kinh nghiệm thực tế thể hiện ở phần hoàn thiện.",
+  as1n: "5 năm",
+  as1l: "Kỹ sư xây dựng",
+  as2n: "5 năm",
+  as2l: "HVAC & thông gió bếp",
+  as3n: "Có mặt",
+  as3l: "Ở mọi công trình trên trang",
+  contactText: "Để trao đổi về dự án hoặc các công trình trên trang này, bạn có thể liên hệ Luke qua email hoặc điện thoại.",
+  emailBtn: "Email cho Luke"
 };
 
 /* ====================== TEMPLATE ====================== */
@@ -491,7 +573,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
     const alt = (typeof p[lang] === 'string' ? p[lang] : p.en) || T.photoAlt + ' ' + (i + 1);
     const sz = jpegSize(p.src);
     const src = p.src + '?v=' + VER(p.src);
-    return `<li class="tile" data-cat="${p.cat || ''}"><button class="ph tilebtn" type="button" data-full="${R}${esc(src)}" data-alt="${esc(alt)}" aria-label="${esc(T.enlarge)}: ${esc(alt)}"><img class="pimg" src="${R}${esc(src)}" alt="${esc(alt)}" width="${sz.w}" height="${sz.h}" loading="lazy" decoding="async"></button></li>`;
+    return `<li class="tile" data-cat="${p.cat || ''}"><button class="ph tilebtn" type="button" data-full="${R}${esc(src)}" data-alt="${esc(alt)}" aria-label="${esc(T.enlarge)}: ${esc(alt)}"><img class="pimg" src="${R}${esc(src)}" alt="${esc(alt)}" width="${sz.w}" height="${sz.h}" loading="lazy" decoding="async"><span class="tcap">${esc(alt)}</span></button></li>`;
   };
   const homeList = (C.photos.some((p) => p.home) ? C.photos.filter((p) => p.home) : C.photos).slice(0, 8);
   const photos = homeList.map(tile).join('\n');
@@ -540,7 +622,7 @@ function page(T, lang, kind = 'home', mode = 'site') {
   <section class="sec sheet dark gal-cta" id="contact">
     <div class="in">
       <div class="shead"><h2 class="h2">${T.galCtaT}</h2><p class="sub">${T.galCtaS}</p></div>
-      <div class="center gal-ctabtns"><a class="btn btn-primary" href="${HL('contact')}">${T.quote} ${ARROW}</a><a class="btn btn-ghost" href="${tel}">${PHONE_IC} ${T.call} ${esc(C.phoneDisplay)}</a></div>
+      <div class="center gal-ctabtns">${C.email ? `<a class="btn btn-primary" href="mailto:${esc(C.email)}">${T.emailBtn} ${ARROW}</a>` : ''}<a class="btn btn-ghost" href="${tel}">${PHONE_IC} ${esc(C.phoneDisplay)}</a></div>
     </div>
   </section>
   </main>`;
@@ -551,9 +633,10 @@ function page(T, lang, kind = 'home', mode = 'site') {
   const msgs = { badEmail: T.badEmail, required: T.required, okSent: T.okSent, okSms: T.okSms, errSend: T.errSend, sending: T.sending, smsHead: T.smsHead, phone: C.phoneDisplay, tel, sms, key: C.web3formsKey, company: C.company, pause: T.motionPause, play: T.motionPlay, labels: { name: T.fName, phone: T.fPhone, email: T.fEmail, suburb: T.fSuburb, kitchen_type: T.fVenue, request: T.fWant, system: T.fService, call_time: T.fTime, details: T.fDetails } };
 
   const ldjson = {
-    '@context': 'https://schema.org', '@type': 'LocalBusiness', name: C.company, telephone: C.phoneIntl,
-    url: pageUrl, areaServed: { '@type': 'State', name: 'Victoria, Australia' },
-    description: EN.metaDesc,
+    '@context': 'https://schema.org', '@type': 'Person', name: 'Luke', url: pageUrl,
+    jobTitle: 'Commercial kitchen exhaust and fresh air project lead',
+    description: EN.metaDesc, workLocation: { '@type': 'Place', name: 'Melbourne and Victoria, Australia' },
+    knowsAbout: ['Commercial kitchen exhaust systems', 'Fresh air systems', 'Ductwork fabrication', 'HVAC installation'],
   };
   if (C.email) ldjson.email = C.email;
 
@@ -590,14 +673,6 @@ ${GTAG()}<title>${esc(isG ? T.galTitle : isP ? T.privTitle : T.title)}</title>
 <body>
 <div class="pg lang-${lang}" id="top" data-lang="${lang}" data-view="${view(lang, kind)}" data-site="${esc(JSON.stringify(msgs))}">
 
-  <div class="util" aria-label="${T.utilLabel}">
-    <div class="in util-in">
-      <a href="${tel}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>${esc(C.phoneDisplay)}</span></a>
-      ${C.email ? `<a href="mailto:${esc(C.email)}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="util-full">${esc(C.email)}</span><span class="util-short" aria-hidden="true">${T.kEmail}</span></a>` : ''}
-      <span class="util-area"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>${T.utilArea}</span></span>
-    </div>
-  </div>
-
   <header class="top">
     <div class="in top-in">
       <a class="logo" href="${HL('top')}" aria-label="${esc(T.home)}">
@@ -605,15 +680,13 @@ ${GTAG()}<title>${esc(isG ? T.galTitle : isP ? T.privTitle : T.title)}</title>
         <span class="lname">${esc(C.company).replace(/^(\S+) /, '$1 <span class="lname2">').replace(/$/, C.company.includes(' ') ? '</span>' : '')}</span>
       </a>
       <nav class="nav" aria-label="${T.navLabel}">
-        ${C.photos.length ? `<a href="${isG ? '#top' : GL}"${isG ? ' aria-current="page"' : (kind === 'home' ? ' data-spy="work"' : '')}>${T.navGallery}</a>` : ''}
-        <a href="${HL('why')}">${T.navWhy}</a>
-        <a href="${HL('system')}">${T.navSystem}</a>
+        ${C.photos.length ? `<a href="${isG ? '#top' : HL('work')}"${isG ? ' aria-current="page"' : ''}>${T.navGallery}</a>` : ''}
+        <a href="${HL('capabilities')}">${T.navCap}</a>
+        <a href="${HL('about')}">${T.navAbout}</a>
         <a href="${HL('process')}">${T.navProcess}</a>
         <a href="${HL('contact')}">${T.navContact}</a>
       </nav>
       <div class="top-r">
-        <a class="btn btn-ghost btn-sm hdr-cta" href="${tel}">${PHONE_IC}<span>${esc(C.phoneDisplay)}</span></a>
-        <a class="btn btn-primary btn-sm hdr-cta" href="${HL('contact')}">${T.quote}</a>
         <button class="iconbtn js-motion" type="button" aria-label="${T.motionPause}" title="${T.motionPause}">
           <svg class="ic-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1.5"/><rect x="14" y="4" width="5" height="16" rx="1.5"/></svg>
           <svg class="ic-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.9l12-7.5a1 1 0 0 0 0-1.8l-12-7.5A1 1 0 0 0 7 4.5z"/></svg>
@@ -634,23 +707,7 @@ ${GTAG()}<title>${esc(isG ? T.galTitle : isP ? T.privTitle : T.title)}</title>
       <p class="tag">${T.eyebrow}</p>
       <h1 class="h1"><span class="l1">${T.h1a}</span> <span class="l2">${T.h1b}</span></h1>
       <p class="lede">${T.lede}</p>
-
-      <div class="qwrap" id="quote">
-        <h2 class="qtitle">${T.heroFormT}</h2>
-        <p class="qcap">${T.heroFormS}</p>
-        <form class="qbar js-enquiry" novalidate>
-          <input type="hidden" name="source" value="Hero form (${lang.toUpperCase()})">
-          <label class="qf"><span class="ql">${T.fName}</span><input type="text" name="name" autocomplete="name" placeholder="${T.phName}" required></label>
-          <label class="qf"><span class="ql">${T.fContact}</span><input type="text" name="contact" autocomplete="tel" placeholder="${T.phContact}"></label>
-          <label class="qf"><span class="ql">${T.fVenue}</span><span class="sel"><select name="kitchen_type">${venueOpts}</select></span></label>
-          <label class="qf"><span class="ql">${T.fSuburb}</span><input type="text" name="suburb" autocomplete="address-level2" placeholder="${T.phSuburb}"></label>
-          <button class="btn btn-primary" type="submit">${T.send} ${ARROW}</button>
-        </form>
-        <p class="notice" role="status" hidden></p>
-      </div>
-
-      <p class="after">${T.preferC} <a href="${tel}">${T.call} ${esc(C.phoneDisplay)}</a>${C.email ? ` ${T.orEmail} <a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : ''}.</p>
-
+      <div class="hero-btns"><a class="btn btn-primary btn-lg" href="#work">${T.heroWork} ${ARROW}</a><a class="btn btn-ghost btn-lg" href="#about">${T.heroAbout}</a></div>
       <ul class="tchips" aria-label="${T.hlLabel}">
         ${chips.join('\n        ')}
       </ul>
@@ -667,20 +724,17 @@ ${GTAG()}<title>${esc(isG ? T.galTitle : isP ? T.privTitle : T.title)}</title>
       </div>
     </section>` : ''}
 
-    <section class="sec sheet light" id="why">
+    <section class="sec sheet light" id="capabilities">
       <div class="in">
-        <div class="shead">
-          <p class="tag">${T.expEyebrow}</p>
-          <h2 class="h2">${T.expH2}</h2>
-          <p class="sub">${T.expSub}</p>
+        <div class="shead"><p class="tag">${T.capEyebrow}</p><h2 class="h2">${T.capH2}</h2><p class="sub">${T.capSub}</p></div>
+        <div class="expect cap6">
+          <div class="fc"><span class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a4 4 0 0 0 5 5L11 20a2.1 2.1 0 0 1-3-3z"/></svg></span><h3>${T.c1t}</h3><p>${T.c1d}</p></div>
+          <div class="fc"><span class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h12a3 3 0 1 0-3-3M3 16h15a3 3 0 1 1-3 3M3 12h18"/></svg></span><h3>${T.c2t}</h3><p>${T.c2d}</p></div>
+          <div class="fc"><span class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></span><h3>${T.c3t}</h3><p>${T.c3d}</p></div>
+          <div class="fc"><span class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16 16 3l5 5L8 21z M7 12l2 2 M10 9l2 2 M13 6l2 2"/></svg></span><h3>${T.c4t}</h3><p>${T.c4d}</p></div>
+          <div class="fc"><span class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V5h14v16M9 9h6M9 13h6M9 17h3"/></svg></span><h3>${T.c5t}</h3><p>${T.c5d}</p></div>
+          <div class="fc"><span class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7zM15 3v4h4M10 12l2 2 4-4"/></svg></span><h3>${T.c6t}</h3><p>${T.c6d}</p></div>
         </div>
-        <div class="expect">
-          <div class="fc"><span class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16 16 3l5 5L8 21z M7 12l2 2 M10 9l2 2 M13 6l2 2"/></svg></span><h3>${T.e1t}</h3><p>${T.e1d}</p></div>
-          <div class="fc"><span class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a4 4 0 0 0 5 5L11 20a2.1 2.1 0 0 1-3-3z"/></svg></span><h3>${T.e2t}</h3><p>${T.e2d}</p></div>
-          <div class="fc"><span class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h12a3 3 0 1 0-3-3M3 16h15a3 3 0 1 1-3 3M3 12h18"/></svg></span><h3>${T.e3t}</h3><p>${T.e3d}</p></div>
-          <div class="fc"><span class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H10l-4 4v-4H4z"/></svg></span><h3>${T.e4t}</h3><p>${T.e4d}</p></div>
-        </div>
-        ${C.reviews.length ? `<h3 class="mono proofh">${T.proofH}</h3><div class="quotes">${reviews}</div>` : ''}
       </div>
     </section>
 
@@ -775,14 +829,34 @@ ${GTAG()}<title>${esc(isG ? T.galTitle : isP ? T.privTitle : T.title)}</title>
             <li class="fa"><b aria-hidden="true">7</b>${T.s7t.replace(/\s*\(.*\)$/, '')}</li>
           </ol>
         </div>
-        <div class="hook">
-          <div class="hook-text"><h3>${T.hookSysT}</h3><p>${T.hookSysS}</p></div>
-          <div class="hook-cta"><a class="btn btn-primary" href="${HL('contact')}">${T.quote} ${ARROW}</a><span class="hook-call">${T.orCall} <a href="${tel}">${esc(C.phoneDisplay)}</a></span></div>
-        </div>
       </div>
     </section>
 
-    <section class="sec sheet light alt" id="process">
+    <section class="sec sheet light alt" id="behind">
+      <div class="in">
+        <div class="shead"><p class="tag">${T.behEyebrow}</p><h2 class="h2">${T.behH2}</h2><p class="sub">${T.behSub}</p></div>
+        <div class="behind"><figure class="bh"><img src="${R}assets/photos/p31.jpg?v=${VER('assets/photos/p31.jpg')}" alt="${esc(T.b1d)}" width="${jpegSize('assets/photos/p31.jpg').w}" height="${jpegSize('assets/photos/p31.jpg').h}" loading="lazy" decoding="async"><figcaption><b>${T.b1t}</b><span>${T.b1d}</span></figcaption></figure><figure class="bh"><img src="${R}assets/photos/p55.jpg?v=${VER('assets/photos/p55.jpg')}" alt="${esc(T.b2d)}" width="${jpegSize('assets/photos/p55.jpg').w}" height="${jpegSize('assets/photos/p55.jpg').h}" loading="lazy" decoding="async"><figcaption><b>${T.b2t}</b><span>${T.b2d}</span></figcaption></figure><figure class="bh"><img src="${R}assets/photos/p51.jpg?v=${VER('assets/photos/p51.jpg')}" alt="${esc(T.b3d)}" width="${jpegSize('assets/photos/p51.jpg').w}" height="${jpegSize('assets/photos/p51.jpg').h}" loading="lazy" decoding="async"><figcaption><b>${T.b3t}</b><span>${T.b3d}</span></figcaption></figure></div>
+      </div>
+    </section>
+
+    <section class="sec sheet dark" id="about">
+      <div class="in about-in">
+        <div class="about-l">
+          <p class="tag">${T.aboutEyebrow}</p>
+          <h2 class="h2">${T.aboutH2}</h2>
+          <p>${T.ap1}</p>
+          <p>${T.ap2}</p>
+          <p class="about-em">${T.ap3}</p>
+        </div>
+        <ul class="about-stats">
+          <li><b>${T.as1n}</b><span>${T.as1l}</span></li>
+          <li><b>${T.as2n}</b><span>${T.as2l}</span></li>
+          <li><b>${T.as3n}</b><span>${T.as3l}</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sec sheet light" id="process">
       <div class="in">
         <div class="shead"><p class="tag">${T.procEyebrow}</p><h2 class="h2">${T.procH2}</h2><p class="sub">${T.procSub}</p></div>
         <ol class="tl">
@@ -793,57 +867,17 @@ ${GTAG()}<title>${esc(isG ? T.galTitle : isP ? T.privTitle : T.title)}</title>
           <li><span class="tn" aria-hidden="true">05</span><div><h3>${T.st5t}</h3><p>${T.st5d}</p></div></li>
           <li><span class="tn" aria-hidden="true">06</span><div><h3>${T.st6t}</h3><p>${T.st6d}</p></div></li>
         </ol>
-        <div class="center"><a class="btn btn-dark" href="${HL('contact')}">${T.quote} ${ARROW}</a></div>
       </div>
     </section>
   </main>
 
-  <section class="sec sheet dark contact" id="contact">
-    <div class="in in-w contact-in">
-      <div class="contact-l">
-        <p class="tag">${T.contactEyebrow}</p>
-        <h2 class="h2">${T.contactH2}</h2>
-        <p class="chook">${T.contactHook}</p>
-        <p class="lede cintro">${T.contactIntro}</p>
-        <p class="lede cintro cintro2">${T.contactIntro2}</p>
-        <h3 class="sendh">${T.sendH}</h3>
-        <ul class="sendlist"><li>${T.l1}</li><li>${T.l2}</li><li>${T.l3}</li><li>${T.l4}</li><li>${T.l6}</li></ul>
-        <div class="reach">
-          <h3 class="mono reach-h">${T.contactDetails}</h3>
-          <div class="r"><span class="mono k">${T.kPhone}</span><a class="big" href="${tel}">${esc(C.phoneDisplay)}</a></div>
-          ${C.email ? `<div class="r"><span class="mono k">${T.kEmail}</span><a class="v" href="mailto:${esc(C.email)}">${esc(C.email)}</a></div>` : ''}
-          <div class="r"><span class="mono k">${T.kArea}</span><span>${T.areaVal}</span></div>
-        </div>
-      </div>
-
-      <div class="contact-r">
-        <div class="fcard">
-          <h2>${T.cFormTitle}</h2>
-          <p class="sub">${T.cFormSub}</p>
-          <form class="form js-enquiry" novalidate>
-            <input type="hidden" name="source" value="Contact form (${lang.toUpperCase()})">
-            <input type="hidden" name="request" value="${T.wCall}">
-            <div class="row2">
-              <div class="field"><label for="c-name">${T.fName} <span class="req" aria-hidden="true">*</span></label><input id="c-name" type="text" name="name" autocomplete="name" placeholder="${T.phName}" required></div>
-              <div class="field"><label for="c-suburb">${T.fSuburb}</label><input id="c-suburb" type="text" name="suburb" autocomplete="address-level2" placeholder="${T.phSuburb}"></div>
-            </div>
-            <div class="contactpair">
-              <div class="row2">
-                <div class="field"><label for="c-phone">${T.fPhone}</label><input id="c-phone" type="tel" name="phone" autocomplete="tel" placeholder="${T.phPhone}" aria-describedby="c-hint"></div>
-                <div class="field"><label for="c-email">${T.fEmail}</label><input id="c-email" type="email" name="email" autocomplete="email" placeholder="${T.phEmail}" aria-describedby="c-hint"></div>
-              </div>
-              <p class="hint" id="c-hint">${T.contactHint}</p>
-            </div>
-            <div class="row2">
-              <div class="field"><label for="c-venue">${T.fVenue}</label><span class="sel"><select id="c-venue" name="kitchen_type">${venueList(T.cSelectPh)}</select></span></div>
-              <div class="field"><label for="c-time">${T.fTime}</label><span class="sel"><select id="c-time" name="call_time"><option value="${T.tAny}">${T.tAny}</option><option value="${T.tMorning}">${T.tMorning}</option><option value="${T.tAfternoon}">${T.tAfternoon}</option><option value="${T.tEvening}">${T.tEvening}</option></select></span></div>
-            </div>
-            <div class="field"><label for="c-details">${T.fDetails}</label><textarea id="c-details" name="details" rows="3" placeholder="${T.cDetailsPh}"></textarea></div>
-            <button class="btn btn-primary btn-block" type="submit">${T.cSend} ${ARROW}</button>
-          </form>
-          <p class="notice" role="status" hidden></p>
-          <p class="talk">${T.preferC} <a href="${tel}">${T.call} ${esc(C.phoneDisplay)}</a>.</p>
-        </div>
+  <section class="sec sheet dark contact contact-s" id="contact">
+    <div class="in">
+      <div class="shead"><p class="tag">${T.contactEyebrow}</p><h2 class="h2">${T.contactH2}</h2><p class="sub">${T.contactText}</p></div>
+      <div class="reach reach-s">
+        ${C.email ? `<div class="r"><span class="mono k">${T.kEmail}</span><a class="v" href="mailto:${esc(C.email)}">${esc(C.email)}</a></div>` : ''}
+        <div class="r"><span class="mono k">${T.kPhone}</span><a class="v" href="${tel}">${esc(C.phoneDisplay)}</a></div>
+        <div class="r"><span class="mono k">${T.kArea}</span><span class="v">${T.areaVal}</span></div>
       </div>
     </div>
   </section>
@@ -855,34 +889,6 @@ ${GTAG()}<title>${esc(isG ? T.galTitle : isP ? T.privTitle : T.title)}</title>
       <div class="foot-r"><span>${T.footArea} · <a href="${tel}">${esc(C.phoneDisplay)}</a>${C.email ? ` · <a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : ''}</span><span>© ${new Date().getFullYear()} ${esc(C.company)}${C.abn ? ' · ABN ' + esc(C.abn) : ''}. ${T.rights} · <a href="${PL}"${isP ? ' aria-current="page"' : ''}>${T.privacyLink}</a></span></div>
     </div>
   </footer>
-
-  <div class="chatfab">
-    <div class="chat-menu" role="group" aria-label="${T.chatTitle}" hidden>
-      <p class="chat-title">${T.chatTitle}</p>
-      <a class="chat-opt chat-wa" href="https://wa.me/${C.phoneIntl.replace('+', '')}?text=${encodeURIComponent(T.waText)}" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg><span>${T.chatWa}</span></a>
-      <a class="chat-opt chat-sms" href="${sms}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H10l-4 4v-4H4z"/><path d="M8 10h8M8 13h5"/></svg><span>${T.chatSms}</span></a>
-      <p class="chat-desk">${T.chatSmsDesk} <strong>${esc(C.phoneDisplay)}</strong>${lang === 'en' ? ' from your phone' : ' từ điện thoại'}.</p>
-      <p class="chat-quick">${T.chatQuick}</p>
-      <form class="chat-form js-enquiry" novalidate>
-        <input type="hidden" name="source" value="Chat quick message (${lang.toUpperCase()})">
-        <label class="sr-only" for="chat-name">${T.chatName}</label>
-        <input id="chat-name" type="text" name="name" autocomplete="name" placeholder="${T.chatName}">
-        <label class="sr-only" for="chat-contact">${T.chatContact}</label>
-        <input id="chat-contact" type="text" name="contact" autocomplete="tel" placeholder="${T.chatContact}">
-        <label class="sr-only" for="chat-msg">${T.chatMsg}</label>
-        <textarea id="chat-msg" name="details" rows="3" placeholder="${T.chatMsgPh}"></textarea>
-        <button class="btn btn-primary btn-sm" type="submit">${T.chatSend}</button>
-      </form>
-      <p class="notice" role="status" hidden></p>
-      <p class="chat-note">${T.chatNote}</p>
-    </div>
-    <button class="chat-btn" type="button" aria-expanded="false" aria-label="${T.chatOpen}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.7 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span>${T.chatBtn}</span></button>
-  </div>
-
-  <div class="stickybar">
-    <a class="btn btn-ghost btn-sm" href="${tel}" aria-label="${T.call} ${esc(C.phoneDisplay)}">${PHONE_IC} <span class="lbl">${T.call}</span></a>
-    <a class="btn btn-primary btn-sm" href="${HL('contact')}">${T.quote}</a>
-  </div>
 
 </div>
 <script src="${R}assets/main.js?v=${JS_V}" defer></script>
@@ -934,7 +940,7 @@ ${GTAG()}<title>Page not found · ${esc(C.company)}</title>
         <a class="btn btn-ghost" href="${U}vi/" lang="vi">Về trang chủ (Tiếng Việt)</a>
         <a class="btn btn-ghost" href="${U}gallery/">View our work</a>
       </div>
-      <p class="nf-call">Need help now? Call <a href="${tel}">${esc(C.phoneDisplay)}</a>${C.email ? ` or email <a href="mailto:${esc(C.email)}">${esc(C.email)}</a>` : ''}.</p>
+      <p class="nf-call">${C.email ? `Questions? Email <a href="mailto:${esc(C.email)}">${esc(C.email)}</a>.` : ''}</p>
     </div>
   </main>
   <footer class="foot dark"><div class="in"><div class="foot-l"><strong class="foot-name">${esc(C.company)}</strong><span>${EN.footTag}</span></div><div class="foot-r"><span>© ${new Date().getFullYear()} ${esc(C.company)}. ${EN.rights}</span></div></div></footer>

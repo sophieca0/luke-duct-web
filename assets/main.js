@@ -2,7 +2,7 @@
    The Google tag (gtag.js) itself is loaded in each page's <head> (see build.js, CONFIG.adsId).
    Labels come from Google Ads (Goals > Conversions). Set id to "" to stop sending conversions. */
 var ADS = {
-  id: 'AW-18563134906',
+  id: '',   /* Google Ads paused: no conversions sent */
   formLabel: 'fWxMCKjOiLUdELrry5NF',   /* "Submit lead form (2)" conversion */
   callLabel: 'l4fMCPbvwrcdELrry5NF'    /* "Website phone click" conversion: calls, SMS and WhatsApp */
 };
@@ -266,7 +266,7 @@ function adsConvert(label) {
 (function () {
   if (!GA4) return;
   function where(el) {
-    var zones = [['.util', 'contact_bar'], ['.top', 'menu'], ['.hero', 'hero'], ['#work', 'gallery_section'], ['#why', 'why_us'],
+    var zones = [['.top', 'menu'], ['.hero', 'hero'], ['#work', 'gallery_section'], ['#capabilities', 'capabilities'], ['#behind', 'behind_the_work'], ['#about', 'about'],
       ['#system', 'system'], ['#process', 'process'], ['#contact', 'contact'], ['.foot', 'footer'], ['.chatfab', 'chat'],
       ['.stickybar', 'mobile_bar'], ['.nf-main', 'page_404']];
     for (var i = 0; i < zones.length; i++) if (el.closest(zones[i][0])) return zones[i][1];
