@@ -2,7 +2,7 @@
    The Google tag (gtag.js) itself is loaded in each page's <head> (see build.js, CONFIG.adsId).
    Labels come from Google Ads (Goals > Conversions). Set id to "" to stop sending conversions. */
 var ADS = {
-  id: 'AW-18563134906',
+  id: '',   /* Google Ads not running: no conversions sent. Restore 'AW-18563134906' to switch back on. */
   formLabel: 'fWxMCKjOiLUdELrry5NF',   /* "Submit lead form (2)" conversion */
   callLabel: 'l4fMCPbvwrcdELrry5NF'    /* "Website phone click" conversion: calls, SMS and WhatsApp */
 };

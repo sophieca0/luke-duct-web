@@ -23,7 +23,7 @@ const CONFIG = {
   // open the visitor's SMS app with their details addressed to the phone above.
   web3formsKey: '335a515e-727e-4c8e-8eaf-f16c578c7db8',
   // Google Ads (gtag.js) ID, loaded in the <head> of every page. Set to '' to switch tracking off.
-  adsId: 'AW-18563134906',
+  adsId: '',
   // Google Analytics 4 measurement ID (shares the same Google tag). Set to '' to switch it off.
   ga4Id: 'G-7BVN9K5DFZ',
   siteUrl: 'https://lukecomkitchen.com/',
@@ -175,7 +175,7 @@ const EN = {
   hl1: "Exhaust & Fresh Air Systems",
   hl2: "Custom Fabrication",
   hl3: "Made In-House",
-  hl4: "Servicing All of Victoria", hl5: "Fully licensed", hl6: "5 years of experience",
+  hl4: "Servicing All of Victoria", hl5: "Civil engineering background", hl6: "5 years of experience",
   hlLabel: "What we do",
   expSub: "A good result takes the right technical knowledge, practical thinking and care in every detail.",
   expSub2: "Here's what you can expect when working with Luke Commercial Kitchen.",
@@ -330,7 +330,7 @@ const VI = {
   hl1: "Hệ thống hút khói và cấp gió tươi",
   hl2: "Gia công theo yêu cầu",
   hl3: "Sản xuất trực tiếp tại xưởng",
-  hl4: "Phục vụ trên toàn bang Victoria", hl5: "Có đầy đủ giấy phép", hl6: "5 năm kinh nghiệm",
+  hl4: "Phục vụ trên toàn bang Victoria", hl5: "Nền tảng kỹ sư xây dựng", hl6: "5 năm kinh nghiệm",
   hlLabel: "Điểm nổi bật",
   expSub: "Một công trình hoàn thiện tốt cần có chuyên môn kỹ thuật, tư duy thực tế và sự chỉn chu trong từng chi tiết.",
   expSub2: "Đây là những gì anh chị có thể trông đợi khi làm việc với Luke Commercial Kitchen.",
